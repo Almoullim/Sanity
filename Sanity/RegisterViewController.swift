@@ -28,6 +28,13 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Change UITextField's placeholder color
+        registerName.attributedPlaceholder = NSAttributedString(string: "Full Name..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        registerUsername.attributedPlaceholder = NSAttributedString(string: "Username..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        registerEmail.attributedPlaceholder = NSAttributedString(string: "Email..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        registerPassword.attributedPlaceholder = NSAttributedString(string: "Password..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        registerPhone.attributedPlaceholder = NSAttributedString(string: "Phone..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        
         // [START setup]
         let settings = FirestoreSettings()
         
