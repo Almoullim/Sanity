@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF686224F9A0F00EA9B93 /* LoginViewController.swift */; };
 		414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */; };
-		414AF68D224FB6D800EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF68C224FB6D800EA9B93 /* UserTypeViewController.swift */; };
+		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
+		414AF696224FDE8D00EA9B93 /* App.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414AF695224FDE8D00EA9B93 /* App.storyboard */; };
+		414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF697224FE7E300EA9B93 /* HomeViewController.swift */; };
 		41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF8099224EA6780007F98F /* AppDelegate.swift */; };
 		41AF809F224EA6780007F98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF809D224EA6780007F98F /* Main.storyboard */; };
 		41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A0224EA67A0007F98F /* Assets.xcassets */; };
@@ -22,7 +24,9 @@
 		30E253126925DB4F0DF0EC20 /* Pods-MP Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP Project.release.xcconfig"; path = "Target Support Files/Pods-MP Project/Pods-MP Project.release.xcconfig"; sourceTree = "<group>"; };
 		414AF686224F9A0F00EA9B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		414AF68C224FB6D800EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
+		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
+		414AF695224FDE8D00EA9B93 /* App.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = App.storyboard; sourceTree = "<group>"; };
+		414AF697224FE7E300EA9B93 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41AF8096224EA6780007F98F /* Sanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF8099224EA6780007F98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AF809E224EA6780007F98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,7 +81,9 @@
 			children = (
 				41AF8099224EA6780007F98F /* AppDelegate.swift */,
 				41AF809D224EA6780007F98F /* Main.storyboard */,
-				414AF68C224FB6D800EA9B93 /* UserTypeViewController.swift */,
+				414AF695224FDE8D00EA9B93 /* App.storyboard */,
+				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
+				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
 				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
 				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
 				41AF80A0224EA67A0007F98F /* Assets.xcassets */,
@@ -166,6 +172,7 @@
 				41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */,
 				41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */,
 				41AF809F224EA6780007F98F /* Main.storyboard in Resources */,
+				414AF696224FDE8D00EA9B93 /* App.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
-				414AF68D224FB6D800EA9B93 /* UserTypeViewController.swift in Sources */,
+				414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
