@@ -491,11 +491,20 @@
                         <outlet property="loginBtn" destination="CYF-uj-Mp6" id="blg-g4-89M"/>
                         <outlet property="loginPassword" destination="rtA-NG-gyw" id="dbp-xk-Bhw"/>
                         <outlet property="loginUsername" destination="kjf-vS-Sjw" id="u3F-hW-5m8"/>
+                        <segue destination="lCA-XK-Xgp" kind="show" identifier="AppStoryboard" id="7PU-DV-OaO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voQ-Xw-F5n" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955" y="24"/>
+        </scene>
+        <!--App-->
+        <scene sceneID="fcR-xn-1g4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="App" id="lCA-XK-Xgp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xv-3v-ShE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695" y="406"/>
         </scene>
     </scenes>
     <resources>

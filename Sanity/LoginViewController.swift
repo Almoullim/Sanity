@@ -125,9 +125,11 @@ class LoginViewController: UIViewController {
                     } else {
                         guard let name = querySnapshot?.documents[0]["name"] as? String else { return }
                         
-                        alert.title = "Welcome, " + name
-                        alert.message = result!.user.uid + "/n" + result!.user.email!
-                        strongSelf.present(alert, animated: true)
+                        //alert.title = "Welcome, " + name
+                        //alert.message = result!.user.uid + "/n" + result!.user.email!
+                        //strongSelf.present(alert, animated: true)
+                        
+                        strongSelf.performSegue(withIdentifier: "AppStoryboard", sender: nil)
                     }
                 }
                 
