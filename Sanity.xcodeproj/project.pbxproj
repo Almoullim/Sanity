@@ -12,6 +12,7 @@
 		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
 		414AF696224FDE8D00EA9B93 /* HelpSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */; };
 		414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF697224FE7E300EA9B93 /* HomeViewController.swift */; };
+		41926C71225136E20078F9FD /* ErrorCodes in Resources */ = {isa = PBXBuildFile; fileRef = 41926C70225136E20078F9FD /* ErrorCodes */; };
 		41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF8099224EA6780007F98F /* AppDelegate.swift */; };
 		41AF809F224EA6780007F98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF809D224EA6780007F98F /* Main.storyboard */; };
 		41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A0224EA67A0007F98F /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpSeeker.storyboard; sourceTree = "<group>"; };
 		414AF697224FE7E300EA9B93 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		41926C70225136E20078F9FD /* ErrorCodes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorCodes; sourceTree = SOURCE_ROOT; };
 		41AF8096224EA6780007F98F /* Sanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF8099224EA6780007F98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AF809E224EA6780007F98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
 				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
 				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
+				41926C70225136E20078F9FD /* ErrorCodes */,
 				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
 				41AF80A0224EA67A0007F98F /* Assets.xcassets */,
 				41AF80A2224EA67A0007F98F /* LaunchScreen.storyboard */,
@@ -170,6 +173,7 @@
 			files = (
 				41AF80A4224EA67A0007F98F /* LaunchScreen.storyboard in Resources */,
 				41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */,
+				41926C71225136E20078F9FD /* ErrorCodes in Resources */,
 				41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */,
 				41AF809F224EA6780007F98F /* Main.storyboard in Resources */,
 				414AF696224FDE8D00EA9B93 /* HelpSeeker.storyboard in Resources */,
