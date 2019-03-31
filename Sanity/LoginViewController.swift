@@ -94,21 +94,18 @@ class LoginViewController: UIViewController {
                 Auth.auth().signIn(withEmail: loginEmail, password: self.loginPassword.text!) { [weak self] result, error in
                     guard let strongSelf = self else { return }
                     
-                    // enable the button and hide the activityIndicator
-                    strongSelf.loginActivity.stopAnimating()
-                    strongSelf.loginBtn.isEnabled = true
-                    
                     if result == nil {
                         print("ERROR: password incorrect")
                         
                         alert.title = "Wrong Username/Password"
                         strongSelf.present(alert, animated: true)
                     } else {
-                        guard let name = querySnapshot?.documents[0]["name"] as? String else { return }
+                        // Check that name is obtainable
+                        guard ((querySnapshot?.documents[0]["name"] as? String) != nil) else { return }
                         
-                        //alert.title = "Welcome, " + name
-                        //alert.message = result!.user.uid + "/n" + result!.user.email!
-                        //strongSelf.present(alert, animated: true)
+                        // enable the button and hide the activityIndicator
+                        strongSelf.loginActivity.stopAnimating()
+                        strongSelf.loginBtn.isEnabled = true
                         
                         strongSelf.performSegue(withIdentifier: "AppStoryboard", sender: nil)
                     }
