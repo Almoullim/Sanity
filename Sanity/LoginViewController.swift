@@ -33,35 +33,16 @@ class LoginViewController: UIViewController {
         
         // [START setup]
         let settings = FirestoreSettings()
-        
         Firestore.firestore().settings = settings
+        db = Firestore.firestore()
         
         self.hideKeyboardWhenTappedAround()
         // [END setup]
         
-        db = Firestore.firestore()
-        
         if let username = self.username {
             self.loginUsername.text = username
         }
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0 {
-//                self.view.frame.origin.y -= keyboardSize.height - 200
-//            }
-//        }
-//    }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        if self.view.frame.origin.y != 0 {
-//            self.view.frame.origin.y = 0
-//        }
-//    }
     
     // Set the stuatus bar content to white
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -136,16 +117,4 @@ class LoginViewController: UIViewController {
                 
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
