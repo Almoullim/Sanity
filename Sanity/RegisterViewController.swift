@@ -11,7 +11,7 @@ import Firebase
 
 // The viewController used for Authintaction actions such as 'register' and 'login'
 class RegisterViewController: UIViewController {
-
+    
     // Google Firestore connection
     var db: Firestore!
     
@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Change UITextField's placeholder color
         registerName.attributedPlaceholder = NSAttributedString(string: "Full Name..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         registerUsername.attributedPlaceholder = NSAttributedString(string: "Username..", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
@@ -37,17 +37,21 @@ class RegisterViewController: UIViewController {
         
         // [START setup]
         let settings = FirestoreSettings()
-        
         Firestore.firestore().settings = settings
+        db = Firestore.firestore()
         
         self.hideKeyboardWhenTappedAround()
         // [END setup]
-        db = Firestore.firestore()
         
+        // Observ the keyboard actions and call the specified methods
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    /*
+     Move the 'view' up by the size of the keyboard minus 150pt
+     so the keyboard won't cover all the UITextField's
+     */
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -56,6 +60,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    // Reset the 'view' origin points to default after the keyboard hides
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -68,6 +73,11 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
+         if navigating to the login view using the LoginView segue identifier
+         which is called once the registration process is finished -> set the username
+         field on the login screen to the one used to sign up for 'ease of access'
+         */
         if segue.identifier == "LoginView" {
             let nav = segue.destination as? UINavigationController
             let view = nav?.viewControllers.first as? LoginViewController
@@ -114,7 +124,7 @@ class RegisterViewController: UIViewController {
                     } else {
                         print("User created in Firebase/Firestore")
                     }
-                }
+            }
             // Send verification to the user email address
             Auth.auth().currentUser?.sendEmailVerification { (error) in
                 print("Email Sent")
