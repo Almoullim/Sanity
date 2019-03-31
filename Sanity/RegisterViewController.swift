@@ -86,6 +86,22 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func helpSeekerRegisterClicked(_ sender: UIButton) {
+        // Create an alert for a failed register/empty field
+        let alert = UIAlertController(title: "Wrong Username/Password", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+        
+        // Make sure the register fields are not empty
+        if     self.registerUsername.text?.isEmpty == true
+            || self.registerPassword.text?.isEmpty == true
+            || self.registerName.text?.isEmpty == true
+            || self.registerEmail.text?.isEmpty == true
+            || self.registerPhone.text?.isEmpty == true
+        {
+            alert.title = "Please fill all the fields"
+            self.present(alert, animated: true)
+            return
+        }
+        
         // Set the button to 'empty' when the its disabled
         registerBtn.setTitle("", for: .disabled)
         
@@ -98,6 +114,10 @@ class RegisterViewController: UIViewController {
             
             if let error = error {
                 print("Error creating user in Firebase/Auth: \(error)")
+                
+                alert.title = "Registration Error"
+                alert.message = "An error occured while registering, please contact support. ErrorCode: 111"
+                self.present(alert, animated: true)
             } else {
                 print("User created in Firebase/Auth")
             }
@@ -121,12 +141,21 @@ class RegisterViewController: UIViewController {
                     
                     if let err = err {
                         print("Error creating user in Firebase/Firestore: \(err)")
+                        
+                        alert.title = "Registration Error"
+                        alert.message = "An error occured while registering, please contact support. ErrorCode: 121"
+                        self.present(alert, animated: true)
                     } else {
                         print("User created in Firebase/Firestore")
                     }
             }
             // Send verification to the user email address
             Auth.auth().currentUser?.sendEmailVerification { (error) in
+                if let _ = error {
+                    alert.title = "Registration Error"
+                    alert.message = "An error occured while sending verification email, please contact support. ErrorCode: 131"
+                    self.present(alert, animated: true)
+                }
                 print("Email Sent")
                 self.performSegue(withIdentifier: "LoginView", sender: nil)
             }
