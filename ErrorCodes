@@ -1,0 +1,4 @@
+111 = Error creating user in Firebase/Auth
+121 = Error creating user in Firebase/Firestore
+131 = Error sending verification email
+212 = Error getting user from 'users' collection
