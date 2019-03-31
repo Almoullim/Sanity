@@ -78,6 +78,10 @@ class LoginViewController: UIViewController {
                 
                 if let err = err {
                     print("ERROR: error getting user from 'users' collection -> \(err)")
+                    
+                    alert.title = "Login Error"
+                    alert.message = "An error occured while trying to signin. Please contact suppoet. ErrorCode: 212"
+                    self.present(alert, animated: true)
                     return
                 }
                 
