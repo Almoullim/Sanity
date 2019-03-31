@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HelpSeeker", sender: nil); return
         // Create an alert for a failed login/empty field
         let alert = UIAlertController(title: "Wrong Username/Password", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
