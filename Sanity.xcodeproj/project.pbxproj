@@ -396,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_ACTIVITY_MODE = disable;
 				DEVELOPMENT_TEAM = DDNRNXSWCY;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_ACTIVITY_MODE = disable;
 				DEVELOPMENT_TEAM = DDNRNXSWCY;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
