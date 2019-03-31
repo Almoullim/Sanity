@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
                 self.loginBtn.isEnabled = true
                 
                 if let err = err {
-                    print("Error getting documents: \(err)")
+                    print("ERROR: error getting user from 'users' collection -> \(err)")
                     return
                 }
                 
@@ -101,13 +101,24 @@ class LoginViewController: UIViewController {
                         strongSelf.present(alert, animated: true)
                     } else {
                         // Check that name is obtainable
-                        guard ((querySnapshot?.documents[0]["name"] as? String) != nil) else { return }
+                        guard let userType = querySnapshot?.documents[0]["type"] as? String else { return }
+                        
                         
                         // enable the button and hide the activityIndicator
                         strongSelf.loginActivity.stopAnimating()
                         strongSelf.loginBtn.isEnabled = true
                         
-                        strongSelf.performSegue(withIdentifier: "AppStoryboard", sender: nil)
+                        // Check the userType and segue to the correct storyboard
+                        switch userType {
+                        case "help-seeker":
+                            strongSelf.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                        default:
+                            print("ERROR: Unkown usertype")
+                            
+                            alert.title = "User Type Error"
+                            alert.message = "There is an error with your account type, please contact support!"
+                            strongSelf.present(alert, animated: true)
+                        }
                     }
                 }
                 
