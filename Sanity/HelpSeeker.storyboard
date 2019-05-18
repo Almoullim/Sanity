@@ -20,40 +20,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-EZ-jl7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-EZ-jl7">
                                 <rect key="frame" x="0.0" y="178" width="414" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VolunteerCell" id="WwD-Dg-xwB" customClass="VolunteerCell" customModule="Sanity" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="90"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WwD-Dg-xwB" id="pf6-EF-AsX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-HO-KDd">
-                                                    <rect key="frame" x="30" y="10" width="70" height="70"/>
+                                                    <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="r1K-Lu-Uha"/>
-                                                        <constraint firstAttribute="height" constant="70" id="xe8-j7-fBO"/>
+                                                        <constraint firstAttribute="width" constant="50" id="r1K-Lu-Uha"/>
+                                                        <constraint firstAttribute="height" constant="50" id="xe8-j7-fBO"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="35"/>
+                                                            <integer key="value" value="25"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yu7-IX-zaS">
-                                                    <rect key="frame" x="115.00000000000001" y="23.333333333333332" width="131.33333333333337" height="43.333333333333343"/>
+                                                    <rect key="frame" x="94.999999999999986" y="14.000000000000004" width="205.66666666666663" height="42.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali Almoullim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-rR-A0t">
-                                                            <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="26.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="205.66666666666666" height="25.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="18"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help: 20 / Rating 4.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-A0-mlQ">
-                                                            <rect key="frame" x="0.0" y="26.333333333333329" width="131.33333333333334" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since 3 years - Bahrain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-A0-mlQ">
+                                                            <rect key="frame" x="0.0" y="25.333333333333336" width="205.66666666666666" height="17"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" name="MainColor"/>
                                                             <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-qD-leT">
-                                                    <rect key="frame" x="364" y="34" width="22" height="22"/>
+                                                    <rect key="frame" x="364" y="24" width="22" height="22"/>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </button>
                                             </subviews>
@@ -88,14 +88,16 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HV0-cz-W10">
-                                <rect key="frame" x="89.666666666666686" y="130" width="235" height="29"/>
+                                <rect key="frame" x="119" y="130" width="176" height="29"/>
                                 <segments>
                                     <segment title="All"/>
-                                    <segment title="Latest"/>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
                                 <color key="tintColor" name="MainColor"/>
+                                <connections>
+                                    <action selector="filterClicked:" destination="gVq-Sc-FPI" eventType="valueChanged" id="HqP-Uz-u8C"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAb-5D-yUh">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
@@ -431,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cz1-Cb-Lzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="1052"/>
+            <point key="canvasLocation" x="2228" y="1300"/>
         </scene>
         <!--Profile-->
         <scene sceneID="x6Y-zp-Yri">
@@ -455,7 +457,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Y5-0X-dLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="1052"/>
+            <point key="canvasLocation" x="1548" y="1300"/>
         </scene>
         <!--Settings-->
         <scene sceneID="di8-tg-abZ">
@@ -497,20 +499,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1R-iY-6Zm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1545" y="-479"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="qq1-th-bSE">
-            <objects>
-                <viewController id="TNB-1E-SSa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qo0-ez-jot">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="FfK-iq-woT"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TQW-cv-Mv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

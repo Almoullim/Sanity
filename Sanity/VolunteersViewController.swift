@@ -7,25 +7,107 @@
 //
 
 import UIKit
+import Firebase
+
+struct Volunteer {
+    var name: String
+    var daysSince: String
+    var getDaysSince: String {
+        get {
+            return "Member since " + self.daysSince
+        }
+    }
+}
 
 class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // Google Firestore connection
+    var db: Firestore!
+    
     @IBOutlet weak var VolunteersTable: UITableView!
     
-    var volunteers = [1,2,3,4,5]
+    var volunteers: [Volunteer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // [START setup]
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
+        loadAllVolunteers()
     }
+    
+    @IBAction func filterClicked(_ sender: UISegmentedControl) {
+        volunteers = []
+        self.VolunteersTable.reloadData()
+        
+        if (sender.selectedSegmentIndex == 1) {
+            loadGenderSpecificVolunteers("m")
+        } else if (sender.selectedSegmentIndex == 2) {
+            loadGenderSpecificVolunteers("f")
+        } else if (sender.selectedSegmentIndex == 0) {
+            loadAllVolunteers()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return volunteers.count
     }
     
+    func loadAllVolunteers() {
+        db.collection("users").whereField("userType", isEqualTo: "volunteer")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.addVolunteers(querySnapshot!.documents)
+                }
+        }
+    }
+    
+    func loadGenderSpecificVolunteers(_ gender: String) {
+        db.collection("users").whereField("userType", isEqualTo: "volunteer")
+            .whereField("gender", isEqualTo: gender).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.addVolunteers(querySnapshot!.documents)
+                }
+        }
+    }
+    
+    func addVolunteers(_ documents: [QueryDocumentSnapshot]) {
+        self.VolunteersTable.beginUpdates()
+        var counter = 0
+        
+        for document in documents {
+            // Get the volunteer name of the document
+            let name = document.data()["name"] as! String
+            
+            // Get the time stamp from the document
+            let date = document.data()["created_at"]! as! Timestamp
+            // Construct days since
+            let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
+            let daysSince = String((secondsSince / 86400)) + " days"
+            
+            self.volunteers.append(Volunteer(name: name, daysSince: daysSince))
+            
+            self.VolunteersTable.insertRows(at: [IndexPath(row: counter, section: 0)], with: .automatic)
+            
+            counter += 1
+        }
+        
+        self.VolunteersTable.endUpdates()
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? VolunteerCell
     
-        cell?.volunteerName.text = "Ali Almoullim"
-        cell?.volunteerInfo.text = "Rating +4"
+        cell?.volunteerName.text = volunteers[indexPath.row].name
+        cell?.volunteerInfo.text = volunteers[indexPath.row].getDaysSince
         cell?.volunteerImage.image = UIImage(named: "women")
         
         return cell!
