@@ -36,19 +36,19 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        loadAllVolunteers()
+        loadVolunteers(gender: "all")
     }
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
         volunteers = []
         self.VolunteersTable.reloadData()
-        
+    
         if (sender.selectedSegmentIndex == 1) {
-            loadGenderSpecificVolunteers("m")
+            loadVolunteers(gender: "m")
         } else if (sender.selectedSegmentIndex == 2) {
-            loadGenderSpecificVolunteers("f")
+            loadVolunteers(gender: "f")
         } else if (sender.selectedSegmentIndex == 0) {
-            loadAllVolunteers()
+            loadVolunteers(gender: "all")
         }
     }
     
@@ -56,25 +56,42 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         return volunteers.count
     }
     
-    func loadAllVolunteers() {
-        db.collection("users").whereField("userType", isEqualTo: "volunteer")
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    self.addVolunteers(querySnapshot!.documents)
-                }
-        }
-    }
+//    func loadAllVolunteers() {
+//        db.collection("users").whereField("userType", isEqualTo: "volunteer")
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    self.addVolunteers(querySnapshot!.documents)
+//                }
+//        }
+//    }
+//
+//    func loadGenderSpecificVolunteers(_ gender: String) {
+//        db.collection("users").whereField("userType", isEqualTo: "volunteer")
+//            .whereField("gender", isEqualTo: gender).getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    self.addVolunteers(querySnapshot!.documents)
+//                }
+//        }
+//    }
     
-    func loadGenderSpecificVolunteers(_ gender: String) {
-        db.collection("users").whereField("userType", isEqualTo: "volunteer")
-            .whereField("gender", isEqualTo: gender).getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    self.addVolunteers(querySnapshot!.documents)
-                }
+    func loadVolunteers(gender: String) {
+        var query = db.collection("users").whereField("userType", isEqualTo: "volunteer")
+            query = query.whereField("userType", isEqualTo: "volunteer")
+        
+        if gender != "all" {
+            query = query.whereField("gender", isEqualTo: gender)
+        }
+
+        query.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.addVolunteers(querySnapshot!.documents)
+            }
         }
     }
     
