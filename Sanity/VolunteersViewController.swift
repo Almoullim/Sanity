@@ -80,29 +80,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         return volunteers.count
     }
     
-//    func loadAllVolunteers() {
-//        db.collection("users").whereField("userType", isEqualTo: "volunteer")
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    self.addVolunteers(querySnapshot!.documents)
-//                }
-//        }
-//    }
-//
-//    func loadGenderSpecificVolunteers(_ gender: String) {
-//        db.collection("users").whereField("userType", isEqualTo: "volunteer")
-//            .whereField("gender", isEqualTo: gender).getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    self.addVolunteers(querySnapshot!.documents)
-//                }
-//        }
-//    }
-    
-    func loadVolunteers(gender: String) {
+    func loadVolunteers(gender: String, searchText: String?) {
         var query = db.collection("users").whereField("userType", isEqualTo: "volunteer")
             query = query.whereField("userType", isEqualTo: "volunteer")
         
