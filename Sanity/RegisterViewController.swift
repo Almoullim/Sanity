@@ -21,6 +21,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerEmail: UITextField!
     @IBOutlet weak var registerPassword: UITextField!
     @IBOutlet weak var registerPhone: UITextField!
+    @IBOutlet weak var genderControl: UISegmentedControl!
+    var userType = ""
     
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var registerActivity: UIActivityIndicatorView!
@@ -132,7 +134,9 @@ class RegisterViewController: UIViewController {
                     "email": self.registerEmail.text!,
                     "phone": self.registerPhone.text!,
                     "username": self.registerUsername.text!,
-                    "type": "help-seeker"
+                    "userType": self.userType,
+                    "gender": self.genderControl.selectedSegmentIndex == 0 ? "m" : "f",
+                    "created_at": Timestamp.init()
                 ]) { err in
                     
                     // Hide activity indicator and reanable the button

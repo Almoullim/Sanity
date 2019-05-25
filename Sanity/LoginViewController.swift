@@ -106,7 +106,7 @@ class LoginViewController: UIViewController {
                         strongSelf.present(alert, animated: true)
                     } else {
                         // Check that name is obtainable
-                        guard let userType = querySnapshot?.documents[0]["type"] as? String else { return }
+                        guard let userType = querySnapshot?.documents[0]["userType"] as? String else { return }
                         
                         
                         // enable the button and hide the activityIndicator
