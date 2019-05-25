@@ -124,6 +124,7 @@
                     <navigationItem key="navigationItem" title="Volunteers" id="LLP-9E-9in"/>
                     <connections>
                         <outlet property="VolunteersTable" destination="ovh-EZ-jl7" id="hRY-vb-Bbo"/>
+                        <outlet property="searchBar" destination="xAb-5D-yUh" id="u4i-Vz-Voc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C48-rw-FQc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,12 +19,13 @@ struct Volunteer {
     }
 }
 
-class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     // Google Firestore connection
     var db: Firestore!
     
     @IBOutlet weak var VolunteersTable: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var volunteers: [Volunteer] = []
     
@@ -36,7 +37,30 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        loadVolunteers(gender: "all")
+        loadVolunteers(gender: "all", searchText: nil)
+        
+        searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            volunteers = []
+            self.VolunteersTable.reloadData()
+            
+            loadVolunteers(gender: "all", searchText: text)
+        }
+        
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        
+        volunteers = []
+        self.VolunteersTable.reloadData()
+        loadVolunteers(gender: "all", searchText: nil)
+        
+        searchBar.resignFirstResponder()
     }
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
@@ -44,11 +68,11 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         self.VolunteersTable.reloadData()
     
         if (sender.selectedSegmentIndex == 1) {
-            loadVolunteers(gender: "m")
+            loadVolunteers(gender: "m", searchText: nil)
         } else if (sender.selectedSegmentIndex == 2) {
-            loadVolunteers(gender: "f")
+            loadVolunteers(gender: "f", searchText: nil)
         } else if (sender.selectedSegmentIndex == 0) {
-            loadVolunteers(gender: "all")
+            loadVolunteers(gender: "all", searchText: nil)
         }
     }
     
@@ -84,6 +108,10 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         
         if gender != "all" {
             query = query.whereField("gender", isEqualTo: gender)
+        }
+        
+        if searchText != nil {
+            query = query.order(by: "name").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
         }
 
         query.getDocuments() { (querySnapshot, err) in
