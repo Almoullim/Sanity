@@ -109,11 +109,13 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
             // Get the volunteer name of the document
             let name = document.data()["name"] as! String
             
+            var daysSince: String = ""
             // Get the time stamp from the document
-            let date = document.data()["created_at"]! as! Timestamp
-            // Construct days since
-            let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
-            let daysSince = String((secondsSince / 86400)) + " days"
+            if let date = document.data()["created_at"] as? Timestamp {
+                // Construct days since
+                let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
+                daysSince = String((secondsSince / 86400)) + " days"
+            }
             
             self.volunteers.append(Volunteer(name: name, daysSince: daysSince))
             
