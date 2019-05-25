@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UHT-zl-4Mm">
-                                <rect key="frame" x="87" y="235.66666666666663" width="240" height="265"/>
+                                <rect key="frame" x="87" y="210.66666666666663" width="240" height="315"/>
                                 <subviews>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9TV-OS-uB0">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -37,7 +37,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gp-5R-MBN">
-                                        <rect key="frame" x="0.0" y="56.000000000000028" width="240" height="41"/>
+                                        <rect key="frame" x="0.0" y="55.000000000000028" width="240" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -49,7 +49,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L4l-7V-2y6">
-                                        <rect key="frame" x="0.0" y="112.00000000000003" width="240" height="41"/>
+                                        <rect key="frame" x="0.0" y="110.00000000000003" width="240" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -60,8 +60,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lyx-uP-srY">
+                                        <rect key="frame" x="0.0" y="165.00000000000003" width="240" height="41"/>
+                                        <segments>
+                                            <segment title="Male"/>
+                                            <segment title="Female"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </segmentedControl>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHC-Rb-ViW">
-                                        <rect key="frame" x="0.0" y="168.00000000000003" width="240" height="41"/>
+                                        <rect key="frame" x="0.0" y="220.00000000000003" width="240" height="39.999999999999972"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -73,7 +81,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p22-QT-txd">
-                                        <rect key="frame" x="0.0" y="224.00000000000003" width="240" height="40.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="275" width="240" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -86,12 +94,12 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="265" id="DTA-AY-gmn"/>
+                                    <constraint firstAttribute="height" constant="315" id="DTA-AY-gmn"/>
                                     <constraint firstAttribute="width" constant="240" id="ikl-op-jPr"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaY-ht-b7P">
-                                <rect key="frame" x="157" y="540.66666666666663" width="100" height="40"/>
+                                <rect key="frame" x="157" y="565.66666666666663" width="100" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.52126921449999997" blue="0.79634876939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PIP-rF-biV"/>
@@ -124,13 +132,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Programming ©" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKl-QZ-mEC">
-                                <rect key="frame" x="146.66666666666666" y="680.66666666666663" width="120.99999999999997" height="13.333333333333371"/>
+                                <rect key="frame" x="146.66666666666666" y="705.66666666666663" width="120.99999999999997" height="13.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMR-Yg-db2">
-                                <rect key="frame" x="179" y="600.66666666666663" width="56" height="30"/>
+                                <rect key="frame" x="179" y="625.66666666666663" width="56" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Login →">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +148,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cKk-CB-oRq">
-                                <rect key="frame" x="197" y="549.66666666666663" width="20" height="20"/>
+                                <rect key="frame" x="197" y="574.66666666666663" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
@@ -170,6 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hgQ-FG-VhM"/>
                     <connections>
+                        <outlet property="genderControl" destination="Lyx-uP-srY" id="ILR-qg-V3Q"/>
                         <outlet property="registerActivity" destination="cKk-CB-oRq" id="cdv-Ha-EFU"/>
                         <outlet property="registerBtn" destination="QaY-ht-b7P" id="8sE-hV-HRb"/>
                         <outlet property="registerEmail" destination="L4l-7V-2y6" id="4tt-Fl-IOW"/>
@@ -211,7 +220,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="2lw-V3-tpi" kind="show" id="85t-yt-39c"/>
+                                            <action selector="helpSeekerClicked:" destination="H43-3Z-UTo" eventType="touchUpInside" id="lbi-Is-gdX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1U-Db-2go">
@@ -226,6 +235,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="volunteerClicked:" destination="H43-3Z-UTo" eventType="touchUpInside" id="dSI-tZ-PUl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-Hd-Zft">
                                         <rect key="frame" x="0.0" y="132.66666666666663" width="240" height="42.333333333333343"/>
@@ -239,6 +251,9 @@
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doctorClicked:" destination="H43-3Z-UTo" eventType="touchUpInside" id="jiM-bF-O13"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -305,6 +320,9 @@
                         <viewLayoutGuide key="safeArea" id="TbS-U2-mGw"/>
                     </view>
                     <navigationItem key="navigationItem" id="odF-JM-fQw"/>
+                    <connections>
+                        <segue destination="2lw-V3-tpi" kind="show" identifier="RegisterView" id="TLQ-sh-Xx1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymU-5K-NLr" sceneMemberID="firstResponder"/>
             </objects>
@@ -515,6 +533,6 @@
         <image name="background" width="961" height="469"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Iij-zd-sWt"/>
+        <segue reference="yZl-Wc-Utu"/>
     </inferredMetricsTieBreakers>
 </document>
