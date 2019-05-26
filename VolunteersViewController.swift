@@ -9,16 +9,6 @@
 import UIKit
 import Firebase
 
-struct Volunteer {
-    var name: String
-    var daysSince: String
-    var getDaysSince: String {
-        get {
-            return "Member since " + self.daysSince
-        }
-    }
-}
-
 class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     // Google Firestore connection
@@ -40,6 +30,8 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         loadVolunteers(gender: "all", searchText: nil)
         
         searchBar.delegate = self
+        VolunteersTable.delegate = self
+        VolunteersTable.dataSource = self
     }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
@@ -82,7 +74,6 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     
     func loadVolunteers(gender: String, searchText: String?) {
         var query = db.collection("users").whereField("userType", isEqualTo: "volunteer")
-            query = query.whereField("userType", isEqualTo: "volunteer")
         
         if gender != "all" {
             query = query.whereField("gender", isEqualTo: gender)
@@ -102,9 +93,6 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func addVolunteers(_ documents: [QueryDocumentSnapshot]) {
-        self.VolunteersTable.beginUpdates()
-        var counter = 0
-        
         for document in documents {
             // Get the volunteer name of the document
             let name = document.data()["name"] as! String
@@ -117,23 +105,19 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
                 daysSince = String((secondsSince / 86400)) + " days"
             }
             
-            self.volunteers.append(Volunteer(name: name, daysSince: daysSince))
-            
-            self.VolunteersTable.insertRows(at: [IndexPath(row: counter, section: 0)], with: .automatic)
-            
-            counter += 1
+            self.volunteers.append(Volunteer(name: name, daysSince: daysSince)!)
         }
         
-        self.VolunteersTable.endUpdates()
+        VolunteersTable.reloadData()
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? VolunteerCell
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? UserCell
     
-        cell?.volunteerName.text = volunteers[indexPath.row].name
-        cell?.volunteerInfo.text = volunteers[indexPath.row].getDaysSince
-        cell?.volunteerImage.image = UIImage(named: "women")
+        cell?.userFullName.text = volunteers[indexPath.row].name
+        cell?.userInfo.text = volunteers[indexPath.row].getDaysSince
+        cell?.userImage.image = UIImage(named: "women")
         
         return cell!
     }

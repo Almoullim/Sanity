@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41074AEA229A0C6900D6E58C /* DoctorsViewController.swift */; };
+		41074AEE229A0CDD00D6E58C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41074AED229A0CDD00D6E58C /* User.swift */; };
 		410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A37E322515325002F1D22 /* VolunteersViewController.swift */; };
-		410A37E622515C8F002F1D22 /* VolunteerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A37E522515C8F002F1D22 /* VolunteerCell.swift */; };
+		410A37E622515C8F002F1D22 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A37E522515C8F002F1D22 /* UserCell.swift */; };
 		414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF686224F9A0F00EA9B93 /* LoginViewController.swift */; };
 		414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */; };
 		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
@@ -25,8 +27,10 @@
 
 /* Begin PBXFileReference section */
 		30E253126925DB4F0DF0EC20 /* Pods-MP Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP Project.release.xcconfig"; path = "Target Support Files/Pods-MP Project/Pods-MP Project.release.xcconfig"; sourceTree = "<group>"; };
+		41074AEA229A0C6900D6E58C /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
+		41074AED229A0CDD00D6E58C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		410A37E322515325002F1D22 /* VolunteersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteersViewController.swift; sourceTree = "<group>"; };
-		410A37E522515C8F002F1D22 /* VolunteerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerCell.swift; sourceTree = "<group>"; };
+		410A37E522515C8F002F1D22 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		414AF686224F9A0F00EA9B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -64,9 +68,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		41074AEC229A0CB900D6E58C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41074AED229A0CDD00D6E58C /* User.swift */,
+				410A37E522515C8F002F1D22 /* UserCell.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		41074AEF229A0E6D00D6E58C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				41074AF0229A0E9500D6E58C /* Home */,
+				410A37E322515325002F1D22 /* VolunteersViewController.swift */,
+				41074AEA229A0C6900D6E58C /* DoctorsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		41074AF0229A0E9500D6E58C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
+				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
+				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
+				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		41074AF1229A0F1700D6E58C /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				41AF809D224EA6780007F98F /* Main.storyboard */,
+				414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		41AF808D224EA6780007F98F = {
 			isa = PBXGroup;
 			children = (
+				41074AF1229A0F1700D6E58C /* StoryBoards */,
+				41074AEF229A0E6D00D6E58C /* ViewControllers */,
+				41074AEC229A0CB900D6E58C /* Models */,
 				41AF8098224EA6780007F98F /* Sanity */,
 				41AF8097224EA6780007F98F /* Products */,
 				5F66D15850F8EFF8127312D2 /* Pods */,
@@ -86,15 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				41AF8099224EA6780007F98F /* AppDelegate.swift */,
-				41AF809D224EA6780007F98F /* Main.storyboard */,
-				414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */,
-				410A37E522515C8F002F1D22 /* VolunteerCell.swift */,
-				410A37E322515325002F1D22 /* VolunteersViewController.swift */,
-				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
-				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
-				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
 				41926C70225136E20078F9FD /* ErrorCodes */,
-				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
 				41AF80A0224EA67A0007F98F /* Assets.xcassets */,
 				41AF80A2224EA67A0007F98F /* LaunchScreen.storyboard */,
 				41AF80A5224EA67A0007F98F /* Info.plist */,
@@ -255,9 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
-				410A37E622515C8F002F1D22 /* VolunteerCell.swift in Sources */,
+				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
+				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
+				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
 				414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */,
