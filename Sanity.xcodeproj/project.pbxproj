@@ -15,6 +15,7 @@
 		410A37E622515C8F002F1D22 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410A37E522515C8F002F1D22 /* UserCell.swift */; };
 		412896FE229A5BF300935BC6 /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412896FD229A5BF300935BC6 /* Doctor.storyboard */; };
 		41289700229A5C7700935BC6 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412896FF229A5C7700935BC6 /* Admin.storyboard */; };
+		41289702229A5E2A00935BC6 /* Volunteer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41289701229A5E2A00935BC6 /* Volunteer.storyboard */; };
 		414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF686224F9A0F00EA9B93 /* LoginViewController.swift */; };
 		414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */; };
 		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
@@ -39,6 +40,7 @@
 		410A37E522515C8F002F1D22 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		412896FD229A5BF300935BC6 /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
 		412896FF229A5C7700935BC6 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		41289701229A5E2A00935BC6 /* Volunteer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Volunteer.storyboard; sourceTree = "<group>"; };
 		414AF686224F9A0F00EA9B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */,
 				412896FD229A5BF300935BC6 /* Doctor.storyboard */,
 				412896FF229A5C7700935BC6 /* Admin.storyboard */,
+				41289701229A5E2A00935BC6 /* Volunteer.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				41AF80A4224EA67A0007F98F /* LaunchScreen.storyboard in Resources */,
 				41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */,
 				41926C71225136E20078F9FD /* ErrorCodes in Resources */,
+				41289702229A5E2A00935BC6 /* Volunteer.storyboard in Resources */,
 				412896FE229A5BF300935BC6 /* Doctor.storyboard in Resources */,
 				41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */,
 				41AF809F224EA6780007F98F /* Main.storyboard in Resources */,

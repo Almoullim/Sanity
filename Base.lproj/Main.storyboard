@@ -518,6 +518,7 @@
                         <segue destination="lCA-XK-Xgp" kind="show" identifier="HelpSeeker" id="7PU-DV-OaO"/>
                         <segue destination="Pv1-wc-OWG" kind="show" identifier="Admin" id="3LC-0O-kfI"/>
                         <segue destination="LXw-MT-lCQ" kind="show" identifier="Doctor" id="a3K-QZ-amH"/>
+                        <segue destination="BQ9-hG-aox" kind="show" identifier="Volunteer" id="nES-ce-1YI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voQ-Xw-F5n" sceneMemberID="firstResponder"/>
@@ -530,7 +531,7 @@
                 <viewControllerPlaceholder storyboardName="HelpSeeker" id="lCA-XK-Xgp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xv-3v-ShE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="407"/>
+            <point key="canvasLocation" x="742" y="540"/>
         </scene>
         <!--Admin-->
         <scene sceneID="K2o-Is-xb3">
@@ -538,7 +539,7 @@
                 <viewControllerPlaceholder storyboardName="Admin" id="Pv1-wc-OWG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rn-UY-rX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="407"/>
+            <point key="canvasLocation" x="892" y="540"/>
         </scene>
         <!--Doctor-->
         <scene sceneID="AUZ-Hb-bgc">
@@ -546,7 +547,15 @@
                 <viewControllerPlaceholder storyboardName="Doctor" id="LXw-MT-lCQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bae-pE-qiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="407"/>
+            <point key="canvasLocation" x="1020" y="540"/>
+        </scene>
+        <!--Volunteer-->
+        <scene sceneID="xB0-Wk-otW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Volunteer" id="BQ9-hG-aox" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrM-xS-Nmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="540"/>
         </scene>
         <!--After Load View Controller-->
         <scene sceneID="Btz-zM-haX">
@@ -588,6 +597,9 @@
                     <connections>
                         <segue destination="lCA-XK-Xgp" kind="show" identifier="HelpSeeker" id="hDo-Mf-2fP"/>
                         <segue destination="rrv-4T-FHe" kind="showDetail" identifier="LoginView" id="buy-Q9-9Ww"/>
+                        <segue destination="Pv1-wc-OWG" kind="show" identifier="Admin" id="VmQ-Xw-Ij8"/>
+                        <segue destination="LXw-MT-lCQ" kind="show" identifier="Doctor" id="fkz-Lw-xLb"/>
+                        <segue destination="BQ9-hG-aox" kind="show" identifier="Volunteer" id="fuR-uo-pdy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEW-L4-Kb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,8 +614,10 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0ZT-Rx-gIf"/>
-        <segue reference="7PU-DV-OaO"/>
-        <segue reference="xTv-tU-xOr"/>
+        <segue reference="fuR-uo-pdy"/>
+        <segue reference="fkz-Lw-xLb"/>
+        <segue reference="VmQ-Xw-Ij8"/>
+        <segue reference="hDo-Mf-2fP"/>
+        <segue reference="buy-Q9-9Ww"/>
     </inferredMetricsTieBreakers>
 </document>

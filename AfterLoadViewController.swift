@@ -32,6 +32,12 @@ class AfterLoadViewController: UIViewController {
                     switch userType {
                     case "help-seeker":
                         self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                    case "volunteer":
+                        self.performSegue(withIdentifier: "Volunteer", sender: nil)
+                    case "doctor":
+                        self.performSegue(withIdentifier: "Doctor", sender: nil)
+                    case "admin":
+                        self.performSegue(withIdentifier: "Admin", sender: nil)
                     default:
                         self.performSegue(withIdentifier: "LoginView", sender: nil)
                     }
