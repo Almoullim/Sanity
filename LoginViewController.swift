@@ -90,11 +90,11 @@ class LoginViewController: UIViewController {
         
         db.collection("users").whereField("username", isEqualTo: loginUsername)
             .getDocuments() { (querySnapshot, err) in
-                
-                self.loginActivity.stopAnimating()
-                self.loginBtn.isEnabled = true
-                
                 if let err = err {
+                    
+                    self.loginActivity.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    
                     print("ERROR: error getting user from 'users' collection -> \(err)")
                     
                     alert.title = "Login Error"
@@ -104,6 +104,10 @@ class LoginViewController: UIViewController {
                 }
                 
                 guard (querySnapshot?.documents.count)! > 0 else {
+                    
+                    self.loginActivity.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    
                     print("ERROR: username not found")
                     
                     alert.title = "Wrong Username/Password"
@@ -111,7 +115,11 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                guard let loginEmail = querySnapshot?.documents[0]["email"] as? String else { return }
+                guard let loginEmail = querySnapshot?.documents[0]["email"] as? String else {
+                    self.loginActivity.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    return
+                }
                 
                 Auth.auth().signIn(withEmail: loginEmail, password: self.loginPassword.text!) { [weak self] result, error in
                     guard let strongSelf = self else { return }
@@ -125,10 +133,11 @@ class LoginViewController: UIViewController {
                         // Check that name is obtainable
                         guard let userType = querySnapshot?.documents[0]["userType"] as? String else { return }
                         
-                        
+                        /*
                         // enable the button and hide the activityIndicator
                         strongSelf.loginActivity.stopAnimating()
                         strongSelf.loginBtn.isEnabled = true
+                        */
                         
                         strongSelf.switchStoryBoard(userType)
                     }
