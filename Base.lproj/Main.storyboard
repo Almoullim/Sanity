@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,7 +101,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaY-ht-b7P">
                                 <rect key="frame" x="157" y="565.66666666666663" width="100" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.52126921449999997" blue="0.79634876939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PIP-rF-biV"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="beU-D9-koA"/>
@@ -281,7 +282,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZj-YW-hX2">
                                 <rect key="frame" x="157" y="495.66666666666674" width="100" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.52126921449999997" blue="0.79634876939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="6fi-5t-LPG"/>
                                     <constraint firstAttribute="height" constant="40" id="pJ1-8O-I09"/>
@@ -432,12 +433,13 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYF-uj-Mp6">
                                 <rect key="frame" x="157" y="461" width="100" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.52126921449999997" blue="0.79634876939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3wU-z8-IWt"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="QFw-ZY-Z0n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -577,9 +579,12 @@
     </scenes>
     <resources>
         <image name="background" width="961" height="469"/>
+        <namedColor name="MainColor">
+            <color red="0.15000000596046448" green="0.62199997901916504" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7PU-DV-OaO"/>
-        <segue reference="buy-Q9-9Ww"/>
+        <segue reference="xTv-tU-xOr"/>
     </inferredMetricsTieBreakers>
 </document>
