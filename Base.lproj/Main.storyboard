@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rrv-4T-FHe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qft-D1-Pqs">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -347,7 +347,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1f-0J-EDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="24.456521739130437"/>
+            <point key="canvasLocation" x="-523" y="24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3WT-fb-9L7">
@@ -528,11 +528,58 @@
             </objects>
             <point key="canvasLocation" x="695" y="406"/>
         </scene>
+        <!--After Load View Controller-->
+        <scene sceneID="Btz-zM-haX">
+            <objects>
+                <viewController id="qft-D1-Pqs" customClass="AfterLoadViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dJ7-CA-j8I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="CHJ-Mc-FDS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sanity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th7-tX-5gy">
+                                <rect key="frame" x="92.666666666666671" y="323" width="228.66666666666663" height="90"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="75"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU'RE NOT ALONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGq-Jl-2lU">
+                                <rect key="frame" x="128" y="418" width="158" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NGq-Jl-2lU" firstAttribute="centerX" secondItem="dJ7-CA-j8I" secondAttribute="centerX" id="2Zo-G7-yOR"/>
+                            <constraint firstAttribute="bottom" secondItem="CHJ-Mc-FDS" secondAttribute="bottom" id="G9d-wD-ir7"/>
+                            <constraint firstItem="NGq-Jl-2lU" firstAttribute="top" secondItem="Th7-tX-5gy" secondAttribute="bottom" constant="5" id="bjj-WJ-w6M"/>
+                            <constraint firstItem="CHJ-Mc-FDS" firstAttribute="top" secondItem="dJ7-CA-j8I" secondAttribute="top" id="g8j-1B-GrK"/>
+                            <constraint firstAttribute="trailing" secondItem="CHJ-Mc-FDS" secondAttribute="trailing" id="gAH-fW-6gv"/>
+                            <constraint firstItem="Th7-tX-5gy" firstAttribute="centerY" secondItem="dJ7-CA-j8I" secondAttribute="centerY" id="hes-8y-6vZ"/>
+                            <constraint firstItem="Th7-tX-5gy" firstAttribute="centerX" secondItem="dJ7-CA-j8I" secondAttribute="centerX" id="oxf-xc-fI5"/>
+                            <constraint firstItem="CHJ-Mc-FDS" firstAttribute="leading" secondItem="dJ7-CA-j8I" secondAttribute="leading" id="yUV-b6-nS1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="40P-NM-hTb"/>
+                    </view>
+                    <connections>
+                        <segue destination="lCA-XK-Xgp" kind="show" identifier="HelpSeeker" id="hDo-Mf-2fP"/>
+                        <segue destination="rrv-4T-FHe" kind="showDetail" identifier="LoginView" id="buy-Q9-9Ww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KEW-L4-Kb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1429" y="24"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="961" height="469"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yZl-Wc-Utu"/>
+        <segue reference="hDo-Mf-2fP"/>
+        <segue reference="buy-Q9-9Ww"/>
     </inferredMetricsTieBreakers>
 </document>

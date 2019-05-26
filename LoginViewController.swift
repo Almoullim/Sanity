@@ -49,8 +49,25 @@ class LoginViewController: UIViewController {
         return .lightContent
     }
     
+    func switchStoryBoard(_ userType: String) {
+        // Check the userType and segue to the correct storyboard
+        switch userType {
+        case "help-seeker":
+            self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+        default:
+            print("ERROR: Unkown usertype")
+            
+            let alert = UIAlertController(title: "Wrong Username/Password", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+            
+            alert.title = "User Type Error"
+            alert.message = "There is an error with your account type, please contact support!"
+            self.present(alert, animated: true)
+        }
+    }
+    
     @IBAction func loginClicked(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "HelpSeeker", sender: nil); return
+//        self.performSegue(withIdentifier: "HelpSeeker", sender: nil); return
         // Create an alert for a failed login/empty field
         let alert = UIAlertController(title: "Wrong Username/Password", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
@@ -113,17 +130,7 @@ class LoginViewController: UIViewController {
                         strongSelf.loginActivity.stopAnimating()
                         strongSelf.loginBtn.isEnabled = true
                         
-                        // Check the userType and segue to the correct storyboard
-                        switch userType {
-                        case "help-seeker":
-                            strongSelf.performSegue(withIdentifier: "HelpSeeker", sender: nil)
-                        default:
-                            print("ERROR: Unkown usertype")
-                            
-                            alert.title = "User Type Error"
-                            alert.message = "There is an error with your account type, please contact support!"
-                            strongSelf.present(alert, animated: true)
-                        }
+                        strongSelf.switchStoryBoard(userType)
                     }
                 }
                 
