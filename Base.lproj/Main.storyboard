@@ -516,6 +516,8 @@
                         <outlet property="loginPassword" destination="rtA-NG-gyw" id="dbp-xk-Bhw"/>
                         <outlet property="loginUsername" destination="kjf-vS-Sjw" id="u3F-hW-5m8"/>
                         <segue destination="lCA-XK-Xgp" kind="show" identifier="HelpSeeker" id="7PU-DV-OaO"/>
+                        <segue destination="Pv1-wc-OWG" kind="show" identifier="Admin" id="3LC-0O-kfI"/>
+                        <segue destination="LXw-MT-lCQ" kind="show" identifier="Doctor" id="a3K-QZ-amH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voQ-Xw-F5n" sceneMemberID="firstResponder"/>
@@ -528,7 +530,23 @@
                 <viewControllerPlaceholder storyboardName="HelpSeeker" id="lCA-XK-Xgp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xv-3v-ShE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="406"/>
+            <point key="canvasLocation" x="541" y="407"/>
+        </scene>
+        <!--Admin-->
+        <scene sceneID="K2o-Is-xb3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Admin" id="Pv1-wc-OWG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Rn-UY-rX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692" y="407"/>
+        </scene>
+        <!--Doctor-->
+        <scene sceneID="AUZ-Hb-bgc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Doctor" id="LXw-MT-lCQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bae-pE-qiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="407"/>
         </scene>
         <!--After Load View Controller-->
         <scene sceneID="Btz-zM-haX">
@@ -584,6 +602,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0ZT-Rx-gIf"/>
         <segue reference="7PU-DV-OaO"/>
         <segue reference="xTv-tU-xOr"/>
     </inferredMetricsTieBreakers>
