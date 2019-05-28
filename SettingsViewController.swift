@@ -21,8 +21,21 @@ class SettingsViewController: UITableViewController {
         db = Firestore.firestore()
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath {
+        case [1, 0]:
+            self.performSegue(withIdentifier: "EditProfile", sender: nil)
+        case [1,1]:
+            logout()
+        default:
+            print("Wrong selection")
+        }
+    }
 
-    @IBAction func logoutClicked(_ sender: Any) {
+    func logout() {
         try? Auth.auth().signOut()
         self.performSegue(withIdentifier: "LoginView", sender: nil)
     }
