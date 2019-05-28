@@ -16,6 +16,7 @@
 		412896FE229A5BF300935BC6 /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412896FD229A5BF300935BC6 /* Doctor.storyboard */; };
 		41289700229A5C7700935BC6 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412896FF229A5C7700935BC6 /* Admin.storyboard */; };
 		41289702229A5E2A00935BC6 /* Volunteer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41289701229A5E2A00935BC6 /* Volunteer.storyboard */; };
+		412E23F3229D36E000065303 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E23F2229D36E000065303 /* Helpers.swift */; };
 		414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF686224F9A0F00EA9B93 /* LoginViewController.swift */; };
 		414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */; };
 		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
@@ -43,6 +44,7 @@
 		412896FD229A5BF300935BC6 /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
 		412896FF229A5C7700935BC6 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		41289701229A5E2A00935BC6 /* Volunteer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Volunteer.storyboard; sourceTree = "<group>"; };
+		412E23F2229D36E000065303 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		414AF686224F9A0F00EA9B93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		41AF808D224EA6780007F98F = {
 			isa = PBXGroup;
 			children = (
+				412E23F2229D36E000065303 /* Helpers.swift */,
 				4186AF70229D0AEC004E4010 /* Extensions.swift */,
 				41074AF1229A0F1700D6E58C /* StoryBoards */,
 				41074AEF229A0E6D00D6E58C /* ViewControllers */,
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41074AF5229A246F00D6E58C /* AfterLoadViewController.swift in Sources */,
+				412E23F3229D36E000065303 /* Helpers.swift in Sources */,
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
