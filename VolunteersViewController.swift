@@ -99,10 +99,9 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
             
             var daysSince: String = ""
             // Get the time stamp from the document
-            if let date = document.data()["created_at"] as? Timestamp {
+            if let timestamp = document.data()["created_at"] as? Timestamp {
                 // Construct days since
-                let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
-                daysSince = String((secondsSince / 86400)) + " days"
+                daysSince = timeSince(timestamp: timestamp)
             }
             
             self.volunteers.append(Volunteer(name: name, daysSince: daysSince)!)
