@@ -21,6 +21,8 @@
 		414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */; };
 		414AF696224FDE8D00EA9B93 /* HelpSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */; };
 		414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414AF697224FE7E300EA9B93 /* HomeViewController.swift */; };
+		4186AF6F229D0712004E4010 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF6E229D0712004E4010 /* ProfileViewController.swift */; };
+		4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF70229D0AEC004E4010 /* Extensions.swift */; };
 		41926C71225136E20078F9FD /* ErrorCodes in Resources */ = {isa = PBXBuildFile; fileRef = 41926C70225136E20078F9FD /* ErrorCodes */; };
 		41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF8099224EA6780007F98F /* AppDelegate.swift */; };
 		41AF809F224EA6780007F98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF809D224EA6780007F98F /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
 		414AF695224FDE8D00EA9B93 /* HelpSeeker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpSeeker.storyboard; sourceTree = "<group>"; };
 		414AF697224FE7E300EA9B93 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4186AF6E229D0712004E4010 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4186AF70229D0AEC004E4010 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		41926C70225136E20078F9FD /* ErrorCodes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorCodes; sourceTree = SOURCE_ROOT; };
 		41AF8096224EA6780007F98F /* Sanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF8099224EA6780007F98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				410A37E322515325002F1D22 /* VolunteersViewController.swift */,
 				41074AEA229A0C6900D6E58C /* DoctorsViewController.swift */,
 				41074AF8229A2CE600D6E58C /* SettingsViewController.swift */,
+				4186AF6E229D0712004E4010 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		41AF808D224EA6780007F98F = {
 			isa = PBXGroup;
 			children = (
+				4186AF70229D0AEC004E4010 /* Extensions.swift */,
 				41074AF1229A0F1700D6E58C /* StoryBoards */,
 				41074AEF229A0E6D00D6E58C /* ViewControllers */,
 				41074AEC229A0CB900D6E58C /* Models */,
@@ -316,7 +322,9 @@
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
 				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
+				4186AF6F229D0712004E4010 /* ProfileViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
+				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
