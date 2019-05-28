@@ -22,13 +22,12 @@ class SettingsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath {
-        case [1, 0]:
+        case [0, 0]:
             self.performSegue(withIdentifier: "EditProfile", sender: nil)
-        case [1,1]:
+        case [0,1]:
             logout()
         default:
             print("Wrong selection")
