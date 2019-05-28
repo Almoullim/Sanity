@@ -24,6 +24,13 @@ class DesignableUIVisualEffectView: UIVisualEffectView {
 class DesignableUILabel: UILabel {
 }
 
+@IBDesignable
+class DesignableUIButton: UIButton {
+}
+
+@IBDesignable
+class DesignableUITextField: UITextField {
+}
 
 
 extension UIView {
