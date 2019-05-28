@@ -527,7 +527,7 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7h-5e-Fl7" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7h-5e-Fl7">
                                                 <rect key="frame" x="282.66666666666669" y="0.0" width="31.333333333333314" height="50"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                 <color key="textColor" name="MainColor"/>
@@ -659,7 +659,15 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Profile" id="skx-QV-mht"/>
                     <connections>
+                        <outlet property="ageValue" destination="M7h-5e-Fl7" id="12W-wI-FqG"/>
+                        <outlet property="backgroundImage" destination="nOV-Jr-Iec" id="Wd4-xe-XlX"/>
+                        <outlet property="issueValue" destination="GaK-Bm-JhH" id="PIk-3F-Vm8"/>
+                        <outlet property="languageValue" destination="7v7-Xe-pkV" id="g0O-7T-ski"/>
+                        <outlet property="location" destination="J9S-ra-jRr" id="y4S-SN-Di5"/>
+                        <outlet property="name" destination="9bZ-Ff-51P" id="F0L-tr-1ie"/>
                         <outlet property="profileImage" destination="CBb-fb-AAa" id="EWG-AJ-EKt"/>
+                        <outlet property="requestsCountValue" destination="fhU-Gi-bnp" id="p2h-Ox-YxA"/>
+                        <outlet property="userInfo" destination="NS1-EC-Zp0" id="qoM-sV-xdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cz1-Cb-Lzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
