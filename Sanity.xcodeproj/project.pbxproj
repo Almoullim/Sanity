@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FC1EB9D86D2D7C1A77F120F /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */; };
 		41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41074AEA229A0C6900D6E58C /* DoctorsViewController.swift */; };
 		41074AEE229A0CDD00D6E58C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41074AED229A0CDD00D6E58C /* User.swift */; };
 		41074AF5229A246F00D6E58C /* AfterLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41074AF4229A246F00D6E58C /* AfterLoadViewController.swift */; };
@@ -64,6 +65,9 @@
 		41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD2869A8DA44714DF3718237 /* Pods-MP Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP Project.debug.xcconfig"; path = "Target Support Files/Pods-MP Project/Pods-MP Project.debug.xcconfig"; sourceTree = "<group>"; };
 		CE07AC4CB51091C02EE10E56 /* Pods_MP_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MP_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1046FB4727CFB1EAD05F357 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
+		D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA68E39A221516C2FEFC3845 /* Pods-Sanity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.release.xcconfig"; path = "Target Support Files/Pods-Sanity/Pods-Sanity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD632B54E2D039E761C21B02 /* Pods_MP_Project.framework in Frameworks */,
+				2FC1EB9D86D2D7C1A77F120F /* Pods_Sanity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CE07AC4CB51091C02EE10E56 /* Pods_MP_Project.framework */,
+				D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			children = (
 				AD2869A8DA44714DF3718237 /* Pods-MP Project.debug.xcconfig */,
 				30E253126925DB4F0DF0EC20 /* Pods-MP Project.release.xcconfig */,
+				D1046FB4727CFB1EAD05F357 /* Pods-Sanity.debug.xcconfig */,
+				EA68E39A221516C2FEFC3845 /* Pods-Sanity.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -265,7 +273,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MP Project/Pods-MP Project-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Sanity/Pods-Sanity-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -290,7 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MP Project/Pods-MP Project-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sanity/Pods-Sanity-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ED89F567CAB0085392355009 /* [CP] Check Pods Manifest.lock */ = {
@@ -308,7 +316,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MP Project-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Sanity-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -480,7 +488,7 @@
 		};
 		41AF80A9224EA67A0007F98F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD2869A8DA44714DF3718237 /* Pods-MP Project.debug.xcconfig */;
+			baseConfigurationReference = D1046FB4727CFB1EAD05F357 /* Pods-Sanity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,7 +508,7 @@
 		};
 		41AF80AA224EA67A0007F98F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30E253126925DB4F0DF0EC20 /* Pods-MP Project.release.xcconfig */;
+			baseConfigurationReference = EA68E39A221516C2FEFC3845 /* Pods-Sanity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
