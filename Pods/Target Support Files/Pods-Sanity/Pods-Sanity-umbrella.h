@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MP_ProjectVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MP_ProjectVersionString[];
+FOUNDATION_EXPORT double Pods_SanityVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SanityVersionString[];
 
