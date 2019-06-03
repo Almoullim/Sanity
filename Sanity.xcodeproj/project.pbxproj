@@ -135,8 +135,6 @@
 		41AF808D224EA6780007F98F = {
 			isa = PBXGroup;
 			children = (
-				412E23F2229D36E000065303 /* Helpers.swift */,
-				4186AF70229D0AEC004E4010 /* Extensions.swift */,
 				41074AF1229A0F1700D6E58C /* StoryBoards */,
 				41074AEF229A0E6D00D6E58C /* ViewControllers */,
 				41074AEC229A0CB900D6E58C /* Models */,
@@ -158,6 +156,8 @@
 		41AF8098224EA6780007F98F /* Sanity */ = {
 			isa = PBXGroup;
 			children = (
+				412E23F2229D36E000065303 /* Helpers.swift */,
+				4186AF70229D0AEC004E4010 /* Extensions.swift */,
 				41AF8099224EA6780007F98F /* AppDelegate.swift */,
 				41926C70225136E20078F9FD /* ErrorCodes */,
 				41AF80A0224EA67A0007F98F /* Assets.xcassets */,
