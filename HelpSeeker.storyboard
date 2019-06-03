@@ -261,6 +261,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="580736186.81599498">
                                                         <!--2019-05-28 11:36:26 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="datePickerValueChangedWithDatePicker:" destination="NCz-C5-bDD" eventType="valueChanged" id="RDq-WW-NSq"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -334,6 +337,37 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TR1-84-aCn">
+                                        <rect key="frame" x="0.0" y="529.33333333333337" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TR1-84-aCn" id="H54-ke-kmX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-i6-1as">
+                                                    <rect key="frame" x="20" y="11.333333333333336" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. Bahrain / Kuwait" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bg0-Js-7fI">
+                                                    <rect key="frame" x="144" y="11.333333333333336" width="250" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="SMy-17-4s9"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bg0-Js-7fI" firstAttribute="centerY" secondItem="H54-ke-kmX" secondAttribute="centerY" id="6D3-Bi-dTf"/>
+                                                <constraint firstItem="Whu-i6-1as" firstAttribute="centerY" secondItem="H54-ke-kmX" secondAttribute="centerY" id="HbS-TS-D4B"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bg0-Js-7fI" secondAttribute="trailing" constant="20" symbolic="YES" id="beM-vh-9yV"/>
+                                                <constraint firstItem="Whu-i6-1as" firstAttribute="leading" secondItem="H54-ke-kmX" secondAttribute="leading" constant="20" symbolic="YES" id="ySb-QL-ihd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -348,11 +382,20 @@
                                 <action selector="cancelButtonClicked:" destination="NCz-C5-bDD" id="amS-6Z-Tq1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="do6-hl-7bg"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="do6-hl-7bg">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="NCz-C5-bDD" id="6m3-qG-ZVw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateOfBirth" destination="RpN-sl-ngM" id="S79-TS-xb3"/>
+                        <outlet property="datePicker" destination="HFO-RS-3We" id="zNW-am-E3B"/>
                         <outlet property="datePickerCell" destination="w5h-kz-foj" id="55i-xt-evr"/>
+                        <outlet property="issueInput" destination="D17-cy-24a" id="sb1-O4-TcJ"/>
+                        <outlet property="languageInput" destination="aFV-rC-J62" id="sAg-nN-4xN"/>
+                        <outlet property="locationInput" destination="Bg0-Js-7fI" id="tHR-em-8By"/>
+                        <outlet property="nameInput" destination="IDv-pN-b3A" id="DmJ-0y-UES"/>
                         <outlet property="table" destination="aAu-8O-j9e" id="6UY-6G-dz6"/>
                     </connections>
                 </tableViewController>
