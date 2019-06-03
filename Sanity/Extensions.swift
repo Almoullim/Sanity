@@ -119,3 +119,21 @@ extension UIView {
         }
     }
 }
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            print("downloading image")
+            let image = UIImage(data: data!)
+            DispatchQueue.main.async() {
+                print("image download finished")
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}

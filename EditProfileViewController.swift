@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class EditProfileViewController: UITableViewController {
+class EditProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
     @IBOutlet var table: UITableView!
     @IBOutlet weak var datePickerCell: UITableViewCell!
     var datePickerIsHidden = true
     @IBOutlet weak var datePicker: UIDatePicker!
+    var imagePicker = UIImagePickerController()
     
     // inputs
     @IBOutlet weak var nameInput: UITextField!
@@ -23,9 +23,11 @@ class EditProfileViewController: UITableViewController {
     @IBOutlet weak var issueInput: UITextField!
     @IBOutlet weak var languageInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
+    @IBOutlet weak var imageView: DesignableUIImageView!
     
     var username: String?
     var db: Firestore!
+    var storage: Storage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,9 @@ class EditProfileViewController: UITableViewController {
         db = Firestore.firestore()
         
         self.hideKeyboardWhenTappedAround()
+        imagePicker.delegate = self
+        
+        storage = Storage.storage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,9 +68,52 @@ class EditProfileViewController: UITableViewController {
                         self.issueInput.text = data["issue"] as? String
                         self.languageInput.text = data["language"] as? String
                         self.locationInput.text = data["location"] as? String
+                        
+                        let storageRef = self.storage.reference()
+                        let imgRef = storageRef.child("images/" + self.username! + ".jpg")
+                        
+                        imgRef.downloadURL { (url, error) in
+                            guard let downloadURL = url else { return }
+                            self.imageView.downloaded(from: downloadURL)
+                        }
                     }
             }
             
+        }
+    }
+    
+    
+    @IBAction func imageClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "Profile Image", message: "Please Select an Option", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Choose from photos", style: .default , handler:{ (UIAlertAction)in
+            self.imagePicker = UIImagePickerController()
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Take a picture", style: .default , handler:{ (UIAlertAction)in
+            self.imagePicker = UIImagePickerController()
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.allowsEditing = false
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.imageView.image = image
+            dismiss(animated: true, completion: nil)
         }
     }
     
@@ -96,9 +144,20 @@ class EditProfileViewController: UITableViewController {
                 if let err = err {
                     print("Error updating document: \(err)")
                 } else {
-                    print("Document successfully updated!")
-                    self.dismiss(animated: true, completion: nil)
+                    print("user info successfully updated!")
                 }
+        }
+        
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("images/" + self.username! + ".jpg")
+        let imgData = imageView.image?.jpegData(compressionQuality: 80.0)
+        
+        
+        // Upload the file
+        print("uploading image")
+        imgRef.putData(imgData!, metadata: nil) { (metadata, error) in
+            print("image uploading finished")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -117,6 +176,8 @@ class EditProfileViewController: UITableViewController {
         switch indexPath {
         case [1, 1]:
             return datePickerIsHidden ? 0.0 : 216.0
+        case [0, 0]:
+            return 180.0
         default:
             return 44.0
         }

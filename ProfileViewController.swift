@@ -21,7 +21,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var issueValue: UILabel!
     @IBOutlet weak var languageValue: UILabel!
     
+    var username: String?
     var db: Firestore!
+    var storage: Storage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class ProfileViewController: UIViewController {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
+        storage = Storage.storage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +42,7 @@ class ProfileViewController: UIViewController {
                 .getDocuments() { (querySnapshot, err) in
                     
                     if let data = querySnapshot?.documents[0].data() {
+                        self.username = data["username"] as? String
                         self.name.text = data["name"] as? String
                         self.location.text = data["location"] as? String
                         
@@ -55,6 +59,14 @@ class ProfileViewController: UIViewController {
                         self.requestsCountValue.text = String((data["requestsCount"] as? Int)!)
                         self.issueValue.text = data["issue"] as? String
                         self.languageValue.text = data["language"] as? String
+                        
+                        let storageRef = self.storage.reference()
+                        let imgRef = storageRef.child("images/" + self.username! + ".jpg")
+                        
+                        imgRef.downloadURL { (url, error) in
+                            guard let downloadURL = url else { return }
+                            self.profileImage.downloaded(from: downloadURL)
+                        }
                     }
             }
 
