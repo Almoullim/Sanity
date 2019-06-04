@@ -56,7 +56,13 @@ class ProfileViewController: UIViewController {
                             self.ageValue.text = String((secondsSince / 86400) / 365)
                         }
                         
-                        self.requestsCountValue.text = String((data["requestsCount"] as? Int)!)
+                        
+                        if let requestsCount = data["requestsCount"] as? Int {
+                            self.requestsCountValue.text = String(requestsCount)
+                        } else {
+                            self.requestsCountValue.text = "0"
+                        }
+                        
                         self.issueValue.text = data["issue"] as? String
                         self.languageValue.text = data["language"] as? String
                         
@@ -65,8 +71,15 @@ class ProfileViewController: UIViewController {
                         
                         imgRef.downloadURL { (url, error) in
                             guard let downloadURL = url else { return }
-                            self.profileImage.downloaded(from: downloadURL)
-                            self.backgroundImage.downloaded(from: downloadURL)
+                            print("image download started")
+                            URLSession.shared.dataTask(with: downloadURL) { data, response, error in
+                                let image = UIImage(data: data!)
+                                DispatchQueue.main.async() {
+                                    print("image download finished")
+                                    self.profileImage.image = image
+                                    self.backgroundImage.image = image
+                                }
+                                }.resume()
                         }
                     }
             }
