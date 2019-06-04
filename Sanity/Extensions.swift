@@ -123,7 +123,7 @@ extension UIView {
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         contentMode = mode
-        print("downloading image")
+        print("image download started")
         URLSession.shared.dataTask(with: url) { data, response, error in
             let image = UIImage(data: data!)
             DispatchQueue.main.async() {
