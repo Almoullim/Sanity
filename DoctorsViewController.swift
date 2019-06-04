@@ -13,6 +13,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Google Firestore connection
     var db: Firestore!
+    var storage: Storage!
     
     @IBOutlet weak var DoctorsTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -26,6 +27,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
+        storage = Storage.storage()
         
         loadDcotors(gender: "all", searchText: nil)
         
@@ -95,6 +97,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
     func addDoctors(_ documents: [QueryDocumentSnapshot]) {
         for document in documents {
             // Get the volunteer name of the document
+            let username = document.data()["username"] as! String
             let name = document.data()["name"] as! String
             
             var daysSince: String = ""
@@ -104,7 +107,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
                 daysSince = timeSince(timestamp: timestamp)
             }
             
-            self.doctors.append(Doctor(name: name, daysSince: daysSince)!)
+            self.doctors.append(Doctor(username: username, name: name, daysSince: daysSince)!)
         }
         
         DoctorsTable.reloadData()
@@ -116,7 +119,14 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell?.userFullName.text = self.doctors[indexPath.row].name
         cell?.userInfo.text = self.doctors[indexPath.row].getDaysSince
-        cell?.userImage.image = UIImage(named: "userImage")
+        
+        let storageRef = self.storage.reference()
+        let imgRef = storageRef.child("images/" + self.doctors[indexPath.row].username + ".jpg")
+        
+        imgRef.downloadURL { (url, error) in
+            guard let downloadURL = url else { return }
+            cell?.userImage.downloaded(from: downloadURL)
+        }
         
         return cell!
     }

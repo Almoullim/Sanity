@@ -13,6 +13,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     
     // Google Firestore connection
     var db: Firestore!
+    var storage: Storage!
     
     @IBOutlet weak var VolunteersTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -26,6 +27,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
+        storage = Storage.storage()
         
         loadVolunteers(gender: "all", searchText: nil)
         
@@ -96,6 +98,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         for document in documents {
             // Get the volunteer name of the document
             let name = document.data()["name"] as! String
+            let username = document.data()["username"] as! String
             
             var daysSince: String = ""
             // Get the time stamp from the document
@@ -104,7 +107,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
                 daysSince = timeSince(timestamp: timestamp)
             }
             
-            self.volunteers.append(Volunteer(name: name, daysSince: daysSince)!)
+            self.volunteers.append(Volunteer(username: username, name: name, daysSince: daysSince)!)
         }
         
         VolunteersTable.reloadData()
@@ -114,9 +117,16 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? UserCell
     
-        cell?.userFullName.text = volunteers[indexPath.row].name
-        cell?.userInfo.text = volunteers[indexPath.row].getDaysSince
-        cell?.userImage.image = UIImage(named: "userImage")
+        cell?.userFullName.text = self.volunteers[indexPath.row].name
+        cell?.userInfo.text = self.volunteers[indexPath.row].getDaysSince
+        
+        let storageRef = self.storage.reference()
+        let imgRef = storageRef.child("images/" + self.volunteers[indexPath.row].username + ".jpg")
+        
+        imgRef.downloadURL { (url, error) in
+            guard let downloadURL = url else { return }
+            cell?.userImage.downloaded(from: downloadURL)
+        }
         
         return cell!
     }
