@@ -9,6 +9,7 @@
 import Foundation
 
 class User {
+    var username: String
     var name: String
     var daysSince: String
     var getDaysSince: String {
@@ -18,12 +19,14 @@ class User {
     }
     
     init() {
+        username = ""
         name = ""
         daysSince = ""
     }
     
-    convenience init?(name: String, daysSince: String) {
+    convenience init?(username: String, name: String, daysSince: String) {
         self.init()
+        self.username = username
         self.name = name
         self.daysSince = daysSince
     }
