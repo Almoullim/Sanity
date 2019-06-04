@@ -116,7 +116,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell?.userFullName.text = self.doctors[indexPath.row].name
         cell?.userInfo.text = self.doctors[indexPath.row].getDaysSince
-        cell?.userImage.image = UIImage(named: "women")
+        cell?.userImage.image = UIImage(named: "userImage")
         
         return cell!
     }

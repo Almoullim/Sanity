@@ -116,7 +116,7 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     
         cell?.userFullName.text = volunteers[indexPath.row].name
         cell?.userInfo.text = volunteers[indexPath.row].getDaysSince
-        cell?.userImage.image = UIImage(named: "women")
+        cell?.userImage.image = UIImage(named: "userImage")
         
         return cell!
     }

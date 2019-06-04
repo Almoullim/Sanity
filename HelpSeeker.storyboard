@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-HO-KDd" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="JBa-HO-KDd" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                                     <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="r1K-Lu-Uha"/>
@@ -189,7 +189,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="179.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-g8-x2k" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-g8-x2k" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                                     <rect key="frame" x="147" y="30" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="gT6-xm-eS2"/>
@@ -516,7 +516,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-Jy-gYl" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="ldD-Jy-gYl" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                                     <rect key="frame" x="30" y="10" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="If9-Fj-XXd"/>
@@ -685,7 +685,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="nOV-Jr-Iec">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="nOV-Jr-Iec">
                                 <rect key="frame" x="0.0" y="20" width="414" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="SvA-uG-GpW"/>
@@ -734,7 +734,7 @@
                                     <constraint firstAttribute="height" constant="70" id="1oG-Jy-FBK"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="CBb-fb-AAa" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBb-fb-AAa" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                 <rect key="frame" x="20" y="150" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="CGZ-4O-BZa"/>
@@ -1076,9 +1076,9 @@
         <image name="language" width="96" height="96"/>
         <image name="reqyests" width="96" height="96"/>
         <image name="services" width="30" height="30"/>
+        <image name="userImage" width="360" height="360"/>
         <image name="user_male" width="30" height="30"/>
         <image name="wallet_app" width="30" height="30"/>
-        <image name="women" width="3000" height="2000"/>
         <namedColor name="MainColor">
             <color red="0.15000000596046448" green="0.62199997901916504" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

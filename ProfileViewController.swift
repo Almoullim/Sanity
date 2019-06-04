@@ -66,6 +66,7 @@ class ProfileViewController: UIViewController {
                         imgRef.downloadURL { (url, error) in
                             guard let downloadURL = url else { return }
                             self.profileImage.downloaded(from: downloadURL)
+                            self.backgroundImage.downloaded(from: downloadURL)
                         }
                     }
             }
