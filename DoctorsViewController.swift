@@ -36,6 +36,10 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         DoctorsTable.dataSource = self
     }
     
+    @IBAction func requestButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "Request", sender: nil)
+    }
+    
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
         if let text = searchBar.text {
             doctors = []

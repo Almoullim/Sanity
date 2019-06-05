@@ -34,6 +34,10 @@ class ProfileViewController: UIViewController {
         storage = Storage.storage()
     }
     
+    @IBAction func requestButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "Request", sender: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

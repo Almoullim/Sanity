@@ -36,6 +36,14 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         VolunteersTable.dataSource = self
     }
     
+    @IBAction func userRequestButtonClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func requestButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "Request", sender: nil)
+    }
+    
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
         if let text = searchBar.text {
             volunteers = []
