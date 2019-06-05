@@ -16,6 +16,8 @@ class RequestViewController: UITableViewController {
     @IBOutlet weak var descriptionInput: UITextView!
     
     var requestedUser: String?
+    var requestType: String?
+    var currentUsername: String?
     var db: Firestore!
     
     override func viewDidLoad() {
@@ -43,6 +45,8 @@ class RequestViewController: UITableViewController {
                         if let issue = data["issue"] as? String {
                             self.issueInput.text = issue
                         }
+                        
+                        self.currentUsername = data["username"] as? String
                     }
             }
             
@@ -54,6 +58,30 @@ class RequestViewController: UITableViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        var docData: [String: Any] = [
+            "requestType": self.requestType!,
+            "username": self.currentUsername!,
+            "issue": self.issueInput.text!,
+            "description": self.descriptionInput.text!,
+            "created_at": Timestamp.init()
+        ]
+        
+        if let requestedUser = self.requestedUser {
+            docData["requestedUser"] = requestedUser
+        }
+        
+        self.db
+            .collection("requests")
+            .document(self.currentUsername!)
+            .setData(docData)
+            { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("request created/updated!")
+                    self.dismiss(animated: true, completion: nil)
+                }
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

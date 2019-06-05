@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol UserCellDelegate: class {
+    func segueWith(user: String)
+}
+
 class UserCell: UITableViewCell {
 
     @IBOutlet weak var userFullName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userImage: UIImageView!
-
+    var username: String!
+    weak var delegate: UserCellDelegate?
+    
+    @IBAction func requestButtonClicked(_ sender: Any) {
+        delegate?.segueWith(user: username)
+    }
 }

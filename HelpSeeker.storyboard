@@ -69,7 +69,7 @@
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="call"/>
                                                     <connections>
-                                                        <action selector="userRequestButtonClicked:" destination="gVq-Sc-FPI" eventType="touchUpInside" id="7Nt-Vh-6si"/>
+                                                        <action selector="requestButtonClicked:" destination="WwD-Dg-xwB" eventType="touchUpInside" id="EIJ-Eu-Cv0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -594,6 +594,9 @@
                                                     <color key="tintColor" name="MainColor"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="call"/>
+                                                    <connections>
+                                                        <action selector="requestButtonClicked:" destination="vI7-Pa-x3s" eventType="touchUpInside" id="qZr-bC-Bb6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1308,6 +1311,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q8c-DT-FNT"/>
+        <segue reference="Efx-fa-vKN"/>
     </inferredMetricsTieBreakers>
 </document>

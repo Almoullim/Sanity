@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class VolunteersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
     
     // Google Firestore connection
     var db: Firestore!
@@ -17,6 +17,8 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var VolunteersTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var selectedVolunteer: String?
     
     var volunteers: [Volunteer] = []
     
@@ -36,8 +38,9 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         VolunteersTable.dataSource = self
     }
     
-    @IBAction func userRequestButtonClicked(_ sender: Any) {
-        
+    func segueWith(user: String) {
+        selectedVolunteer = user
+        requestButtonClicked(self)
     }
     
     @IBAction func requestButtonClicked(_ sender: Any) {
@@ -127,6 +130,8 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
     
         cell?.userFullName.text = self.volunteers[indexPath.row].name
         cell?.userInfo.text = self.volunteers[indexPath.row].getDaysSince
+        cell?.username = self.volunteers[indexPath.row].username
+        cell?.delegate = self
         
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.volunteers[indexPath.row].username + ".jpg")
@@ -137,5 +142,14 @@ class VolunteersViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Request" {
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as? RequestViewController
+            view?.requestedUser = self.selectedVolunteer
+            view?.requestType = "volunteer"
+        }
     }
 }

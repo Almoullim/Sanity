@@ -9,14 +9,16 @@
 import UIKit
 import Firebase
 
-class DoctorsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    
+class DoctorsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
+
     // Google Firestore connection
     var db: Firestore!
     var storage: Storage!
     
     @IBOutlet weak var DoctorsTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var selectedDoctor: String?
     
     var doctors: [Doctor] = []
     
@@ -34,6 +36,11 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         searchBar.delegate = self
         DoctorsTable.delegate = self
         DoctorsTable.dataSource = self
+    }
+    
+    func segueWith(user: String) {
+        selectedDoctor = user
+        requestButtonClicked(self)
     }
     
     @IBAction func requestButtonClicked(_ sender: Any) {
@@ -123,6 +130,8 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell?.userFullName.text = self.doctors[indexPath.row].name
         cell?.userInfo.text = self.doctors[indexPath.row].getDaysSince
+        cell?.username = self.doctors[indexPath.row].username
+        cell?.delegate = self
         
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.doctors[indexPath.row].username + ".jpg")
@@ -133,5 +142,14 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         return cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Request" {
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as? RequestViewController
+            view?.requestedUser = self.selectedDoctor
+            view?.requestType = "doctor"
+        }
     }
 }

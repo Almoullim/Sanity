@@ -48,7 +48,10 @@ class ProfileViewController: UIViewController {
                     if let data = querySnapshot?.documents[0].data() {
                         self.username = data["username"] as? String
                         self.name.text = data["name"] as? String
-                        self.location.text = data["location"] as? String
+                        
+                        if let location = data["location"] as? String {
+                            self.location.text = location
+                        }
                         
                         if let timestamp = data["created_at"] as? Timestamp {
                             self.userInfo.text = "Member since " + timeSince(timestamp: timestamp)
@@ -60,15 +63,19 @@ class ProfileViewController: UIViewController {
                             self.ageValue.text = String((secondsSince / 86400) / 365)
                         }
                         
-                        
                         if let requestsCount = data["requestsCount"] as? Int {
                             self.requestsCountValue.text = String(requestsCount)
                         } else {
                             self.requestsCountValue.text = "0"
                         }
                         
-                        self.issueValue.text = data["issue"] as? String
-                        self.languageValue.text = data["language"] as? String
+                        if let issue = data["issue"] as? String {
+                            self.issueValue.text = issue
+                        }
+                        
+                        if let language = data["language"] as? String {
+                            self.languageValue.text = language
+                        }
                         
                         let storageRef = self.storage.reference()
                         let imgRef = storageRef.child("images/" + self.username! + ".jpg")
