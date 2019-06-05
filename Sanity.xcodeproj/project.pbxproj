@@ -27,6 +27,9 @@
 		4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF6E229D0712004E4010 /* HelpSeekerProfileViewController.swift */; };
 		4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF70229D0AEC004E4010 /* Extensions.swift */; };
 		41926C71225136E20078F9FD /* ErrorCodes in Resources */ = {isa = PBXBuildFile; fileRef = 41926C70225136E20078F9FD /* ErrorCodes */; };
+		41A84D3C22A77C250025A1DB /* ReadingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */; };
+		41A84D3E22A77C950025A1DB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3D22A77C950025A1DB /* Article.swift */; };
+		41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3F22A77D810025A1DB /* ReadingCell.swift */; };
 		41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF8099224EA6780007F98F /* AppDelegate.swift */; };
 		41AF809F224EA6780007F98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF809D224EA6780007F98F /* Main.storyboard */; };
 		41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A0224EA67A0007F98F /* Assets.xcassets */; };
@@ -60,6 +63,9 @@
 		4186AF6E229D0712004E4010 /* HelpSeekerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSeekerProfileViewController.swift; sourceTree = "<group>"; };
 		4186AF70229D0AEC004E4010 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		41926C70225136E20078F9FD /* ErrorCodes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorCodes; sourceTree = SOURCE_ROOT; };
+		41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsViewController.swift; sourceTree = "<group>"; };
+		41A84D3D22A77C950025A1DB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		41A84D3F22A77D810025A1DB /* ReadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCell.swift; sourceTree = "<group>"; };
 		41AF8096224EA6780007F98F /* Sanity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sanity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF8099224EA6780007F98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41AF809E224EA6780007F98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			children = (
 				41074AED229A0CDD00D6E58C /* User.swift */,
 				410A37E522515C8F002F1D22 /* UserCell.swift */,
+				41A84D3D22A77C950025A1DB /* Article.swift */,
+				41A84D3F22A77D810025A1DB /* ReadingCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				41B62C0F22A75DA700A731AF /* RequestsViewController.swift */,
 				41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */,
 				41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */,
+				41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */,
 			);
 			path = VolunteersControllers;
 			sourceTree = "<group>";
@@ -366,17 +375,20 @@
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
 				41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */,
+				41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */,
 				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
 				41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */,
 				4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */,
 				412E23F5229D3EED00065303 /* HelpSeekerEditProfileViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
+				41A84D3E22A77C950025A1DB /* Article.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
 				41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */,
 				414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */,
+				41A84D3C22A77C250025A1DB /* ReadingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
