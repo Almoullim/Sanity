@@ -24,6 +24,11 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
     @IBOutlet weak var languageInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var imageView: DesignableUIImageView!
+    @IBOutlet weak var mobileInput: UITextField!
+    
+    // cases
+    var alreadyRan: Bool = false
+    var imageChanged: Bool = false
     
     var username: String?
     var db: Firestore!
@@ -45,6 +50,8 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if alreadyRan { return }
+        
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
                 .getDocuments() { (querySnapshot, err) in
@@ -52,6 +59,10 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
                     if let data = querySnapshot?.documents[0].data() {
                         self.username = data["username"] as? String
                         self.nameInput.text = data["name"] as? String
+                        
+                        if let mobile = data["mobile"] as? String {
+                            self.mobileInput.text = mobile
+                        }
                         
                         if let timestamp = data["dob"] as? Timestamp {
                             // Construct days since
@@ -80,6 +91,7 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
             }
             
         }
+        self.alreadyRan = true
     }
     
     
@@ -113,6 +125,7 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.imageView.image = image
+            self.imageChanged = true
             dismiss(animated: true, completion: nil)
         }
     }
@@ -133,6 +146,7 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
             "issue":self.issueInput.text!,
             "language": self.languageInput.text!,
             "location": self.locationInput.text!,
+            "mobile": self.mobileInput.text!,
             "dob": dob ?? NSNull(),
         ]
         
@@ -146,6 +160,11 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
                 } else {
                     print("user info successfully updated!")
                 }
+        }
+        
+        if !imageChanged {
+            self.dismiss(animated: true, completion: nil)
+            return
         }
         
         let storageRef = storage.reference()
@@ -174,7 +193,7 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
-        case [1, 1]:
+        case [1, 2]:
             return datePickerIsHidden ? 0.0 : 216.0
         case [0, 0]:
             return 180.0
@@ -186,7 +205,7 @@ class EditProfileViewController: UITableViewController, UIImagePickerControllerD
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
-        case [1, 0]:
+        case [1, 1]:
             tableView.beginUpdates()
             datePickerIsHidden = !datePickerIsHidden
             tableView.endUpdates()
