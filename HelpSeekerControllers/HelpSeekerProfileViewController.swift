@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class HelpSeekerProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!

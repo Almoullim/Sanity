@@ -18,6 +18,7 @@ class RequestViewController: UITableViewController {
     var requestedUser: String?
     var requestType: String?
     var currentUsername: String?
+    var name: String?
     var db: Firestore!
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class RequestViewController: UITableViewController {
                         }
                         
                         self.currentUsername = data["username"] as? String
+                        self.name =  data["name"] as? String
                     }
             }
             
@@ -60,6 +62,7 @@ class RequestViewController: UITableViewController {
     @IBAction func saveClicked(_ sender: Any) {
         var docData: [String: Any] = [
             "requestType": self.requestType!,
+            "name": self.name!,
             "username": self.currentUsername!,
             "issue": self.issueInput.text!,
             "description": self.descriptionInput.text!,

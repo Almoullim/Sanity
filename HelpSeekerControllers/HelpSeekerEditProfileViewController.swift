@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HelpSeekerEditProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var table: UITableView!
     @IBOutlet weak var datePickerCell: UITableViewCell!

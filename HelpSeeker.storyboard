@@ -181,7 +181,7 @@
         <!--Edit Profile-->
         <scene sceneID="O33-zA-VdR">
             <objects>
-                <tableViewController title="Edit Profile" id="NCz-C5-bDD" customClass="EditProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Edit Profile" id="NCz-C5-bDD" customClass="HelpSeekerEditProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="aAu-8O-j9e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -726,7 +726,7 @@
         <!--Profile-->
         <scene sceneID="snl-JE-x54">
             <objects>
-                <viewController id="1qx-59-iBG" customClass="ProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1qx-59-iBG" customClass="HelpSeekerProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f1y-gB-NRX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
