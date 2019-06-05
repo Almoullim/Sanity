@@ -112,24 +112,12 @@
 		41074AEF229A0E6D00D6E58C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				41A84D3A22A777E90025A1DB /* HomeControllers */,
 				41B62C1422A7704C00A731AF /* HelpSeekerControllers */,
 				41B62C1322A7703300A731AF /* VolunteersControllers */,
 				41074AF8229A2CE600D6E58C /* SettingsViewController.swift */,
-				41074AF0229A0E9500D6E58C /* Home */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		41074AF0229A0E9500D6E58C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
-				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
-				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
-				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
-				41074AF4229A246F00D6E58C /* AfterLoadViewController.swift */,
-			);
-			name = Home;
 			sourceTree = "<group>";
 		};
 		41074AF1229A0F1700D6E58C /* StoryBoards */ = {
@@ -142,6 +130,18 @@
 				41289701229A5E2A00935BC6 /* Volunteer.storyboard */,
 			);
 			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		41A84D3A22A777E90025A1DB /* HomeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				414AF697224FE7E300EA9B93 /* HomeViewController.swift */,
+				414AF692224FDDC100EA9B93 /* UserTypeViewController.swift */,
+				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
+				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
+				41074AF4229A246F00D6E58C /* AfterLoadViewController.swift */,
+			);
+			path = HomeControllers;
 			sourceTree = "<group>";
 		};
 		41AF808D224EA6780007F98F = {
