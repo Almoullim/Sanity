@@ -39,3 +39,11 @@ class Volunteer: User {
 class Doctor: User {
     
 }
+
+class HelpSeeker: User {
+    override var getDaysSince: String {
+        get {
+            return "Requested " + self.daysSince
+        }
+    }
+}
