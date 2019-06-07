@@ -40,6 +40,10 @@ class Doctor: User {
     
 }
 
+class Session: HelpSeeker {
+    
+}
+
 class HelpSeeker: User {
     var mobile: String
     override var getDaysSince: String {
