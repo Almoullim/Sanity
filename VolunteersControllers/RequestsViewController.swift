@@ -48,9 +48,18 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    func segueWith(user: String) {
+        selectedHelpSeeker = user
+    }
+    
     func call(_ mobile: String) {
-        UIApplication.shared.open(URL(string: "tel://" + mobile)!, options: [:]) { (success:Bool) in
-            
+        if let number = URL(string: "tel://" + mobile) {
+            UIApplication.shared.open(number, options: [:]) { (success:Bool) in
+                self.db
+                    .collection("requests")
+                    .document(self.selectedHelpSeeker!)
+                    .delete()
+            }
         }
     }
     
@@ -147,15 +156,6 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         return cell!
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Request" {
-            let nav = segue.destination as? UINavigationController
-            let view = nav?.viewControllers.first as? RequestViewController
-            view?.requestedUser = self.selectedHelpSeeker
-            view?.requestType = "volunteer"
-        }
     }
     
 }
