@@ -66,7 +66,8 @@ class RequestViewController: UITableViewController {
             "username": self.currentUsername!,
             "issue": self.issueInput.text!,
             "description": self.descriptionInput.text!,
-            "created_at": Timestamp.init()
+            "created_at": Timestamp.init(),
+            "mobile": mobileInput.text!
         ]
         
         if let requestedUser = self.requestedUser {

@@ -10,14 +10,12 @@ import UIKit
 import Firebase
 
 class RequestsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
-
     
     // Google Firestore connection
     var db: Firestore!
     var storage: Storage!
     
     @IBOutlet weak var HelpSeekersTable: UITableView!
-//    @IBOutlet weak var VolunteersTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedHelpSeeker: String?
@@ -50,13 +48,10 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-    
-    func segueWith(user: String) {
-        selectedHelpSeeker = user
-        print(user)
+    func call(_ mobile: String) {
+        UIApplication.shared.open(URL(string: "tel://" + mobile)!, options: [:]) { (success:Bool) in
+            
+        }
     }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
@@ -119,6 +114,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         for document in documents {
             let name = document.data()["name"] as! String
             let username = document.data()["username"] as! String
+            let mobile = document.data()["mobile"] as! String
             var daysSince: String = ""
             // Get the time stamp from the document
             if let timestamp = document.data()["created_at"] as? Timestamp {
@@ -126,7 +122,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
                 daysSince = timeSince(timestamp: timestamp) + " ago"
             }
             
-            self.HelpSeekers.append(HelpSeeker(username: username, name: name, daysSince: daysSince)!)
+            self.HelpSeekers.append(HelpSeeker(username: username, name: name, daysSince: daysSince, mobile: mobile)!)
         }
         
         HelpSeekersTable.reloadData()
@@ -135,10 +131,11 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? UserCell
-        
+
         cell?.userFullName.text = self.HelpSeekers[indexPath.row].name
         cell?.userInfo.text = self.HelpSeekers[indexPath.row].getDaysSince
         cell?.username = self.HelpSeekers[indexPath.row].username
+        cell?.mobile = self.HelpSeekers[indexPath.row].mobile
         cell?.delegate = self
         
         let storageRef = self.storage.reference()

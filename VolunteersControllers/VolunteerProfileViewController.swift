@@ -65,8 +65,8 @@ class VolunteerProfileViewController: UIViewController {
                             self.callsCountValue.text = "0"
                         }
                         
-                        if let issue = data["issue"] as? String {
-                            self.specialityValue.text = issue
+                        if let speciality = data["speciality"] as? String {
+                            self.specialityValue.text = speciality
                         }
                         
                         if let language = data["language"] as? String {

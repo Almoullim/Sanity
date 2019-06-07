@@ -11,5 +11,6 @@ import Foundation
 struct Article {
     var title: String
     var uid: String
-    var tags: [String]
+    var tags: String
+    var description: String
 }
