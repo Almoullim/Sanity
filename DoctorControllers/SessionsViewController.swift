@@ -16,7 +16,6 @@ class SessionsViewController: UIViewController, UITableViewDataSource, UITableVi
     var storage: Storage!
     
     @IBOutlet weak var VolunteersTable: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedVolunteer: String?
     
@@ -33,7 +32,6 @@ class SessionsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         loadVolunteers(gender: "all", searchText: nil)
         
-        searchBar.delegate = self
         VolunteersTable.delegate = self
         VolunteersTable.dataSource = self
     }

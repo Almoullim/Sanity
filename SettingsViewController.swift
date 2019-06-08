@@ -29,6 +29,8 @@ class SettingsViewController: UITableViewController {
             self.performSegue(withIdentifier: "EditProfile", sender: nil)
         case [0,1]:
             logout()
+        case [1, 0]:
+            self.performSegue(withIdentifier: "EditArticles", sender: nil)
         default:
             print("Wrong selection")
         }
