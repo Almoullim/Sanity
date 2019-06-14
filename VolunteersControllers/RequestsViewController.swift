@@ -54,6 +54,12 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func call(_ mobile: String) {
         print(mobile)
+        let api = "https://us-central1-poly-mp-project.cloudfunctions.net";
+        
+        if let incEndPoint = URL(string: (api + "/userFieldInc?user=" + username!)) {
+            URLSession.shared.dataTask(with: incEndPoint).resume()
+        }
+        
         if let number = URL(string: "tel://" + mobile.replacingOccurrences(of: " ", with: "")) {
             UIApplication.shared.open(number, options: [:]) { (success:Bool) in
 //                self.db
