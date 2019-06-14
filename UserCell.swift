@@ -28,6 +28,9 @@ class UserCell: UITableViewCell {
     
     @IBAction func requestButtonClicked(_ sender: Any) {
         delegate?.segueWith(user: username)
-        delegate?.call(mobile!)
+        if let mobile = mobile {
+            delegate?.call(mobile)
+        }
+        
     }
 }
