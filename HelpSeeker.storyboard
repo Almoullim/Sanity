@@ -1307,7 +1307,7 @@
         <image name="user_male" width="30" height="30"/>
         <image name="wallet_app" width="30" height="30"/>
         <namedColor name="MainColor">
-            <color red="0.15000000596046448" green="0.62199997901916504" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14901960784313725" green="0.61960784313725492" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
