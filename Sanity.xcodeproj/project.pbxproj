@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */; };
-		20ED1B4C22B4D57400FD27A0 /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* SessionsViewController.swift */; };
+		20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */; };
 		20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */; };
 		20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */; };
 		20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */; };
@@ -55,7 +55,7 @@
 
 /* Begin PBXFileReference section */
 		20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEditProfileTableViewController.swift; sourceTree = "<group>"; };
-		20ED1B4B22B4D57400FD27A0 /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
+		20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */,
-				20ED1B4B22B4D57400FD27A0 /* SessionsViewController.swift */,
+				20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */,
 				20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */,
 				20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */,
 				20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */,
@@ -440,7 +440,7 @@
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
-				20ED1B4C22B4D57400FD27A0 /* SessionsViewController.swift in Sources */,
+				20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
 				41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */,
 				414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */,
