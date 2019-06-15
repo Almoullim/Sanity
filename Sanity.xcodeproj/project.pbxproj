@@ -13,6 +13,7 @@
 		20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */; };
 		20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */; };
 		20ED1B5622B4D6B400FD27A0 /* UserEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */; };
+		20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5722B4FE6F00FD27A0 /* Question.swift */; };
 		2FC1EB9D86D2D7C1A77F120F /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */; };
 		404EC3E422AC55EC0044856F /* EditArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */; };
 		4074CAD822AAE57500D1412F /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4074CAD722AAE57500D1412F /* SessionsViewController.swift */; };
@@ -59,6 +60,7 @@
 		20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditProfileTableViewController.swift; sourceTree = "<group>"; };
+		20ED1B5722B4FE6F00FD27A0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditArticlesViewController.swift; sourceTree = "<group>"; };
 		4074CAD722AAE57500D1412F /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
 		40A0AA0522AAF16C008189E2 /* DoctorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				410A37E522515C8F002F1D22 /* UserCell.swift */,
 				41A84D3D22A77C950025A1DB /* Article.swift */,
 				41A84D3F22A77D810025A1DB /* ReadingCell.swift */,
+				20ED1B5722B4FE6F00FD27A0 /* Question.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				41A1AAB422AA13FA00F4468B /* ArticleViewController.swift in Sources */,
 				41074AF5229A246F00D6E58C /* AfterLoadViewController.swift in Sources */,
 				412E23F3229D36E000065303 /* Helpers.swift in Sources */,
+				20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */,
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
 				41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
@@ -589,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_ACTIVITY_MODE = default;
-				DEVELOPMENT_TEAM = 88496PP8ZM;
+				DEVELOPMENT_TEAM = 53V53JSQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,7 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_ACTIVITY_MODE = default;
-				DEVELOPMENT_TEAM = 88496PP8ZM;
+				DEVELOPMENT_TEAM = 53V53JSQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
