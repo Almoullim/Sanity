@@ -60,7 +60,7 @@
         <!--Home-->
         <scene sceneID="MaG-Kp-4l2">
             <objects>
-                <viewController id="xBZ-nC-Uo7" customClass="VolunteerProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xBZ-nC-Uo7" customClass="AdminProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jE6-aC-B84">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,48 +169,15 @@
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Home" id="VIp-tM-Cvv"/>
-                    <connections>
-                        <outlet property="backgroundImage" destination="oAP-jC-iHC" id="9hh-la-3ye"/>
-                        <outlet property="name" destination="Wzf-xW-DAH" id="9LX-T9-jyD"/>
-                        <outlet property="profileImage" destination="ZpJ-KC-Dll" id="JJ1-nl-UQW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qr-LG-7ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2003" y="60"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="CAg-gK-Scv">
-            <objects>
-                <tableViewController id="dxf-KE-j98" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pm2-Cc-P3Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="N6O-SC-zUi">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N6O-SC-zUi" id="Hta-2W-m5P">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="dxf-KE-j98" id="p6j-Zx-D9v"/>
-                            <outlet property="delegate" destination="dxf-KE-j98" id="P7B-A0-xb7"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R1d-cf-HbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2680" y="56"/>
-        </scene>
-        <!--Requests-->
+        <!--Users-->
         <scene sceneID="upR-xy-LXF">
             <objects>
-                <viewController title="Requests" id="qmY-YI-j7F" customClass="RequestsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Users" id="qmY-YI-j7F" customClass="UsersListViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eA1-0I-Hmb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="2006" y="-708"/>
         </scene>
-        <!--Requests-->
+        <!--Users-->
         <scene sceneID="1I3-0O-JsM">
             <objects>
-                <navigationController title="Requests" id="M9R-qz-RxB" sceneMemberID="viewController">
+                <navigationController title="Users" id="M9R-qz-RxB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Users" image="user_male" id="bps-JK-uST"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="XKg-zw-SHC">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -361,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="1157" y="-708"/>
         </scene>
-        <!--Requests-->
+        <!--Sessions-->
         <scene sceneID="137-t1-4Ec">
             <objects>
-                <viewController title="Requests" id="k7Z-jO-zWh" customClass="RequestsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sessions" id="k7Z-jO-zWh" customClass="SessionsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="st9-cl-Wn9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,9 +385,6 @@
                                                     <color key="tintColor" name="MainColor"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" image="call"/>
-                                                    <connections>
-                                                        <action selector="requestButtonClicked:" destination="evG-pa-KEd" eventType="touchUpInside" id="URa-6g-keJ"/>
-                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="E5j-Jq-8dh" userLabel="User2 Image" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                                     <rect key="frame" x="40" y="25" width="40" height="40"/>
@@ -448,16 +412,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="userFullName" destination="2gh-TY-lgl" id="qym-uF-bQ5"/>
-                                            <outlet property="userImage" destination="CkL-v4-wI8" id="EKd-P5-RbK"/>
-                                            <outlet property="userInfo" destination="f22-qT-sMA" id="gP3-f0-vHa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="k7Z-jO-zWh" id="Ino-Vh-pWi"/>
-                                    <outlet property="delegate" destination="k7Z-jO-zWh" id="gBx-ZL-qwQ"/>
-                                </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-TP-1xq">
                                 <rect key="frame" x="77" y="130" width="260" height="29"/>
@@ -467,9 +425,6 @@
                                     <segment title="Video Calls"/>
                                 </segments>
                                 <color key="tintColor" name="MainColor"/>
-                                <connections>
-                                    <action selector="filterClicked:" destination="k7Z-jO-zWh" eventType="valueChanged" id="Pys-wM-OK1"/>
-                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaV-Iy-tvg">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
@@ -494,19 +449,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Sessions" image="wallet_app" id="fxP-s6-59R"/>
                     <navigationItem key="navigationItem" title="Sessions" id="WYJ-kv-vcD"/>
-                    <connections>
-                        <outlet property="HelpSeekersTable" destination="Y2K-5k-cCK" id="YAk-yz-JlO"/>
-                        <outlet property="searchBar" destination="uaV-Iy-tvg" id="rFu-n1-AlR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVz-eT-pA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.7971014492755" y="776.9021739130435"/>
         </scene>
-        <!--Requests-->
+        <!--Sessions-->
         <scene sceneID="Mej-F0-Ouv">
             <objects>
-                <navigationController title="Requests" id="wXN-m0-EtE" sceneMemberID="viewController">
+                <navigationController title="Sessions" id="wXN-m0-EtE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Seesions" image="wallet_app" id="jdZ-eX-Wnw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="lYD-s5-hTs">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -530,7 +481,7 @@
         <!--Edit Profile-->
         <scene sceneID="56r-KW-kKv">
             <objects>
-                <tableViewController title="Edit Profile" id="qSw-st-Qk1" customClass="HelpSeekerEditProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Edit Profile" id="qSw-st-Qk1" customClass="AdminEditProfileTableViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Kaj-eF-Eks">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -899,7 +850,7 @@
         <scene sceneID="ue3-4u-KvG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJR-Mr-N1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="VQB-L0-JtM" customClass="VolunteerProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VQB-L0-JtM" customClass="UserProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJY-e4-HP0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1147,26 +1098,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="ageValue" destination="ZfW-k7-JjY" id="shU-Kn-seU"/>
-                        <outlet property="backgroundImage" destination="6Yf-vR-y1m" id="0eW-De-kjU"/>
-                        <outlet property="callsCountValue" destination="U4N-N3-NrV" id="spE-gs-aGH"/>
-                        <outlet property="languageValue" destination="xuS-6Y-Ph2" id="UwW-r3-pq3"/>
-                        <outlet property="location" destination="Px0-jr-asq" id="8Sg-ry-kEE"/>
-                        <outlet property="name" destination="UrS-ty-cbu" id="6vr-K7-LYL"/>
-                        <outlet property="profileImage" destination="Fwk-dt-WVt" id="Fhb-2C-iFA"/>
-                        <outlet property="specialityValue" destination="djD-gI-tpB" id="23N-GO-WR9"/>
-                        <outlet property="userInfo" destination="Uj4-6p-Wes" id="U6Z-FK-Zcv"/>
-                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2819" y="-708"/>
+            <point key="canvasLocation" x="2818.840579710145" y="-708.42391304347836"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="GuS-Na-BEO">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRB-QG-Cnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="Edit Profile" id="lHa-5n-sy4" customClass="VolunteerEditProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Edit Profile" id="lHa-5n-sy4" customClass="UserEditProfileTableViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZtB-ko-3Fx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
