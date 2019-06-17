@@ -8,8 +8,24 @@
 
 import UIKit
 
-class UserEditProfileTableViewController: UITableViewController {
+class UserEditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    
+    var imagePicker = UIImagePickerController()
+    @IBOutlet weak var UserImage: DesignableUIImageView!
+    @IBOutlet weak var NameInput: UITextField!
+    @IBOutlet weak var MobileInput: UITextField!
+    @IBOutlet weak var DOBInput: UILabel!
+    @IBOutlet weak var DatePicker: UIDatePicker!
+    @IBOutlet weak var DatePickerCell: UITableViewCell!
+    var datePickerIsHidden = true
+    @IBOutlet weak var SpecialityInput: UITextField!
+    @IBOutlet weak var LanguageInput: UITextField!
+    @IBOutlet weak var LocationInput: UITextField!
+    @IBOutlet weak var SpecialityLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +46,29 @@ class UserEditProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath {
+        case [1, 2]:
+            return datePickerIsHidden ? 0.0 : 216.0
+        case [0, 0]:
+            return 180.0
+        default:
+            return 44.0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath {
+        case [1, 1]:
+            tableView.beginUpdates()
+            datePickerIsHidden = !datePickerIsHidden
+            tableView.endUpdates()
+        default:
+            print("Wrong selection")
+        }
     }
 
     /*

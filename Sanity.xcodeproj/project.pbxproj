@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */; };
 		20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */; };
 		20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */; };
 		20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecoredTableViewCell.swift; sourceTree = "<group>"; };
 		20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */,
 				20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */,
 				20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */,
+				2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */,
 			);
 			path = AdminContollers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */,
 				40B8764A22AAF6CA006DE401 /* DoctorEditProfileViewController.swift in Sources */,
 				404EC3E422AC55EC0044856F /* EditArticlesViewController.swift in Sources */,
+				2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */,
 				41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */,
 				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
 				41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */,

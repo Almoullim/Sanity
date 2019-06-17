@@ -11,7 +11,6 @@ import Firebase
 
 class HelpSeekerEditProfileViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet var table: UITableView!
     @IBOutlet weak var datePickerCell: UITableViewCell!
     var datePickerIsHidden = true
     @IBOutlet weak var datePicker: UIDatePicker!

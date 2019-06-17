@@ -474,7 +474,6 @@
                         <outlet property="locationInput" destination="Bg0-Js-7fI" id="tHR-em-8By"/>
                         <outlet property="mobileInput" destination="GDB-9V-eSR" id="U7w-YT-ZpF"/>
                         <outlet property="nameInput" destination="IDv-pN-b3A" id="DmJ-0y-UES"/>
-                        <outlet property="table" destination="aAu-8O-j9e" id="6UY-6G-dz6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnN-7P-77T" userLabel="First Responder" sceneMemberID="firstResponder"/>

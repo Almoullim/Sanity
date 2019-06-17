@@ -36,10 +36,9 @@
         <!--Home-->
         <scene sceneID="bgU-3d-yYj">
             <objects>
-                <navigationController id="pWl-CH-5hR" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="pWl-CH-5hR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="xGv-QM-KBa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wyv-XB-JBl">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -337,10 +336,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-5k-cCK">
-                                <rect key="frame" x="0.0" y="178" width="414" height="509"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VolunteerCell" id="evG-pa-KEd" userLabel="SessionCell" customClass="UserCell" customModule="Sanity" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VolunteerCell" id="evG-pa-KEd" userLabel="SessionCell" customClass="SessionRecoredTableViewCell" customModule="Sanity" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="evG-pa-KEd" id="Je5-4a-WSz">
@@ -384,7 +383,7 @@
                                                     </constraints>
                                                     <color key="tintColor" name="MainColor"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                    <state key="normal" image="call"/>
+                                                    <state key="normal" image="right"/>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="E5j-Jq-8dh" userLabel="User2 Image" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
                                                     <rect key="frame" x="40" y="25" width="40" height="40"/>
@@ -411,21 +410,17 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="SessionIcon" destination="WET-6s-W8w" id="xdf-s5-Lbb"/>
+                                            <outlet property="TimeSince" destination="f22-qT-sMA" id="c9j-8E-Z1T"/>
+                                            <outlet property="UserOneImage" destination="CkL-v4-wI8" id="6Qa-Sr-VU2"/>
+                                            <outlet property="UserTwoImage" destination="E5j-Jq-8dh" id="m58-6v-E0w"/>
+                                            <outlet property="UsersName" destination="2gh-TY-lgl" id="Y7z-hi-z7p"/>
                                             <outlet property="userFullName" destination="2gh-TY-lgl" id="qym-uF-bQ5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-TP-1xq">
-                                <rect key="frame" x="77" y="130" width="260" height="29"/>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title="Phone Calls"/>
-                                    <segment title="Video Calls"/>
-                                </segments>
-                                <color key="tintColor" name="MainColor"/>
-                            </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaV-Iy-tvg">
                                 <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <color key="barTintColor" name="MainColor"/>
@@ -434,16 +429,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Y2K-5k-cCK" firstAttribute="top" secondItem="uaV-Iy-tvg" secondAttribute="bottom" id="7rB-bq-DDL"/>
                             <constraint firstItem="uaV-Iy-tvg" firstAttribute="trailing" secondItem="Hbb-oc-0Lt" secondAttribute="trailing" id="IgB-ba-Ssk"/>
                             <constraint firstItem="uaV-Iy-tvg" firstAttribute="top" secondItem="Hbb-oc-0Lt" secondAttribute="top" id="JRg-dN-SzO"/>
-                            <constraint firstItem="Ual-TP-1xq" firstAttribute="centerX" secondItem="st9-cl-Wn9" secondAttribute="centerX" id="PmI-BX-oG0"/>
                             <constraint firstItem="Hbb-oc-0Lt" firstAttribute="bottom" secondItem="Y2K-5k-cCK" secondAttribute="bottom" id="XFm-9Q-Gzp"/>
                             <constraint firstItem="uaV-Iy-tvg" firstAttribute="leading" secondItem="Hbb-oc-0Lt" secondAttribute="leading" id="dmD-4T-2sz"/>
                             <constraint firstItem="uaV-Iy-tvg" firstAttribute="centerX" secondItem="st9-cl-Wn9" secondAttribute="centerX" id="eje-ab-YLI"/>
                             <constraint firstItem="Hbb-oc-0Lt" firstAttribute="trailing" secondItem="Y2K-5k-cCK" secondAttribute="trailing" id="kfK-bs-Qat"/>
                             <constraint firstItem="Y2K-5k-cCK" firstAttribute="leading" secondItem="Hbb-oc-0Lt" secondAttribute="leading" id="qsL-Ux-F0M"/>
-                            <constraint firstItem="Y2K-5k-cCK" firstAttribute="top" secondItem="Ual-TP-1xq" secondAttribute="bottom" constant="20" id="uYx-Ql-auv"/>
-                            <constraint firstItem="Ual-TP-1xq" firstAttribute="top" secondItem="uaV-Iy-tvg" secondAttribute="bottom" constant="10" id="ysw-DL-IJj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hbb-oc-0Lt"/>
                     </view>
@@ -746,6 +739,17 @@
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="idt-w9-qjP"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="cAS-xX-mGu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="DOBLable" destination="rdg-Ji-bOB" id="Hsg-Pi-w2J"/>
+                        <outlet property="DatePicker" destination="D0L-GA-8pa" id="WMB-9n-UuE"/>
+                        <outlet property="DatePickerCell" destination="jsi-k7-RYN" id="ugb-Mx-xTL"/>
+                        <outlet property="LanguageInput" destination="3I8-UE-qjh" id="Sjp-mj-CtU"/>
+                        <outlet property="Location" destination="X6r-gw-TYg" id="3Gh-m9-q0c"/>
+                        <outlet property="MobileInput" destination="OGc-WT-lch" id="jpG-Ff-Pid"/>
+                        <outlet property="Password" destination="zkc-N3-iF5" id="6oK-kh-24m"/>
+                        <outlet property="UserImage" destination="1dY-ak-YXZ" id="HiF-3c-vwg"/>
+                        <outlet property="UserNameInput" destination="K6N-Tg-RH0" id="Pf8-Yx-uR0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55O-Dz-BVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -849,7 +853,6 @@
         <!--User Profile-->
         <scene sceneID="ue3-4u-KvG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JJR-Mr-N1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="VQB-L0-JtM" customClass="UserProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJY-e4-HP0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
@@ -1098,14 +1101,26 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Age" destination="ZfW-k7-JjY" id="XcQ-ms-EvX"/>
+                        <outlet property="CallsLable" destination="gUj-Vu-OC8" id="z6T-Es-kmc"/>
+                        <outlet property="CallsNumber" destination="U4N-N3-NrV" id="Sd7-fF-nmb"/>
+                        <outlet property="Language" destination="xuS-6Y-Ph2" id="crK-Nb-cD9"/>
+                        <outlet property="Location" destination="Px0-jr-asq" id="NHz-VA-4hI"/>
+                        <outlet property="MemberSince" destination="Uj4-6p-Wes" id="oF2-c5-csS"/>
+                        <outlet property="Speciality" destination="djD-gI-tpB" id="8ya-yb-P1f"/>
+                        <outlet property="SpecialityLable" destination="RhL-Qd-Xha" id="n39-Oe-gxE"/>
+                        <outlet property="UserImage" destination="Fwk-dt-WVt" id="Xrm-ab-uK4"/>
+                        <outlet property="UserName" destination="UrS-ty-cbu" id="zBU-0q-SbA"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJR-Mr-N1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2818.840579710145" y="-708.42391304347836"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="GuS-Na-BEO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IRB-QG-Cnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Edit Profile" id="lHa-5n-sy4" customClass="UserEditProfileTableViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZtB-ko-3Fx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
@@ -1390,6 +1405,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="DOBInput" destination="lvu-Zl-53g" id="Wcq-XL-w5m"/>
+                        <outlet property="DatePicker" destination="ZNL-xi-ASg" id="yIo-vR-TbQ"/>
+                        <outlet property="DatePickerCell" destination="dLh-cB-JZ6" id="gZ1-iv-Pcf"/>
+                        <outlet property="LanguageInput" destination="1oe-xW-ays" id="cEN-T1-L6r"/>
+                        <outlet property="LocationInput" destination="vkp-Ny-X3F" id="lyz-3U-uck"/>
+                        <outlet property="MobileInput" destination="Gmh-jA-QGR" id="Sj4-er-UU8"/>
+                        <outlet property="NameInput" destination="ylP-kU-oBf" id="FVd-Y6-W4U"/>
+                        <outlet property="SpecialityInput" destination="znv-IX-2Np" id="Fb6-Aa-0w6"/>
+                        <outlet property="SpecialityLabel" destination="sz2-22-JLW" id="s9Z-J2-tQi"/>
+                        <outlet property="UserImage" destination="I1r-Fz-oiz" id="Pz5-mn-eAo"/>
                         <outlet property="dateOfBirth" destination="lvu-Zl-53g" id="mYl-ZJ-JpE"/>
                         <outlet property="datePicker" destination="ZNL-xi-ASg" id="Yan-IJ-BJq"/>
                         <outlet property="datePickerCell" destination="dLh-cB-JZ6" id="1s3-9g-SBl"/>
@@ -1402,13 +1427,13 @@
                         <outlet property="table" destination="ZtB-ko-3Fx" id="Kh5-MK-8mO"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IRB-QG-Cnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3564" y="-708"/>
         </scene>
     </scenes>
     <resources>
         <image name="age" width="96" height="96"/>
-        <image name="call" width="96" height="96"/>
         <image name="home" width="30" height="30"/>
         <image name="issue" width="96" height="96"/>
         <image name="language" width="96" height="96"/>
