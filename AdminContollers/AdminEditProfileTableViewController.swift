@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AdminEditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
@@ -22,6 +23,14 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     @IBOutlet weak var Location: UITextField!
     @IBOutlet weak var Password: UITextField!
     
+    
+    // cases
+    var alreadyRan: Bool = false
+    var imageChanged: Bool = false
+    
+    var username: String?
+    var db: Firestore!
+    var storage: Storage!
     
     
     override func viewDidLoad() {

@@ -12,6 +12,7 @@ class User {
     var username: String
     var name: String
     var daysSince: String
+    var userType: String
     var getDaysSince: String {
         get {
             return "Member since " + self.daysSince
@@ -22,6 +23,7 @@ class User {
         username = ""
         name = ""
         daysSince = ""
+        userType = ""
     }
     
     convenience init?(username: String, name: String, daysSince: String) {

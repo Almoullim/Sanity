@@ -11,6 +11,7 @@ import UIKit
 class UserEditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    var doctorName: String?
     
     var imagePicker = UIImagePickerController()
     @IBOutlet weak var UserImage: DesignableUIImageView!
