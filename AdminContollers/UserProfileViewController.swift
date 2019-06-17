@@ -44,7 +44,7 @@ class UserProfileViewController: UIViewController {
         super.viewDidAppear(animated)
         if let currentUser = username {
 
-            db.collection("users").whereField("username", isEqualTo: username!)
+            db.collection("users").whereField("username", isEqualTo: currentUser)
                 .getDocuments() { (querySnapshot, err) in
                     
                     if let data = querySnapshot?.documents[0].data() {
