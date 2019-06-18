@@ -24,6 +24,7 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var SpecialityLable: UILabel!
     @IBOutlet weak var Language: UILabel!
     @IBOutlet weak var isAvtive: UISwitch!
+    @IBOutlet weak var backImage: UIImageView!
     
     var username: String?
     var db: Firestore!
@@ -54,14 +55,11 @@ class UserProfileViewController: UIViewController {
                             self.CallsLable.text = "Requests count"
                             self.SpecialityLable.text = "Issue"
                             
-                        } else if self.userType == "doctor" {
-                            self.SaveEditButton.title = "edit"
-                            
                         }
                         
                         self.username = data["username"] as? String
                         self.UserName.text = data["name"] as? String
-                        self.isAvtive.isOn = (data["name"] as? Bool)!
+                        self.isAvtive.isOn = (data["isActive"] as? Bool)!
 
                         if let location = data["location"] as? String {
                             self.Location.text = location
@@ -107,6 +105,7 @@ class UserProfileViewController: UIViewController {
                                 DispatchQueue.main.async() {
                                     print("image download finished")
                                     self.UserImage.image = image
+                                    self.backImage.image = image
                                 }
                                 }.resume()
                         }
@@ -116,47 +115,31 @@ class UserProfileViewController: UIViewController {
             
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "edit" {
-            let nav = segue.destination as? UINavigationController
-            let view = nav?.viewControllers.first as? UserEditProfileTableViewController
-            view?.doctorName = self.username
-        }
-    }
-    func segueWith(user: String) {
-        username = user
-        
-        SaveEditClicked(self)
-    }
     
     
     
     
-    
-    @IBAction func SaveEditClicked(_ sender: Any) {
+    @IBAction func SaveEditClicked(_ sender: UIBarButtonItem) {
         if self.userType == "doctor" {
-            performSegue(withIdentifier: "edit", sender: sender)
-        } else{
+        }
+        let user = db.collection("users").document(self.username!)
         
-            performSegue(withIdentifier: "save", sender: sender)
-            
-            let docData: [String: Any] = [
-                "isActive": self.isAvtive.isOn,
-            ]
-            
-            self.db
-                .collection("users")
-                .document(self.username!)
-                .setData(docData, merge: true)
-                { err in
-                    if let err = err {
-                        print("Error updating document: \(err)")
-                    } else {
-                        print("user info successfully updated!")
-                    }
+        // Set the "capital" field of the city 'DC'
+        user.updateData([
+            "isActive": self.isAvtive.isOn
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
             }
         }
-    }
+        print("edit")
+            
+        performSegue(withIdentifier: "save", sender: UIBarButtonItem.self)
+        }
+    
+    
     
 
     /*

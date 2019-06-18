@@ -81,7 +81,6 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         self.UsersTable.reloadData()
         
         if (sender.selectedSegmentIndex == 1) {
-            print("help")
             loadUsers(userType: "help-seeker", searchText: nil)
         } else if (sender.selectedSegmentIndex == 2) {
             loadUsers(userType: "volunteer", searchText: nil)
@@ -171,14 +170,14 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UserProfile" {
-            let nav = segue.destination as? UINavigationController
-            let view = nav?.viewControllers.first as? UserProfileViewController
-            view?.username = self.selectedUser
-            print(self.selectedUser!)
-            view?.userType = self.userType
+            if segue.destination is UserProfileViewController
+            {
+                let view = segue.destination as? UserProfileViewController
+                view?.username = self.selectedUser
+                view?.userType = self.userType
+            }
         }
     }
-    
     
     
     

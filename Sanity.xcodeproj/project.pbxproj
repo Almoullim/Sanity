@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */; };
+		2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */; };
 		20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */; };
 		20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */; };
 		20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */; };
 		20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */; };
 		20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */; };
-		20ED1B5622B4D6B400FD27A0 /* UserEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */; };
 		20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5722B4FE6F00FD27A0 /* Question.swift */; };
 		2FC1EB9D86D2D7C1A77F120F /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */; };
 		404EC3E422AC55EC0044856F /* EditArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */; };
@@ -56,12 +56,12 @@
 
 /* Begin PBXFileReference section */
 		2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecoredTableViewCell.swift; sourceTree = "<group>"; };
+		2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		20ED1B5722B4FE6F00FD27A0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditArticlesViewController.swift; sourceTree = "<group>"; };
 		4074CAD722AAE57500D1412F /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 				20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */,
 				20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */,
 				20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */,
-				20ED1B5522B4D6B400FD27A0 /* UserEditProfileTableViewController.swift */,
 				2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */,
+				2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */,
 			);
 			path = AdminContollers;
 			sourceTree = "<group>";
@@ -421,7 +421,6 @@
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
 				41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
-				20ED1B5622B4D6B400FD27A0 /* UserEditProfileTableViewController.swift in Sources */,
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
 				41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */,
@@ -437,6 +436,7 @@
 				20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */,
 				4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */,
 				4074CAD822AAE57500D1412F /* SessionsViewController.swift in Sources */,
+				2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */,
 				412E23F5229D3EED00065303 /* HelpSeekerEditProfileViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
