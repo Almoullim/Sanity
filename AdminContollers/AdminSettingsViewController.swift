@@ -14,7 +14,6 @@ class AdminSettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -25,11 +24,13 @@ class AdminSettingsViewController: UITableViewController {
         
         switch indexPath {
         case [1, 0]:
-            self.performSegue(withIdentifier: "EditProfile", sender: nil)
+            print("")
+           // self.performSegue(withIdentifier: "EditProfile", sender: nil)
         case [1,1]:
             logout()
         case [0, 0]:
-            self.performSegue(withIdentifier: "EditArticles", sender: nil)
+            print("")
+            //self.performSegue(withIdentifier: "EditArticles", sender: nil)
         default:
             print("Wrong selection")
         }
@@ -37,6 +38,6 @@ class AdminSettingsViewController: UITableViewController {
     
     func logout() {
         try? Auth.auth().signOut()
-        self.performSegue(withIdentifier: "LoginView", sender: nil)
+       // self.performSegue(withIdentifier: "LoginView", sender: nil)
     }
 }
