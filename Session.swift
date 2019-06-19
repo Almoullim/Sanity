@@ -75,6 +75,8 @@ class Appointment {
     var helpSeekerName: String
     var helpSeekerMobile: String
     var helperUserName: String
+    var isAproved: Bool
+    var isDone: Bool
     var date: String
     var time: String
     var createAt: String
@@ -93,6 +95,8 @@ class Appointment {
         date = ""
         time = ""
         createAt = ""
+        isAproved = false
+        isDone = false
     }
     
     convenience init?(appointmentID: String, helpSeekerUserName: String, helperUserName: String, date: String, time: String, createAt: String){
@@ -103,6 +107,8 @@ class Appointment {
         self.date = date
         self.time = time
         self.createAt = createAt
+        self.isAproved = false
+        self.isDone = false
     }
     
     convenience init?(appointmentID: String, helpSeekerUserName: String, helpSeekerName: String, helpSeekerMobile: String, helperUserName: String, createdAt: String){
@@ -113,5 +119,7 @@ class Appointment {
         self.helpSeekerMobile = helpSeekerMobile
         self.helperUserName = helperUserName
         self.createAt = createAt
+        self.isAproved = false
+        self.isDone = false
     }
 }
