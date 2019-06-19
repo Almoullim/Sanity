@@ -33,19 +33,19 @@
             </objects>
             <point key="canvasLocation" x="-125" y="60"/>
         </scene>
-        <!--Volunteers-->
+        <!--Appointments-->
         <scene sceneID="vvy-wS-Pyl">
             <objects>
-                <viewController id="SXU-WW-enD" customClass="SessionsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SXU-WW-enD" customClass="AppointmentsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Grc-tB-EJW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-Mg-Hzr">
-                                <rect key="frame" x="0.0" y="132" width="414" height="555"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VolunteerCell" id="pIL-sE-Rw2" customClass="UserCell" customModule="Sanity" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VolunteerCell" id="pIL-sE-Rw2" customClass="UserCell" customModule="Sanity" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pIL-sE-Rw2" id="e7j-LO-flj">
@@ -113,41 +113,31 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-uo-Hgb">
-                                <rect key="frame" x="149.66666666666666" y="84" width="114.99999999999997" height="29"/>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title="For Me"/>
-                                </segments>
-                                <color key="tintColor" name="MainColor"/>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QcZ-Ts-lNo" firstAttribute="bottom" secondItem="zq0-Mg-Hzr" secondAttribute="bottom" id="28b-c0-yEh"/>
                             <constraint firstItem="zq0-Mg-Hzr" firstAttribute="leading" secondItem="QcZ-Ts-lNo" secondAttribute="leading" id="7B1-ds-Y4W"/>
-                            <constraint firstItem="2nI-uo-Hgb" firstAttribute="centerX" secondItem="Grc-tB-EJW" secondAttribute="centerX" id="7H5-1U-tOX"/>
-                            <constraint firstItem="2nI-uo-Hgb" firstAttribute="top" secondItem="QcZ-Ts-lNo" secondAttribute="top" constant="20" id="NCm-Lc-rqt"/>
-                            <constraint firstItem="zq0-Mg-Hzr" firstAttribute="top" secondItem="2nI-uo-Hgb" secondAttribute="bottom" constant="20" id="RX4-CL-huA"/>
                             <constraint firstItem="QcZ-Ts-lNo" firstAttribute="trailing" secondItem="zq0-Mg-Hzr" secondAttribute="trailing" id="jkE-0E-Apg"/>
+                            <constraint firstItem="zq0-Mg-Hzr" firstAttribute="top" secondItem="QcZ-Ts-lNo" secondAttribute="top" id="tzW-ib-620"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QcZ-Ts-lNo"/>
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Volunteers" image="for_you" id="DYf-rI-QaC"/>
-                    <navigationItem key="navigationItem" title="Volunteers" id="bam-H7-pCy"/>
+                    <navigationItem key="navigationItem" title="Appointments" id="bam-H7-pCy"/>
                     <connections>
-                        <outlet property="VolunteersTable" destination="zq0-Mg-Hzr" id="JQA-ys-3nM"/>
+                        <outlet property="appointmentsTable" destination="zq0-Mg-Hzr" id="JQA-ys-3nM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rg-9x-mcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1835" y="60"/>
         </scene>
-        <!--Sessions-->
+        <!--Appointments-->
         <scene sceneID="gVe-U6-b5n">
             <objects>
                 <navigationController id="zq9-Hu-dZC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sessions" image="for_you" id="u4P-Uv-mvI"/>
+                    <tabBarItem key="tabBarItem" title="Appointments" image="for_you" id="u4P-Uv-mvI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Yv0-oQ-51V">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -759,13 +749,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="speciality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bM-nd-90t">
-                                                    <rect key="frame" x="20" y="11.333333333333336" width="72.333333333333329" height="21"/>
+                                                    <rect key="frame" x="20" y="11.333333333333336" width="72.666666666666671" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. Depression / Anxity" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwb-n0-1T2">
-                                                    <rect key="frame" x="144" y="11.333333333333336" width="250" height="21"/>
+                                                    <rect key="frame" x="330" y="11.333333333333336" width="250" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="W7I-gI-RAz"/>
                                                     </constraints>
@@ -796,7 +786,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. English / Arabic" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odN-qB-Gsp">
-                                                    <rect key="frame" x="144" y="11.333333333333336" width="250" height="21"/>
+                                                    <rect key="frame" x="330" y="11.333333333333336" width="250" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="IlA-yV-CPI"/>
                                                     </constraints>
@@ -827,7 +817,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. Bahrain / Kuwait" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivn-eX-XS1">
-                                                    <rect key="frame" x="144" y="11.333333333333336" width="250" height="21"/>
+                                                    <rect key="frame" x="330" y="11.333333333333336" width="250" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="Abp-mW-d02"/>
                                                     </constraints>
