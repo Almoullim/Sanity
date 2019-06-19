@@ -12,12 +12,14 @@ import Firebase
 func timeSince(timestamp: Timestamp) -> String {
     // Construct days since
     let seconds = Int64(Date().timeIntervalSince1970) - timestamp.seconds
+    let hours = (seconds / 3600)
     let days = (seconds / 86400)
     let months = days / 30
     let years = days / 365
     var timeSince = ""
-    
-    if days < 30 {
+    if hours < 24 {
+        timeSince = String(hours) + (days > 1 ? " hours" : " hour")
+    }else if days < 31 {
         timeSince = String(days) + (days > 1 ? " days" : " day")
     } else if months < 12 {
         timeSince = String(months) + (months > 1 ? " months" : " month")
@@ -26,4 +28,25 @@ func timeSince(timestamp: Timestamp) -> String {
     }
     
     return timeSince
+}
+
+func duration(duration: String) -> String {
+    let durationInt = Int(duration)
+    let seconds = durationInt
+    let hours = (seconds! / 3600)
+    let days = (seconds! / 86400)
+    let months = days / 30
+    let years = days / 365
+    var durationString = ""
+    if hours < 24 {
+        durationString = String(hours) + (days > 1 ? " hours" : " hour")
+    }else if days < 31 {
+        durationString = String(days) + (days > 1 ? " days" : " day")
+    } else if months < 12 {
+        durationString = String(months) + (months > 1 ? " months" : " month")
+    } else {
+        durationString = String(years) + (years > 1 ? " years" : " year")
+    }
+    
+    return durationString
 }

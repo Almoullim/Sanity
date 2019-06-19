@@ -14,18 +14,16 @@ class AdminSessionViewController: UIViewController {
     @IBOutlet weak var FirstUserImage: DesignableUIImageView!
     @IBOutlet weak var FirstUserName: DesignableUILabel!
     @IBOutlet weak var FirstUserUserType: DesignableUILabel!
+    @IBOutlet weak var FirstUserReview: UILabel!
     @IBOutlet weak var SessionTime: UILabel!
     @IBOutlet weak var SessionDuration: UILabel!
-    @IBOutlet weak var FirstUserReview: UITextField!
-    @IBOutlet var FirstUserRating: [UIImageView]!
     @IBOutlet weak var SecoundUserImage: DesignableUIImageView!
     @IBOutlet weak var SecoundUserName: DesignableUILabel!
     @IBOutlet weak var SecoundUserUserType: DesignableUILabel!
-    @IBOutlet weak var SecoundUserReview: UITextField!
-    @IBOutlet var SecoundUserRating: [UIImageView]!
-    var firstUserRating:Int?
-    var secoundUserRating:Int?
-
+    @IBOutlet weak var SecoundUserReview: UILabel!
+    @IBOutlet weak var FirstUserRating: UILabel!
+    @IBOutlet weak var SecondUserRatingLabel: UILabel!
+    
     var sessionID: String?
     var db: Firestore!
     var storage: Storage!
@@ -63,15 +61,21 @@ class AdminSessionViewController: UIViewController {
 
             self.FirstUserName.text = document.data()["helpSeekerUserName"] as? String
             self.FirstUserReview.text = document.data()["helpSeekerReview"] as? String
+            if let firstUserRating = document.data()["helpSeekerRating"] as? Int {
+                self.FirstUserRating.text = String(firstUserRating)
+            }
             self.SecoundUserName.text = document.data()["helperUserName"] as? String
             self.SecoundUserReview.text = document.data()["helperReview"] as? String
+            if let secondUserRating = document.data()["helperRating"] as? Int {
+                self.SecondUserRatingLabel.text = String(secondUserRating)
+            }
             self.FirstUserUserType.text = "help seeker"
             self.SecoundUserUserType.text = "volnteer"
-            if let timestamp = document.data()["daysSince"] as? Timestamp {
-                self.SessionTime.text = "Since " + timeSince(timestamp: timestamp)
+            if let sinceTimestamp = document.data()["daysSince"] as? Timestamp {
+                self.SessionTime.text = "Since " + timeSince(timestamp: sinceTimestamp)
             }
-            if let duration = document.data()["duration"] as? String {
-                self.SessionDuration.text = duration
+            if let durationTimestamp = document.data()["duration"] as? String {
+                self.SessionDuration.text = duration(duration: durationTimestamp)
             }
             print("before image")
             
