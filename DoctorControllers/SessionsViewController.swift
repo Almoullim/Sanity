@@ -110,7 +110,7 @@ class SessionsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             
             
-            self.Sessions.append(Session(username: username, name: name, daysSince: daysSince, mobile: mobile)!)
+   //         self.Sessions.append(Session(username: username, name: name, daysSince: daysSince, mobile: mobile)!)
         }
         
         VolunteersTable.reloadData()
@@ -120,19 +120,19 @@ class SessionsViewController: UIViewController, UITableViewDataSource, UITableVi
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? UserCell
         
-        cell?.userFullName.text = self.Sessions[indexPath.row].name
-        cell?.userInfo.text = self.Sessions[indexPath.row].getDaysSince
-        cell?.username = self.Sessions[indexPath.row].username
-        cell?.delegate = self
-        cell?.mobile = self.Sessions[indexPath.row].mobile
+  //      cell?.userFullName.text = self.Sessions[indexPath.row].name
+     //   cell?.userInfo.text = self.Sessions[indexPath.row].getDaysSince
+      //  cell?.username = self.Sessions[indexPath.row].username
+       cell?.delegate = self
+     //   cell?.mobile = self.Sessions[indexPath.row].mobile
         
-        let storageRef = self.storage.reference()
-        let imgRef = storageRef.child("images/" + self.Sessions[indexPath.row].username + ".jpg")
+      //  let storageRef = self.storage.reference()
+      //  let imgRef = storageRef.child("images/" + self.Sessions[indexPath.row].username + ".jpg")
         
-        imgRef.downloadURL { (url, error) in
-            guard let downloadURL = url else { return }
-            cell?.userImage.downloaded(from: downloadURL)
-        }
+      //  imgRef.downloadURL { (url, error) in
+         //   guard let downloadURL = url else { return }
+          //  cell?.userImage.downloaded(from: downloadURL)
+     //   }
         
         return cell!
     }
@@ -141,7 +141,7 @@ class SessionsViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "Request" {
             let nav = segue.destination as? UINavigationController
             let view = nav?.viewControllers.first as? RequestViewController
-            view?.requestedUser = self.selectedVolunteer
+          //  view?.requestedUser = self.selectedVolunteer
             view?.requestType = "volunteer"
         }
     }

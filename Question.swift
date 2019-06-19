@@ -10,15 +10,21 @@ import Foundation
 
 struct Question {
     var text: String
-    var type: ResponseType
+    var usertype: Usertype
     var answers: [Answer]
 }
-
+enum Usertype {
+    case helpSeeker, Volunteer
+}
 enum ResponseType {
     case single, multiple, ranged
 }
 
 struct Answer {
     var text: String
-    var type: String
+    var type: Rate
+}
+
+enum Rate {
+    case veryGood,good,bad,VeryBad
 }

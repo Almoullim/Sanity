@@ -21,7 +21,6 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     var datePickerIsHidden = true
     @IBOutlet weak var Location: UITextField!
     @IBOutlet weak var Language: UITextField!
-    @IBOutlet weak var Password: UITextField!
     
     
     // cases

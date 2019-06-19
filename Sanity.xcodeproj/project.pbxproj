@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */; };
 		2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */; };
+		20CD016B22B90035002623AB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016A22B90035002623AB /* QuestionsViewController.swift */; };
+		20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */; };
+		20CD016F22B97BCB002623AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016E22B97BCB002623AB /* Session.swift */; };
+		20CD017122B99652002623AB /* AdminSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD017022B99652002623AB /* AdminSessionViewController.swift */; };
+		20CD017322B9B1CB002623AB /* AdminAppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */; };
 		20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */; };
 		20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */; };
 		20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */; };
@@ -57,6 +62,11 @@
 /* Begin PBXFileReference section */
 		2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecoredTableViewCell.swift; sourceTree = "<group>"; };
 		2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
+		20CD016A22B90035002623AB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionTableViewController.swift; sourceTree = "<group>"; };
+		20CD016E22B97BCB002623AB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		20CD017022B99652002623AB /* AdminSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionViewController.swift; sourceTree = "<group>"; };
+		20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppointmentsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +146,9 @@
 				20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */,
 				2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */,
 				2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */,
+				20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */,
+				20CD017022B99652002623AB /* AdminSessionViewController.swift */,
+				20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */,
 			);
 			path = AdminContollers;
 			sourceTree = "<group>";
@@ -159,6 +172,7 @@
 				41A84D3D22A77C950025A1DB /* Article.swift */,
 				41A84D3F22A77D810025A1DB /* ReadingCell.swift */,
 				20ED1B5722B4FE6F00FD27A0 /* Question.swift */,
+				20CD016E22B97BCB002623AB /* Session.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 				414AF68A224FA2B300EA9B93 /* RegisterViewController.swift */,
 				414AF686224F9A0F00EA9B93 /* LoginViewController.swift */,
 				41074AF4229A246F00D6E58C /* AfterLoadViewController.swift */,
+				20CD016A22B90035002623AB /* QuestionsViewController.swift */,
 			);
 			path = HomeControllers;
 			sourceTree = "<group>";
@@ -428,6 +443,7 @@
 				40B8764A22AAF6CA006DE401 /* DoctorEditProfileViewController.swift in Sources */,
 				404EC3E422AC55EC0044856F /* EditArticlesViewController.swift in Sources */,
 				2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */,
+				20CD016B22B90035002623AB /* QuestionsViewController.swift in Sources */,
 				41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */,
 				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
 				41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */,
@@ -443,8 +459,12 @@
 				41A84D3E22A77C950025A1DB /* Article.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */,
+				20CD016F22B97BCB002623AB /* Session.swift in Sources */,
+				20CD017122B99652002623AB /* AdminSessionViewController.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,
 				20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */,
+				20CD017322B9B1CB002623AB /* AdminAppointmentsViewController.swift in Sources */,
+				20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
 				41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */,
 				414AF693224FDDC200EA9B93 /* UserTypeViewController.swift in Sources */,
