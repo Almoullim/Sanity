@@ -107,30 +107,41 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func loadHelpSeekers(requestedUser: String, searchText: String?) {
-        var query = db.collection("requests").whereField("requestType", isEqualTo: "volunteer")
+        let collection = db.collection("requests")
+        var query: Query? = nil
         
         if requestedUser != "all" {
-            query = query.whereField("requestedUser", isEqualTo: username!)
+            query = collection.whereField("helperUserName", isEqualTo: username!)
         }
         
         if searchText != nil {
-            query = query.order(by: "name").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
+            if query == nil {
+                query = collection.order(by: "helpSeekerName").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
+            } else {
+                query = query?.order(by: "helpSeekerName").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
+            }
         }
         
-        query.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.addHelpSeekers(querySnapshot!.documents)
-            }
+        if query != nil {
+            query?.getDocuments(completion: handleDocuments)
+        } else {
+            collection.getDocuments(completion: handleDocuments)
+        }
+    }
+    
+    func handleDocuments(querySnapshot: QuerySnapshot?, err: Error?) {
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.addHelpSeekers(querySnapshot!.documents)
         }
     }
     
     func addHelpSeekers(_ documents: [QueryDocumentSnapshot]) {
         for document in documents {
-            let name = document.data()["name"] as! String
-            let username = document.data()["username"] as! String
-            let mobile = document.data()["mobile"] as! String
+            let name = document.data()["helpSeekerName"] as! String
+            let username = document.data()["helpSeekerUserName"] as! String
+            let mobile = document.data()["helpSeekerMobile"] as! String
             var daysSince: String = ""
             // Get the time stamp from the document
             if let timestamp = document.data()["created_at"] as? Timestamp {
