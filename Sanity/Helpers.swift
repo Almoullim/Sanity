@@ -18,13 +18,13 @@ func timeSince(timestamp: Timestamp) -> String {
     let years = days / 365
     var timeSince = ""
     if hours < 24 {
-        timeSince = String(hours) + (days > 1 ? " hours" : " hour")
+        timeSince = String(hours) + (days > 1 ? " " + NSLocalizedString("hours", comment: "") : " " + NSLocalizedString("hour", comment: ""))
     }else if days < 31 {
-        timeSince = String(days) + (days > 1 ? " days" : " day")
+        timeSince = String(days) + (days > 1 ? " " + NSLocalizedString("day", comment: "") : " " + NSLocalizedString("days", comment: ""))
     } else if months < 12 {
-        timeSince = String(months) + (months > 1 ? " months" : " month")
+        timeSince = String(months) + (months > 1 ? " " + NSLocalizedString("months", comment: "") : " " + NSLocalizedString("month", comment: ""))
     } else {
-        timeSince = String(years) + (years > 1 ? " years" : " year")
+        timeSince = String(years) + (years > 1 ? " " + NSLocalizedString("year", comment: "") : " " + NSLocalizedString("years", comment: ""))
     }
     
     return timeSince
@@ -39,13 +39,13 @@ func duration(duration: String) -> String {
     let years = days / 365
     var durationString = ""
     if hours < 24 {
-        durationString = String(hours) + (days > 1 ? " hours" : " hour")
+        durationString = String(hours) + (days > 1 ? " " + NSLocalizedString("hours", comment: "") : " " + NSLocalizedString("hour", comment: ""))
     }else if days < 31 {
-        durationString = String(days) + (days > 1 ? " days" : " day")
+        durationString = String(days) + (days > 1 ? " " + NSLocalizedString("day", comment: "") : " " + NSLocalizedString("days", comment: ""))
     } else if months < 12 {
-        durationString = String(months) + (months > 1 ? " months" : " month")
+        durationString = String(months) + (months > 1 ? " " + NSLocalizedString("months", comment: "") : " " + NSLocalizedString("month", comment: ""))
     } else {
-        durationString = String(years) + (years > 1 ? " years" : " year")
+        durationString = String(years) + (years > 1 ? " " + NSLocalizedString("year", comment: "") : " " + NSLocalizedString("years", comment: ""))
     }
     
     return durationString

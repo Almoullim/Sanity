@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -142,56 +143,64 @@
         <scene sceneID="vIp-px-xP5">
             <objects>
                 <tableViewController id="x9j-Gg-JCh" customClass="ReadingsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AUJ-Ip-Se5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AUJ-Ip-Se5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReadingCell" rowHeight="72" id="FVQ-b7-QXi" customClass="ReadingCell" customModule="Sanity" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReadingCell" rowHeight="72" id="FVQ-b7-QXi" customClass="ReadingCell" customModule="Sanity" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVQ-b7-QXi" id="PZ8-Ri-a1r">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVQ-b7-QXi" id="PZ8-Ri-a1r">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What you need to know about stress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9G-kr-JU4">
-                                            <rect key="frame" x="40" y="16" width="324" height="20.666666666666671"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" name="MainColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stress / Anxity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4L-GG-bXG" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
-                                            <rect key="frame" x="40" y="38.666666666666664" width="324" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="0.0"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="0.0"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-3f-S7y">
+                                            <rect key="frame" x="20" y="11" width="374" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="12r-gN-gxm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What you need to know about stress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9G-kr-JU4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="MainColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stress / Anxity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4L-GG-bXG" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="29" width="374" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="uor-Dx-WzK">
                                             <rect key="frame" x="364" y="21" width="30" height="30"/>
                                             <color key="tintColor" name="MainColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="UWj-DV-ozE"/>
-                                                <constraint firstAttribute="height" constant="30" id="kx9-Yl-U2U"/>
+                                                <constraint firstAttribute="width" constant="30" id="2Od-6r-kaJ"/>
+                                                <constraint firstAttribute="height" constant="30" id="p0f-sS-ooF"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="G4L-GG-bXG" firstAttribute="top" secondItem="d9G-kr-JU4" secondAttribute="bottom" constant="2" id="VNE-IU-O9Z"/>
-                                        <constraint firstItem="uor-Dx-WzK" firstAttribute="centerY" secondItem="PZ8-Ri-a1r" secondAttribute="centerY" id="Vxb-HE-YX9"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="G4L-GG-bXG" secondAttribute="trailing" constant="30" id="g3a-S5-QdD"/>
-                                        <constraint firstItem="G4L-GG-bXG" firstAttribute="leading" secondItem="PZ8-Ri-a1r" secondAttribute="leadingMargin" constant="20" id="jBi-pn-TCq"/>
-                                        <constraint firstAttribute="trailing" secondItem="uor-Dx-WzK" secondAttribute="trailing" constant="20" id="qeJ-Mo-VEM"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="d9G-kr-JU4" secondAttribute="trailing" constant="30" id="ruO-es-mjJ"/>
-                                        <constraint firstItem="d9G-kr-JU4" firstAttribute="top" secondItem="PZ8-Ri-a1r" secondAttribute="topMargin" constant="5" id="rvD-Nu-BaT"/>
-                                        <constraint firstItem="d9G-kr-JU4" firstAttribute="leading" secondItem="PZ8-Ri-a1r" secondAttribute="leadingMargin" constant="20" id="wPi-7R-22o"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rqT-3f-S7y" secondAttribute="trailing" id="JFM-5U-Hy7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uor-Dx-WzK" secondAttribute="trailing" id="Klm-zS-Scx"/>
+                                        <constraint firstItem="rqT-3f-S7y" firstAttribute="top" secondItem="PZ8-Ri-a1r" secondAttribute="topMargin" id="Ob0-Jz-aSX"/>
+                                        <constraint firstItem="uor-Dx-WzK" firstAttribute="centerY" secondItem="PZ8-Ri-a1r" secondAttribute="centerY" id="pco-wH-xRb"/>
+                                        <constraint firstItem="rqT-3f-S7y" firstAttribute="leading" secondItem="PZ8-Ri-a1r" secondAttribute="leadingMargin" id="tNv-rp-TlU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rqT-3f-S7y" secondAttribute="bottom" id="v9e-IC-gpt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

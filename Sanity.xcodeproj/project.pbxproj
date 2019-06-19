@@ -53,6 +53,7 @@
 		41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0F22A75DA700A731AF /* RequestsViewController.swift */; };
 		41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */; };
 		41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */; };
+		41C71E6922BA96D800C943AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41C71E6B22BA96D800C943AB /* Localizable.strings */; };
 		41F459E722BA80A5002C1ADB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F459E622BA80A5002C1ADB /* Request.swift */; };
 		41F459E822BA8980002C1ADB /* HelpSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F459EA22BA8980002C1ADB /* HelpSeeker.storyboard */; };
 		41F459EB22BA8987002C1ADB /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F459ED22BA8987002C1ADB /* Doctor.storyboard */; };
@@ -114,6 +115,7 @@
 		41C71E6322BA8EC400C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Admin.strings; sourceTree = "<group>"; };
 		41C71E6422BA8EC500C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Volunteer.strings; sourceTree = "<group>"; };
 		41C71E6522BA8EC600C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		41C71E6A22BA96D800C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41F459E622BA80A5002C1ADB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		41F459E922BA8980002C1ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HelpSeeker.storyboard; sourceTree = "<group>"; };
 		41F459EC22BA8987002C1ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Doctor.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				41AF80A2224EA67A0007F98F /* LaunchScreen.storyboard */,
 				41AF80A5224EA67A0007F98F /* Info.plist */,
 				41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */,
+				41C71E6B22BA96D800C943AB /* Localizable.strings */,
 			);
 			path = Sanity;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */,
 				41926C71225136E20078F9FD /* ErrorCodes in Resources */,
 				41F459F122BA899E002C1ADB /* Volunteer.storyboard in Resources */,
+				41C71E6922BA96D800C943AB /* Localizable.strings in Resources */,
 				41F459EB22BA8987002C1ADB /* Doctor.storyboard in Resources */,
 				41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */,
 				41AF809F224EA6780007F98F /* Main.storyboard in Resources */,
@@ -502,6 +506,14 @@
 				41C71E6522BA8EC600C943AB /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		41C71E6B22BA96D800C943AB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41C71E6A22BA96D800C943AB /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		41F459EA22BA8980002C1ADB /* HelpSeeker.storyboard */ = {

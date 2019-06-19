@@ -146,7 +146,7 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
             // Get the time stamp from the document
             if let timestamp = document.data()["created_at"] as? Timestamp {
                 // Construct days since
-                daysSince = timeSince(timestamp: timestamp) + " ago"
+                daysSince = timeSince(timestamp: timestamp) + " " + NSLocalizedString("ago", comment: "")
             }
             
             let request = Request(helpSeekerUserName: username, helpSeekerName: name, helpSeekerMobile: mobile, createdAt: daysSince)

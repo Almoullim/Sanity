@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Sanity
+
+  Created by Ali on 6/19/19.
+  Copyright © 2019 Almoullim. All rights reserved.
+*/
+
+"Requested" = "طلبت قبل";
+"Member Since" = "عضو منذ";
+
+"hour" = "ساعة";
+"hours" = "ساعات";
+"day" = "يوم";
+"days" = "ايام";
+"month" = "شهر";
+"months" = "اشهر";
+"year" = "سنة";
+"years" = "سنوات";
+"ago" = "";

@@ -17,7 +17,7 @@ class Request {
     var createdAt: String
     var getDaysSince: String {
         get {
-            return "Requested " + self.createdAt
+            return NSLocalizedString("Requested", comment: "") + " " + self.createdAt
         }
     }
 

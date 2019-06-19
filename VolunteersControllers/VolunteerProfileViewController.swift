@@ -50,7 +50,7 @@ class VolunteerProfileViewController: UIViewController {
                         }
                         
                         if let timestamp = data["created_at"] as? Timestamp {
-                            self.userInfo.text = "Member since " + timeSince(timestamp: timestamp)
+                            self.userInfo.text = NSLocalizedString("Member Since", comment: "") + " " + timeSince(timestamp: timestamp)
                         }
                         
                         if let date = data["dob"] as? Timestamp {
