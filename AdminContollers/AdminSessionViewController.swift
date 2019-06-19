@@ -42,37 +42,36 @@ class AdminSessionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let currentSession = sessionID {
-            print(currentSession)
-            let docRef = db.collection("sessions").document(currentSession)
-            print("get")
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                    print("Document data: \(dataDescription)")
-                    self.getSession(document)
-                } else {
-                    print("Document does not exist")
+            let query = db.collection("sessions").whereField("sessionID", isEqualTo: currentSession)
+            
+            
+                query.getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        self.getSession(querySnapshot!.documents)
+                    }
                 }
-            }
+            
             
         }
         
     }
     
-    func getSession(_ document: DocumentSnapshot) {
-        if let data = document.data() {
-            
-            self.FirstUserName.text = data["helpSeekerUserName"] as? String
-            self.FirstUserReview.text = data["helpSeekerReview"] as? String
-            self.SecoundUserName.text = data["helperUserName"] as? String
-            self.SecoundUserReview.text = data["helperReview"] as? String
+    func getSession(_ documents: [QueryDocumentSnapshot]) {
+        for document in documents {
+
+            self.FirstUserName.text = document.data()["helpSeekerUserName"] as? String
+            self.FirstUserReview.text = document.data()["helpSeekerReview"] as? String
+            self.SecoundUserName.text = document.data()["helperUserName"] as? String
+            self.SecoundUserReview.text = document.data()["helperReview"] as? String
             self.FirstUserUserType.text = "help seeker"
             self.SecoundUserUserType.text = "volnteer"
-            if let timestamp = data["daysSince"] as? Timestamp {
+            if let timestamp = document.data()["daysSince"] as? Timestamp {
                 self.SessionTime.text = "Since " + timeSince(timestamp: timestamp)
             }
-            if let duration = data["duration"] as? String {
-                self.SessionTime.text = duration
+            if let duration = document.data()["duration"] as? String {
+                self.SessionDuration.text = duration
             }
             print("before image")
             
@@ -106,6 +105,7 @@ class AdminSessionViewController: UIViewController {
             }
         }
     }
+    
     }
     
 
