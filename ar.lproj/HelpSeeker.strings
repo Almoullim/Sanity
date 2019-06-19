@@ -1,0 +1,192 @@
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "0B4-ph-dUq"; */
+"0B4-ph-dUq.text" = "Date of Birth";
+
+/* Class = "UINavigationController"; title = "Settings"; ObjectID = "139-bV-hyM"; */
+"139-bV-hyM.title" = "Settings";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "3Ep-d4-lhf"; */
+"3Ep-d4-lhf.text" = "Mobile";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "3ON-O5-W7N"; */
+"3ON-O5-W7N.title" = "Settings";
+
+/* Class = "UISegmentedControl"; 7Bt-ZD-Ri9.segmentTitles[0] = "All"; ObjectID = "7Bt-ZD-Ri9"; */
+"7Bt-ZD-Ri9.segmentTitles[0]" = "All";
+
+/* Class = "UISegmentedControl"; 7Bt-ZD-Ri9.segmentTitles[1] = "Male"; ObjectID = "7Bt-ZD-Ri9"; */
+"7Bt-ZD-Ri9.segmentTitles[1]" = "Male";
+
+/* Class = "UISegmentedControl"; 7Bt-ZD-Ri9.segmentTitles[2] = "Female"; ObjectID = "7Bt-ZD-Ri9"; */
+"7Bt-ZD-Ri9.segmentTitles[2]" = "Female";
+
+/* Class = "UIBarButtonItem"; title = "Send"; ObjectID = "7qn-6E-0HZ"; */
+"7qn-6E-0HZ.title" = "Send";
+
+/* Class = "UILabel"; text = " "; ObjectID = "7v7-Xe-pkV"; */
+"7v7-Xe-pkV.text" = " ";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "8LR-vQ-Fd5"; */
+"8LR-vQ-Fd5.text" = "Name";
+
+/* Class = "UILabel"; text = " "; ObjectID = "9bZ-Ff-51P"; */
+"9bZ-Ff-51P.text" = " ";
+
+/* Class = "UILabel"; text = "Member since 3 years - Bahrain"; ObjectID = "9jr-VY-PE9"; */
+"9jr-VY-PE9.text" = "Member since 3 years - Bahrain";
+
+/* Class = "UILabel"; text = "Requests count"; ObjectID = "BBF-Us-DSJ"; */
+"BBF-Us-DSJ.text" = "Requests count";
+
+/* Class = "UITextField"; placeholder = "e.g. Bahrain / Kuwait"; ObjectID = "Bg0-Js-7fI"; */
+"Bg0-Js-7fI.placeholder" = "e.g. Bahrain / Kuwait";
+
+/* Class = "UILabel"; text = "Edit Profile"; ObjectID = "Bn2-Aw-8aL"; */
+"Bn2-Aw-8aL.text" = "Edit Profile";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "CbS-30-RMH"; */
+"CbS-30-RMH.title" = "Profile";
+
+/* Class = "UITextField"; placeholder = "e.g. Depression / Anxity"; ObjectID = "D17-cy-24a"; */
+"D17-cy-24a.placeholder" = "e.g. Depression / Anxity";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "EQc-Rp-nte"; */
+"EQc-Rp-nte.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "FCA-TU-6Us"; */
+"FCA-TU-6Us.text" = "Mobile";
+
+/* Class = "UILabel"; text = "Issue"; ObjectID = "FeF-c5-8s2"; */
+"FeF-c5-8s2.text" = "Issue";
+
+/* Class = "UILabel"; text = "Issue"; ObjectID = "FoV-aX-Yqd"; */
+"FoV-aX-Yqd.text" = "Issue";
+
+/* Class = "UITextField"; placeholder = "e.g. +973 36224432"; ObjectID = "GDB-9V-eSR"; */
+"GDB-9V-eSR.placeholder" = "e.g. +973 36224432";
+
+/* Class = "UILabel"; text = " "; ObjectID = "GaK-Bm-JhH"; */
+"GaK-Bm-JhH.text" = " ";
+
+/* Class = "UISegmentedControl"; HV0-cz-W10.segmentTitles[0] = "All"; ObjectID = "HV0-cz-W10"; */
+"HV0-cz-W10.segmentTitles[0]" = "All";
+
+/* Class = "UISegmentedControl"; HV0-cz-W10.segmentTitles[1] = "Male"; ObjectID = "HV0-cz-W10"; */
+"HV0-cz-W10.segmentTitles[1]" = "Male";
+
+/* Class = "UISegmentedControl"; HV0-cz-W10.segmentTitles[2] = "Female"; ObjectID = "HV0-cz-W10"; */
+"HV0-cz-W10.segmentTitles[2]" = "Female";
+
+/* Class = "UITextField"; placeholder = "First and last name"; ObjectID = "IDv-pN-b3A"; */
+"IDv-pN-b3A.placeholder" = "First and last name";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "JTS-YF-mid"; */
+"JTS-YF-mid.title" = "Settings";
+
+/* Class = "UITableViewSection"; footerTitle = "Writing a description will be very helpful for our volunteers to better help you but its not required"; ObjectID = "KN7-9u-qZ1"; */
+"KN7-9u-qZ1.footerTitle" = "Writing a description will be very helpful for our volunteers to better help you but its not required";
+
+/* Class = "UITableViewSection"; headerTitle = "Request Details"; ObjectID = "KN7-9u-qZ1"; */
+"KN7-9u-qZ1.headerTitle" = "Request Details";
+
+/* Class = "UINavigationItem"; title = "Add new request"; ObjectID = "KsH-Eq-teX"; */
+"KsH-Eq-teX.title" = "Add new request";
+
+/* Class = "UINavigationItem"; title = "Volunteers"; ObjectID = "LLP-9E-9in"; */
+"LLP-9E-9in.title" = "Volunteers";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "M7h-5e-Fl7"; */
+"M7h-5e-Fl7.text" = "  ";
+
+/* Class = "UINavigationItem"; title = "Doctors"; ObjectID = "MYj-Mg-u6a"; */
+"MYj-Mg-u6a.title" = "Doctors";
+
+/* Class = "UITextField"; placeholder = "e.g. +973 36224432"; ObjectID = "Mfm-yd-7t3"; */
+"Mfm-yd-7t3.placeholder" = "e.g. +973 36224432";
+
+/* Class = "UILabel"; text = "Short description (optional)"; ObjectID = "N3s-AJ-shB"; */
+"N3s-AJ-shB.text" = "Short description (optional)";
+
+/* Class = "UITableViewController"; title = "Edit Profile"; ObjectID = "NCz-C5-bDD"; */
+"NCz-C5-bDD.title" = "Edit Profile";
+
+/* Class = "UILabel"; text = " "; ObjectID = "NS1-EC-Zp0"; */
+"NS1-EC-Zp0.text" = " ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "Ns2-ja-bm1"; */
+"Ns2-ja-bm1.text" = "Language";
+
+/* Class = "UILabel"; text = "Ali Almoullim"; ObjectID = "PUF-rR-A0t"; */
+"PUF-rR-A0t.text" = "Ali Almoullim";
+
+/* Class = "UILabel"; text = "Ali Almoullim"; ObjectID = "QE9-kl-pjH"; */
+"QE9-kl-pjH.text" = "Ali Almoullim";
+
+/* Class = "UILabel"; text = "Pick a date"; ObjectID = "RpN-sl-ngM"; */
+"RpN-sl-ngM.text" = "Pick a date";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "TJK-yT-Qgw"; */
+"TJK-yT-Qgw.text" = "Logout";
+
+/* Class = "UITableViewSection"; headerTitle = "User Settings"; ObjectID = "TO4-9j-iGl"; */
+"TO4-9j-iGl.headerTitle" = "User Settings";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "UDz-km-L2h"; */
+"UDz-km-L2h.title" = "Volunteers";
+
+/* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "V8Q-In-hR8"; */
+"V8Q-In-hR8.title" = "Edit Profile";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "VKf-WU-ulP"; */
+"VKf-WU-ulP.title" = "Volunteers";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "Whu-i6-1as"; */
+"Whu-i6-1as.text" = "Location";
+
+/* Class = "UITabBarItem"; title = "Doctors"; ObjectID = "ZN9-Kk-yJu"; */
+"ZN9-Kk-yJu.title" = "Doctors";
+
+/* Class = "UITextField"; placeholder = "e.g. English / Arabic"; ObjectID = "aFV-rC-J62"; */
+"aFV-rC-J62.placeholder" = "e.g. English / Arabic";
+
+/* Class = "UITextField"; placeholder = "e.g. Depression / Anxity"; ObjectID = "bX4-Ll-joA"; */
+"bX4-Ll-joA.placeholder" = "e.g. Depression / Anxity";
+
+/* Class = "UILabel"; text = "Issue"; ObjectID = "dXc-9y-RwW"; */
+"dXc-9y-RwW.text" = "Issue";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "dyQ-kC-KCi"; */
+"dyQ-kC-KCi.text" = "Age";
+
+/* Class = "UINavigationItem"; title = "Tab"; ObjectID = "eLf-DS-yuk"; */
+"eLf-DS-yuk.title" = "Tab";
+
+/* Class = "UILabel"; text = " "; ObjectID = "fhU-Gi-bnp"; */
+"fhU-Gi-bnp.text" = " ";
+
+/* Class = "UILabel"; text = "Member since 3 years - Bahrain"; ObjectID = "jhq-A0-mlQ"; */
+"jhq-A0-mlQ.text" = "Member since 3 years - Bahrain";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "qvQ-qT-GUi"; */
+"qvQ-qT-GUi.text" = "Language";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "rAY-Od-sDc"; */
+"rAY-Od-sDc.title" = "Volunteers";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "skx-QV-mht"; */
+"skx-QV-mht.title" = "Profile";
+
+/* Class = "UITableViewSection"; footerTitle = "First and last name"; ObjectID = "w8H-vH-Yyd"; */
+"w8H-vH-Yyd.footerTitle" = "First and last name";
+
+/* Class = "UITableViewSection"; headerTitle = "Your information"; ObjectID = "w8H-vH-Yyd"; */
+"w8H-vH-Yyd.headerTitle" = "Your information";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "wn5-F7-uRF"; */
+"wn5-F7-uRF.text" = "  ";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "xAb-5D-yUh"; */
+"xAb-5D-yUh.placeholder" = "Search";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "y6o-V7-fZv"; */
+"y6o-V7-fZv.title" = "Volunteers";

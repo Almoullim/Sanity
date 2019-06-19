@@ -1,0 +1,138 @@
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "27V-IS-xgH"; */
+"27V-IS-xgH.text" = "Logout";
+
+/* Class = "UITextField"; placeholder = "e.g. +973 36224432"; ObjectID = "2MN-sk-OmH"; */
+"2MN-sk-OmH.placeholder" = "e.g. +973 36224432";
+
+/* Class = "UILabel"; text = "speciality"; ObjectID = "2bM-nd-90t"; */
+"2bM-nd-90t.text" = "speciality";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "3ab-gf-RpJ"; */
+"3ab-gf-RpJ.text" = "Location";
+
+/* Class = "UILabel"; text = " "; ObjectID = "4at-eB-NMn"; */
+"4at-eB-NMn.text" = " ";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "7bY-AX-6mV"; */
+"7bY-AX-6mV.text" = "Date of Birth";
+
+/* Class = "UILabel"; text = " "; ObjectID = "7fO-J7-hyu"; */
+"7fO-J7-hyu.text" = " ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "AJK-cl-A4d"; */
+"AJK-cl-A4d.text" = "Language";
+
+/* Class = "UILabel"; text = "Member since 3 years - Bahrain"; ObjectID = "AXs-ZT-FR8"; */
+"AXs-ZT-FR8.text" = "Member since 3 years - Bahrain";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "AZo-5o-dvJ"; */
+"AZo-5o-dvJ.text" = "Age";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "CCA-qA-QBh"; */
+"CCA-qA-QBh.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "DYf-rI-QaC"; */
+"DYf-rI-QaC.title" = "Volunteers";
+
+/* Class = "UILabel"; text = " "; ObjectID = "Dhs-t1-a0J"; */
+"Dhs-t1-a0J.text" = " ";
+
+/* Class = "UITextField"; placeholder = "e.g. Depression / Anxity"; ObjectID = "Gwb-n0-1T2"; */
+"Gwb-n0-1T2.placeholder" = "e.g. Depression / Anxity";
+
+/* Class = "UILabel"; text = "Ali Almoullim"; ObjectID = "Hd5-2o-0hs"; */
+"Hd5-2o-0hs.text" = "Ali Almoullim";
+
+/* Class = "UITableViewSection"; footerTitle = "First and last name"; ObjectID = "HdY-fv-ym8"; */
+"HdY-fv-ym8.footerTitle" = "First and last name";
+
+/* Class = "UITableViewSection"; headerTitle = "Your information"; ObjectID = "HdY-fv-ym8"; */
+"HdY-fv-ym8.headerTitle" = "Your information";
+
+/* Class = "UINavigationItem"; title = "Edit Articles"; ObjectID = "Hdn-gs-DmX"; */
+"Hdn-gs-DmX.title" = "Edit Articles";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "Mhr-sL-yHE"; */
+"Mhr-sL-yHE.title" = "Settings";
+
+/* Class = "UILabel"; text = "Edit Profile"; ObjectID = "Ouh-wq-cFg"; */
+"Ouh-wq-cFg.text" = "Edit Profile";
+
+/* Class = "UILabel"; text = " "; ObjectID = "P65-hT-3L4"; */
+"P65-hT-3L4.text" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "User Settings"; ObjectID = "RFv-E0-kbd"; */
+"RFv-E0-kbd.headerTitle" = "User Settings";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "SiS-Fv-Ffb"; */
+"SiS-Fv-Ffb.title" = "Volunteers";
+
+/* Class = "UILabel"; text = "Pick a date"; ObjectID = "T0q-S2-Yr7"; */
+"T0q-S2-Yr7.text" = "Pick a date";
+
+/* Class = "UINavigationController"; title = "Settings"; ObjectID = "TdC-6g-trs"; */
+"TdC-6g-trs.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "Tva-ib-viq"; */
+"Tva-ib-viq.title" = "Edit Profile";
+
+/* Class = "UILabel"; text = "speciality"; ObjectID = "UPR-KC-mA8"; */
+"UPR-KC-mA8.text" = "speciality";
+
+/* Class = "UINavigationItem"; title = "Appointments"; ObjectID = "bam-H7-pCy"; */
+"bam-H7-pCy.title" = "Appointments";
+
+/* Class = "UITableViewSection"; headerTitle = "User Settings"; ObjectID = "dm8-CF-4FL"; */
+"dm8-CF-4FL.headerTitle" = "User Settings";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "eG8-xi-nj5"; */
+"eG8-xi-nj5.text" = "  ";
+
+/* Class = "UITextField"; placeholder = "First and last name"; ObjectID = "eqr-dD-Eie"; */
+"eqr-dD-Eie.placeholder" = "First and last name";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "gP2-wT-0R4"; */
+"gP2-wT-0R4.title" = "Settings";
+
+/* Class = "UITextField"; placeholder = "e.g. Bahrain / Kuwait"; ObjectID = "ivn-eX-XS1"; */
+"ivn-eX-XS1.placeholder" = "e.g. Bahrain / Kuwait";
+
+/* Class = "UILabel"; text = " "; ObjectID = "kOH-fI-opz"; */
+"kOH-fI-opz.text" = " ";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "lFl-ID-g7L"; */
+"lFl-ID-g7L.title" = "Profile";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "lXJ-BD-cX2"; */
+"lXJ-BD-cX2.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "e.g. English / Arabic"; ObjectID = "odN-qB-Gsp"; */
+"odN-qB-Gsp.placeholder" = "e.g. English / Arabic";
+
+/* Class = "UILabel"; text = "Edit Articles"; ObjectID = "osr-sI-Gur"; */
+"osr-sI-Gur.text" = "Edit Articles";
+
+/* Class = "UITableViewController"; title = "Edit Profile"; ObjectID = "p7b-AJ-YO8"; */
+"p7b-AJ-YO8.title" = "Edit Profile";
+
+/* Class = "UINavigationItem"; title = "Tab"; ObjectID = "rdZ-4Y-eHr"; */
+"rdZ-4Y-eHr.title" = "Tab";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "tqY-AF-tlC"; */
+"tqY-AF-tlC.text" = "  ";
+
+/* Class = "UITabBarItem"; title = "Appointments"; ObjectID = "u4P-Uv-mvI"; */
+"u4P-Uv-mvI.title" = "Appointments";
+
+/* Class = "UILabel"; text = "Calls Made"; ObjectID = "uy0-uU-B38"; */
+"uy0-uU-B38.text" = "Calls Made";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "vOA-CW-9K0"; */
+"vOA-CW-9K0.text" = "Language";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "wef-8M-IsM"; */
+"wef-8M-IsM.text" = "Logout";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "y7n-jM-GYm"; */
+"y7n-jM-GYm.text" = "Mobile";

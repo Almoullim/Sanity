@@ -1,0 +1,162 @@
+
+/* Class = "UINavigationController"; title = "Settings"; ObjectID = "0t1-xT-aTt"; */
+"0t1-xT-aTt.title" = "الآعدادات";
+
+/* Class = "UITabBarItem"; title = "Volunteers"; ObjectID = "3Qw-cU-fwv"; */
+"3Qw-cU-fwv.title" = "المتطوعين";
+
+/* Class = "UILabel"; text = "Edit Profile"; ObjectID = "3Zg-eG-eGK"; */
+"3Zg-eG-eGK.text" = "تعديل الملف الشخصي";
+
+/* Class = "UILabel"; text = "Requested 4 days ago - Depression"; ObjectID = "3cp-JS-rIG"; */
+"3cp-JS-rIG.text" = "Requested 4 days ago - Depression";
+
+/* Class = "UILabel"; text = " "; ObjectID = "5FP-cf-8Re"; */
+"5FP-cf-8Re.text" = " ";
+
+/* Class = "UILabel"; text = " "; ObjectID = "6Vl-Ew-fZp"; */
+"6Vl-Ew-fZp.text" = " ";
+
+/* Class = "UINavigationController"; title = "Requests"; ObjectID = "8Lt-m5-3S2"; */
+"8Lt-m5-3S2.title" = "الطلبات";
+
+/* Class = "UITableViewSection"; headerTitle = "User Settings"; ObjectID = "9uj-x2-wHq"; */
+"9uj-x2-wHq.headerTitle" = "اعدادات المستخدم";
+
+/* Class = "UITextField"; placeholder = "First and last name"; ObjectID = "AUf-eA-Sc9"; */
+"AUf-eA-Sc9.placeholder" = "الآسم الاول والاخير";
+
+/* Class = "UILabel"; text = "speciality"; ObjectID = "Aly-95-nWV"; */
+"Aly-95-nWV.text" = "التخصص";
+
+/* Class = "UILabel"; text = " "; ObjectID = "CTx-OA-pRd"; */
+"CTx-OA-pRd.text" = " ";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum sapien at ante faucibus, sit amet ornare eros sagittis. Cras scelerisque velit vel nisi hendrerit, ultricies porttitor est feugiat. In interdum turpis non dolor vehicula, nec porttitor mauris tincidunt. Praesent in lorem velit. Sed faucibus accumsan massa nec ornare. Praesent diam ipsum, commodo sed odio nec, suscipit sollicitudin turpis. Aliquam malesuada odio vel nisl luctus fringilla. Proin eu molestie justo."; ObjectID = "D9t-cG-CWl"; */
+"D9t-cG-CWl.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam condimentum sapien at ante faucibus, sit amet ornare eros sagittis. Cras scelerisque velit vel nisi hendrerit, ultricies porttitor est feugiat. In interdum turpis non dolor vehicula, nec porttitor mauris tincidunt. Praesent in lorem velit. Sed faucibus accumsan massa nec ornare. Praesent diam ipsum, commodo sed odio nec, suscipit sollicitudin turpis. Aliquam malesuada odio vel nisl luctus fringilla. Proin eu molestie justo.";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "DAM-4J-R6h"; */
+"DAM-4J-R6h.text" = "تاريخ الميلاد";
+
+/* Class = "UILabel"; text = "Ali Almoullim"; ObjectID = "EES-R6-5Ic"; */
+"EES-R6-5Ic.text" = "Ali Almoullim";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "G0K-79-EcC"; */
+"G0K-79-EcC.title" = "الملف الشخصي";
+
+/* Class = "UILabel"; text = "Stress / Anxity"; ObjectID = "G4L-GG-bXG"; */
+"G4L-GG-bXG.text" = "Stress / Anxity";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H5T-c3-lYD"; */
+"H5T-c3-lYD.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "Hjf-w0-d4v"; */
+"Hjf-w0-d4v.title" = "الأعدادات";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "JKC-CF-eyE"; */
+"JKC-CF-eyE.text" = "  ";
+
+/* Class = "UITextField"; placeholder = "e.g. English / Arabic"; ObjectID = "KoK-tu-XDA"; */
+"KoK-tu-XDA.placeholder" = "e.g. English / Arabic";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "LEy-Em-v9p"; */
+"LEy-Em-v9p.text" = "الاسم";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "OQA-Mn-Oei"; */
+"OQA-Mn-Oei.text" = "العمر";
+
+/* Class = "UILabel"; text = "Calls Made"; ObjectID = "PeK-hN-iJV"; */
+"PeK-hN-iJV.text" = "عدد الاتصالات";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "Qlh-yG-D1o"; */
+"Qlh-yG-D1o.text" = "المكان";
+
+/* Class = "UITableViewSection"; footerTitle = "First and last name"; ObjectID = "TKy-Zg-k7J"; */
+"TKy-Zg-k7J.footerTitle" = "الاسم الاول والاسم الاخير";
+
+/* Class = "UITableViewSection"; headerTitle = "Your information"; ObjectID = "TKy-Zg-k7J"; */
+"TKy-Zg-k7J.headerTitle" = "معلوماتك";
+
+/* Class = "UITabBarItem"; title = "Requests"; ObjectID = "U5R-ke-HKh"; */
+"U5R-ke-HKh.title" = "الطلبات";
+
+/* Class = "UITextField"; placeholder = "e.g. Bahrain / Kuwait"; ObjectID = "W74-Bk-Wa0"; */
+"W74-Bk-Wa0.placeholder" = "e.g. Bahrain / Kuwait";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "Y5U-NB-FHq"; */
+"Y5U-NB-FHq.text" = "  ";
+
+/* Class = "UILabel"; text = "Pick a date"; ObjectID = "ZE1-ZZ-edT"; */
+"ZE1-ZZ-edT.text" = "اتخر تاريخ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "a2z-XC-nhZ"; */
+"a2z-XC-nhZ.text" = "اللغة";
+
+/* Class = "UINavigationItem"; title = "Readings"; ObjectID = "aFb-SS-Rhr"; */
+"aFb-SS-Rhr.title" = "القرائات";
+
+/* Class = "UILabel"; text = "What you need to know about stress"; ObjectID = "d9G-kr-JU4"; */
+"d9G-kr-JU4.text" = "What you need to know about stress";
+
+/* Class = "UITextField"; placeholder = "e.g. +973 36224432"; ObjectID = "fOS-kN-M7H"; */
+"fOS-kN-M7H.placeholder" = "e.g. +973 36224432";
+
+/* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "gzE-He-is9"; */
+"gzE-He-is9.title" = "تعديل الملف الشخصي";
+
+/* Class = "UITabBarItem"; title = "Requests"; ObjectID = "i12-ZC-a4O"; */
+"i12-ZC-a4O.title" = "الطلبات";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "imD-6e-nGe"; */
+"imD-6e-nGe.title" = "الملف الشخصي";
+
+/* Class = "UIViewController"; title = "Requests"; ObjectID = "jgU-YK-sLn"; */
+"jgU-YK-sLn.title" = "الطلبات";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "jof-OC-EXl"; */
+"jof-OC-EXl.text" = "الهاتف";
+
+/* Class = "UITextField"; placeholder = "e.g. Depression / Anxity"; ObjectID = "k9g-vO-21e"; */
+"k9g-vO-21e.placeholder" = "e.g. Depression / Anxity";
+
+/* Class = "UISegmentedControl"; kJq-f4-9CX.segmentTitles[0] = "All"; ObjectID = "kJq-f4-9CX"; */
+"kJq-f4-9CX.segmentTitles[0]" = "الكل";
+
+/* Class = "UISegmentedControl"; kJq-f4-9CX.segmentTitles[1] = "For Me"; ObjectID = "kJq-f4-9CX"; */
+"kJq-f4-9CX.segmentTitles[1]" = "لي";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "nNm-Bq-aHD"; */
+"nNm-Bq-aHD.title" = "الاعدادات";
+
+/* Class = "UILabel"; text = " "; ObjectID = "nSF-uz-uGz"; */
+"nSF-uz-uGz.text" = " ";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "ngq-MV-45i"; */
+"ngq-MV-45i.text" = "اللغة";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "pVB-Kz-2mY"; */
+"pVB-Kz-2mY.text" = "تسجيل الخروج";
+
+/* Class = "UINavigationItem"; title = "Requests"; ObjectID = "prk-gK-eSy"; */
+"prk-gK-eSy.title" =  "الطلبات";
+
+/* Class = "UILabel"; text = "An article about depression"; ObjectID = "q6J-GG-g4n"; */
+"q6J-GG-g4n.text" = "An article about depression";
+
+/* Class = "UITableViewController"; title = "Edit Profile"; ObjectID = "r2P-Tj-EMH"; */
+"r2P-Tj-EMH.title" = "تعديل الملف الشخصي";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "sbf-5P-9yJ"; */
+"sbf-5P-9yJ.placeholder" = "البحث";
+
+/* Class = "UINavigationItem"; title = "Requests"; ObjectID = "uV8-Ab-vVe"; */
+"uV8-Ab-vVe.title" = "الطلبات";
+
+/* Class = "UILabel"; text = "speciality"; ObjectID = "xfS-8y-2P0"; */
+"xfS-8y-2P0.text" = "التخصص";
+
+/* Class = "UITabBarItem"; title = "Readings"; ObjectID = "zCd-uw-8jq"; */
+"zCd-uw-8jq.title" = "القرائات";
+
+/* Class = "UILabel"; text = " "; ObjectID = "zmT-zx-Tds"; */
+"zmT-zx-Tds.text" = " ";

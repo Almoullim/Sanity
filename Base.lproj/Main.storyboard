@@ -611,6 +611,7 @@
         <!--Questions View Controller-->
         <scene sceneID="Edn-NL-RX9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Efn-dS-pTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cd8-tj-04a" customClass="QuestionsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DsY-1X-Nfv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -703,7 +704,6 @@
                         <outlet property="singleStackView" destination="WkG-qf-vtd" id="V86-iW-iwj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Efn-dS-pTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3461" y="24"/>
         </scene>
