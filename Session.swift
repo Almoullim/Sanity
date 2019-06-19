@@ -72,6 +72,8 @@ class Session {
 class Appointment {
     var appointmentID: String
     var helpSeekerUserName: String
+    var helpSeekerName: String
+    var helpSeekerMobile: String
     var helperUserName: String
     var date: String
     var time: String
@@ -86,10 +88,13 @@ class Appointment {
         appointmentID = ""
         helpSeekerUserName = ""
         helperUserName = ""
+        helpSeekerName = ""
+        helpSeekerMobile = ""
         date = ""
         time = ""
         createAt = ""
     }
+    
     convenience init?(appointmentID: String, helpSeekerUserName: String, helperUserName: String, date: String, time: String, createAt: String){
         self.init()
         self.appointmentID = appointmentID
@@ -97,6 +102,16 @@ class Appointment {
         self.helperUserName = helperUserName
         self.date = date
         self.time = time
+        self.createAt = createAt
+    }
+    
+    convenience init?(appointmentID: String, helpSeekerUserName: String, helpSeekerName: String, helpSeekerMobile: String, helperUserName: String, createdAt: String){
+        self.init()
+        self.appointmentID = appointmentID
+        self.helpSeekerUserName = helpSeekerUserName
+        self.helpSeekerName = helpSeekerName
+        self.helpSeekerMobile = helpSeekerMobile
+        self.helperUserName = helperUserName
         self.createAt = createAt
     }
 }
