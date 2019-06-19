@@ -80,7 +80,7 @@ class Appointment {
     var createAt: String
     var getDaysSince: String {
         get {
-            return "Member since " + self.createAt
+            return "Made since " + self.createAt
         }
     }
     
