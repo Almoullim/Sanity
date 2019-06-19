@@ -42,23 +42,6 @@ class Doctor: User {
     
 }
 
-
-
 class HelpSeeker: User {
-    var mobile: String
-    override var getDaysSince: String {
-        get {
-            return "Requested " + self.daysSince
-        }
-    }
-    
-    override init() {
-        self.mobile = ""
-        super.init()
-    }
-    
-    convenience init?(username: String, name: String, daysSince: String, mobile: String) {
-        self.init(username: username, name: name, daysSince: daysSince)
-        self.mobile = mobile
-    }
+
 }

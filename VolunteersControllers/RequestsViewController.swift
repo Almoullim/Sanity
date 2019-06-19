@@ -15,13 +15,13 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     var db: Firestore!
     var storage: Storage!
     
-    @IBOutlet weak var HelpSeekersTable: UITableView!
+    @IBOutlet weak var requestsTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedHelpSeeker: String?
     var username: String?
     
-    var HelpSeekers: [HelpSeeker] = []
+    var requests: [Request] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,11 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         db = Firestore.firestore()
         storage = Storage.storage()
         
-        loadHelpSeekers(requestedUser: "all", searchText: nil)
+        loadRequests(requestedUser: "all", searchText: nil)
         
         searchBar.delegate = self
-        HelpSeekersTable.delegate = self
-        HelpSeekersTable.dataSource = self
+        requestsTable.delegate = self
+        requestsTable.dataSource = self
         
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
@@ -72,10 +72,10 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
         if let text = searchBar.text {
-            HelpSeekers = []
-            self.HelpSeekersTable.reloadData()
+            requests = []
+            self.requestsTable.reloadData()
             
-            loadHelpSeekers(requestedUser: "all", searchText: text)
+            loadRequests(requestedUser: "all", searchText: text)
         }
         
         searchBar.resignFirstResponder()
@@ -84,29 +84,29 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
         
-        HelpSeekers = []
-        self.HelpSeekersTable.reloadData()
-        loadHelpSeekers(requestedUser: "all", searchText: nil)
+        requests = []
+        self.requestsTable.reloadData()
+        loadRequests(requestedUser: "all", searchText: nil)
         
         searchBar.resignFirstResponder()
     }
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
-        HelpSeekers = []
-        self.HelpSeekersTable.reloadData()
+        requests = []
+        self.requestsTable.reloadData()
         
         if (sender.selectedSegmentIndex == 1) {
-            loadHelpSeekers(requestedUser: "me", searchText: nil)
+            loadRequests(requestedUser: "me", searchText: nil)
         } else if (sender.selectedSegmentIndex == 0) {
-            loadHelpSeekers(requestedUser: "all", searchText: nil)
+            loadRequests(requestedUser: "all", searchText: nil)
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return HelpSeekers.count
+        return requests.count
     }
     
-    func loadHelpSeekers(requestedUser: String, searchText: String?) {
+    func loadRequests(requestedUser: String, searchText: String?) {
         let collection = db.collection("requests")
         var query: Query? = nil
         
@@ -149,24 +149,26 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
                 daysSince = timeSince(timestamp: timestamp) + " ago"
             }
             
-            self.HelpSeekers.append(HelpSeeker(username: username, name: name, daysSince: daysSince, mobile: mobile)!)
+            let request = Request(helpSeekerUserName: username, helpSeekerName: name, helpSeekerMobile: mobile, createdAt: daysSince)
+            
+            self.requests.append(request!)
         }
         
-        HelpSeekersTable.reloadData()
+        requestsTable.reloadData()
     }
     
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "VolunteerCell") as? UserCell
 
-        cell?.userFullName.text = self.HelpSeekers[indexPath.row].name
-        cell?.userInfo.text = self.HelpSeekers[indexPath.row].getDaysSince
-        cell?.username = self.HelpSeekers[indexPath.row].username
-        cell?.mobile = self.HelpSeekers[indexPath.row].mobile
+        cell?.userFullName.text = self.requests[indexPath.row].helpSeekerName
+        cell?.userInfo.text = self.requests[indexPath.row].getDaysSince
+        cell?.username = self.requests[indexPath.row].helpSeekerUserName
+        cell?.mobile = self.requests[indexPath.row].helpSeekerMobile
         cell?.delegate = self
         
         let storageRef = self.storage.reference()
-        let imgRef = storageRef.child("images/" + self.HelpSeekers[indexPath.row].username + ".jpg")
+        let imgRef = storageRef.child("images/" + self.requests[indexPath.row].helpSeekerUserName + ".jpg")
         
         imgRef.downloadURL { (url, error) in
             guard let downloadURL = url else { return }

@@ -57,6 +57,7 @@
 		41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0F22A75DA700A731AF /* RequestsViewController.swift */; };
 		41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */; };
 		41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */; };
+		41F459E722BA80A5002C1ADB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F459E622BA80A5002C1ADB /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		41B62C0F22A75DA700A731AF /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerProfileViewController.swift; sourceTree = "<group>"; };
 		41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerEditProfileViewController.swift; sourceTree = "<group>"; };
+		41F459E622BA80A5002C1ADB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D1046FB4727CFB1EAD05F357 /* Pods-Sanity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.debug.xcconfig"; path = "Target Support Files/Pods-Sanity/Pods-Sanity.debug.xcconfig"; sourceTree = "<group>"; };
 		D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sanity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA68E39A221516C2FEFC3845 /* Pods-Sanity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sanity.release.xcconfig"; path = "Target Support Files/Pods-Sanity/Pods-Sanity.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				41A84D3F22A77D810025A1DB /* ReadingCell.swift */,
 				20ED1B5722B4FE6F00FD27A0 /* Question.swift */,
 				20CD016E22B97BCB002623AB /* Session.swift */,
+				41F459E622BA80A5002C1ADB /* Request.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
+				41F459E722BA80A5002C1ADB /* Request.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
 				41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */,
 				20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */,
