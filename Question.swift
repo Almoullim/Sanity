@@ -16,9 +16,6 @@ struct Question {
 enum Usertype {
     case helpSeeker, Volunteer
 }
-enum ResponseType {
-    case single, multiple, ranged
-}
 
 struct Answer {
     var text: String

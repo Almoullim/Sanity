@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2077CD7522B7F756009F16D3 /* SessionRecoredTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */; };
 		2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */; };
+		2097BB4A22BAD18F00FE6662 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */; };
+		2097BB4C22BAF25C00FE6662 /* AdminSettingCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */; };
 		20CD016B22B90035002623AB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016A22B90035002623AB /* QuestionsViewController.swift */; };
 		20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */; };
 		20CD016F22B97BCB002623AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016E22B97BCB002623AB /* Session.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecoredTableViewCell.swift; sourceTree = "<group>"; };
 		2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
+		2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
+		2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingCellTableView.swift; sourceTree = "<group>"; };
 		20CD016A22B90035002623AB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionTableViewController.swift; sourceTree = "<group>"; };
 		20CD016E22B97BCB002623AB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */,
 				20CD017022B99652002623AB /* AdminSessionViewController.swift */,
 				20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */,
+				2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */,
+				2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */,
 			);
 			path = AdminContollers;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
 				41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
+				2097BB4A22BAD18F00FE6662 /* QuestionsTableViewController.swift in Sources */,
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				41F459E722BA80A5002C1ADB /* Request.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
 				41A84D3E22A77C950025A1DB /* Article.swift in Sources */,
+				2097BB4C22BAF25C00FE6662 /* AdminSettingCellTableView.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */,
 				20CD016F22B97BCB002623AB /* Session.swift in Sources */,

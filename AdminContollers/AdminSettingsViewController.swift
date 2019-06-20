@@ -24,13 +24,15 @@ class AdminSettingsViewController: UITableViewController {
         
         switch indexPath {
         case [1, 0]:
-            print("")
-           // self.performSegue(withIdentifier: "EditProfile", sender: nil)
+           self.performSegue(withIdentifier: "EditProfile", sender: nil)
         case [1,1]:
             logout()
         case [0, 0]:
             print("")
-            //self.performSegue(withIdentifier: "EditArticles", sender: nil)
+            //self.performSegue(withIdentifier: "Qustions", sender: nil)
+        case [0, 1]:
+            self.performSegue(withIdentifier: "Qustions", sender: nil)
+       
         default:
             print("Wrong selection")
         }
