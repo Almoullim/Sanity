@@ -1,39 +1,39 @@
 
 /* Class = "UIButton"; normalTitle = "Join Now →"; ObjectID = "03E-uX-ozi"; */
-"03E-uX-ozi.normalTitle" = "Join Now →";
+"03E-uX-ozi.normalTitle" = "سجل الآن→";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "6gp-5R-MBN"; */
-"6gp-5R-MBN.placeholder" = "Username";
+"6gp-5R-MBN.placeholder" = "اسم المستخدم";
 
 /* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "9TV-OS-uB0"; */
-"9TV-OS-uB0.placeholder" = "Full Name";
+"9TV-OS-uB0.placeholder" = "الإسم الكامل";
 
 /* Class = "UILabel"; text = "Sanity"; ObjectID = "Auk-Jr-bdg"; */
 "Auk-Jr-bdg.text" = "Sanity";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "CYF-uj-Mp6"; */
-"CYF-uj-Mp6.normalTitle" = "Login";
+"CYF-uj-Mp6.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "EAo-w5-ScB"; */
 "EAo-w5-ScB.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "L4l-7V-2y6"; */
-"L4l-7V-2y6.placeholder" = "Email";
+"L4l-7V-2y6.placeholder" = "البريد الإلكتروني";
 
 /* Class = "UISegmentedControl"; Lyx-uP-srY.segmentTitles[0] = "Male"; ObjectID = "Lyx-uP-srY"; */
-"Lyx-uP-srY.segmentTitles[0]" = "Male";
+"Lyx-uP-srY.segmentTitles[0]" = "ذكر";
 
 /* Class = "UISegmentedControl"; Lyx-uP-srY.segmentTitles[1] = "Female"; ObjectID = "Lyx-uP-srY"; */
-"Lyx-uP-srY.segmentTitles[1]" = "Female";
+"Lyx-uP-srY.segmentTitles[1]" = "أنثى";
 
 /* Class = "UILabel"; text = "YOU'RE NOT ALONE"; ObjectID = "NGq-Jl-2lU"; */
-"NGq-Jl-2lU.text" = "YOU'RE NOT ALONE";
+"NGq-Jl-2lU.text" = "أنت لست لوحدك";
 
 /* Class = "UIButton"; normalTitle = "Volunteer"; ObjectID = "O1U-Db-2go"; */
-"O1U-Db-2go.normalTitle" = "Volunteer";
+"O1U-Db-2go.normalTitle" = "متطوع";
 
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "QaY-ht-b7P"; */
-"QaY-ht-b7P.normalTitle" = "Register";
+"QaY-ht-b7P.normalTitle" = "تسجيل";
 
 /* Class = "UILabel"; text = "Sanity"; ObjectID = "Th7-tX-5gy"; */
 "Th7-tX-5gy.text" = "Sanity";
@@ -45,25 +45,25 @@
 "VPh-6e-S2p.text" = "Sanity";
 
 /* Class = "UILabel"; text = "YOU'RE NOT ALONE"; ObjectID = "WG6-v1-2E4"; */
-"WG6-v1-2E4.text" = "YOU'RE NOT ALONE";
+"WG6-v1-2E4.text" = "أنت لست لوحدك";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YRO-BD-wmW"; */
 "YRO-BD-wmW.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "YOU'RE NOT ALONE"; ObjectID = "YnP-mz-fcZ"; */
-"YnP-mz-fcZ.text" = "YOU'RE NOT ALONE";
+"YnP-mz-fcZ.text" = "أنت لست لوحدك";
 
 /* Class = "UILabel"; text = "Mobile Programming ©"; ObjectID = "buK-GR-nF4"; */
 "buK-GR-nF4.text" = "Mobile Programming ©";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "cZj-YW-hX2"; */
-"cZj-YW-hX2.normalTitle" = "Login";
+"cZj-YW-hX2.normalTitle" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Mobile Programming ©"; ObjectID = "dSY-hV-5iM"; */
 "dSY-hV-5iM.text" = "Mobile Programming ©";
 
 /* Class = "UILabel"; text = "YOU'RE NOT ALONE"; ObjectID = "feI-MI-AH2"; */
-"feI-MI-AH2.text" = "YOU'RE NOT ALONE";
+"feI-MI-AH2.text" = "أنت لست لوحدك";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hYv-LS-s1p"; */
 "hYv-LS-s1p.normalTitle" = "Button";
@@ -72,22 +72,22 @@
 "iHM-co-CVv.normalTitle" = "Button";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "kjf-vS-Sjw"; */
-"kjf-vS-Sjw.placeholder" = "Username";
+"kjf-vS-Sjw.placeholder" = "اسم المستخدم";
 
 /* Class = "UIButton"; normalTitle = "Doctor"; ObjectID = "l2a-Hd-Zft"; */
-"l2a-Hd-Zft.normalTitle" = "Doctor";
+"l2a-Hd-Zft.normalTitle" = "طبيب";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "oHC-Rb-ViW"; */
-"oHC-Rb-ViW.placeholder" = "Phone";
+"oHC-Rb-ViW.placeholder" = "رقم الهاتف";
 
 /* Class = "UIButton"; normalTitle = "Login →"; ObjectID = "oMR-Yg-db2"; */
-"oMR-Yg-db2.normalTitle" = "Login →";
+"oMR-Yg-db2.normalTitle" = "← تسجيل الدخول";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "p22-QT-txd"; */
-"p22-QT-txd.placeholder" = "Password";
+"p22-QT-txd.placeholder" = "كلمة السر";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "rtA-NG-gyw"; */
-"rtA-NG-gyw.placeholder" = "Password";
+"rtA-NG-gyw.placeholder" = "كلمة السر";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ula-GO-1Iz"; */
 "ula-GO-1Iz.normalTitle" = "Button";
@@ -96,4 +96,4 @@
 "xf4-jS-PeR.text" = "Sanity";
 
 /* Class = "UIButton"; normalTitle = "Help Seeker"; ObjectID = "xfj-Zo-keC"; */
-"xfj-Zo-keC.normalTitle" = "Help Seeker";
+"xfj-Zo-keC.normalTitle" = "طالب المساعدة";
