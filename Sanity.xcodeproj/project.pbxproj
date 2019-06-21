@@ -43,7 +43,7 @@
 		4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF6E229D0712004E4010 /* HelpSeekerProfileViewController.swift */; };
 		4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186AF70229D0AEC004E4010 /* Extensions.swift */; };
 		41926C71225136E20078F9FD /* ErrorCodes in Resources */ = {isa = PBXBuildFile; fileRef = 41926C70225136E20078F9FD /* ErrorCodes */; };
-		41A1AAB422AA13FA00F4468B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1AAB322AA13FA00F4468B /* ArticleViewController.swift */; };
+		41A1AAB422AA13FA00F4468B /* VolunteerArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1AAB322AA13FA00F4468B /* VolunteerArticleViewController.swift */; };
 		41A84D3C22A77C250025A1DB /* ReadingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */; };
 		41A84D3E22A77C950025A1DB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3D22A77C950025A1DB /* Article.swift */; };
 		41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A84D3F22A77D810025A1DB /* ReadingCell.swift */; };
@@ -57,6 +57,7 @@
 		41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */; };
 		41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */; };
 		41C71E6922BA96D800C943AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41C71E6B22BA96D800C943AB /* Localizable.strings */; };
+		41D79E7222BD56F900EAC4FF /* DoctorArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */; };
 		41F459E722BA80A5002C1ADB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F459E622BA80A5002C1ADB /* Request.swift */; };
 		41F459E822BA8980002C1ADB /* HelpSeeker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F459EA22BA8980002C1ADB /* HelpSeeker.storyboard */; };
 		41F459EB22BA8987002C1ADB /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F459ED22BA8987002C1ADB /* Doctor.storyboard */; };
@@ -100,7 +101,7 @@
 		4186AF6E229D0712004E4010 /* HelpSeekerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSeekerProfileViewController.swift; sourceTree = "<group>"; };
 		4186AF70229D0AEC004E4010 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		41926C70225136E20078F9FD /* ErrorCodes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ErrorCodes; sourceTree = SOURCE_ROOT; };
-		41A1AAB322AA13FA00F4468B /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		41A1AAB322AA13FA00F4468B /* VolunteerArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerArticleViewController.swift; sourceTree = "<group>"; };
 		41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsViewController.swift; sourceTree = "<group>"; };
 		41A84D3D22A77C950025A1DB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		41A84D3F22A77D810025A1DB /* ReadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCell.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		41C71E6422BA8EC500C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Volunteer.strings; sourceTree = "<group>"; };
 		41C71E6522BA8EC600C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		41C71E6A22BA96D800C943AB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorArticleViewController.swift; sourceTree = "<group>"; };
 		41F459E622BA80A5002C1ADB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		41F459E922BA8980002C1ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HelpSeeker.storyboard; sourceTree = "<group>"; };
 		41F459EC22BA8987002C1ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Doctor.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				40A0AA0522AAF16C008189E2 /* DoctorProfileViewController.swift */,
 				40B8764922AAF6CA006DE401 /* DoctorEditProfileViewController.swift */,
 				404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */,
+				41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */,
 			);
 			path = DoctorControllers;
 			sourceTree = "<group>";
@@ -279,7 +282,7 @@
 				41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */,
 				41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */,
 				41A84D3B22A77C250025A1DB /* ReadingsViewController.swift */,
-				41A1AAB322AA13FA00F4468B /* ArticleViewController.swift */,
+				41A1AAB322AA13FA00F4468B /* VolunteerArticleViewController.swift */,
 			);
 			path = VolunteersControllers;
 			sourceTree = "<group>";
@@ -452,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41A1AAB422AA13FA00F4468B /* ArticleViewController.swift in Sources */,
+				41A1AAB422AA13FA00F4468B /* VolunteerArticleViewController.swift in Sources */,
 				2097BB4E22BC506100FE6662 /* ArticelsViewController.swift in Sources */,
 				41074AF5229A246F00D6E58C /* AfterLoadViewController.swift in Sources */,
 				412E23F3229D36E000065303 /* Helpers.swift in Sources */,
@@ -486,6 +489,7 @@
 				2097BB4C22BAF25C00FE6662 /* AdminSettingCellTableView.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
 				20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */,
+				41D79E7222BD56F900EAC4FF /* DoctorArticleViewController.swift in Sources */,
 				20CD016F22B97BCB002623AB /* Session.swift in Sources */,
 				20CD017122B99652002623AB /* AdminSessionViewController.swift in Sources */,
 				414AF687224F9A0F00EA9B93 /* LoginViewController.swift in Sources */,

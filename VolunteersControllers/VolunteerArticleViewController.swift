@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController {
+class VolunteerArticleViewController: UIViewController {
 
-    
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleTags: UILabel!
     @IBOutlet weak var articleDescription: UITextView!

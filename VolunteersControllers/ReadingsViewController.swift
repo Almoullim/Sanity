@@ -72,8 +72,8 @@ class ReadingsViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Article" {
-            let view = segue.destination as? ArticleViewController
-            
+            let view = segue.destination as? VolunteerArticleViewController
+
             view?.articleTitleValue = selectedArticle?.title
             view?.articleTagsValue = selectedArticle?.tags
             view?.articleDescriptionValue = selectedArticle?.description
