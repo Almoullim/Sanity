@@ -83,12 +83,12 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             let appointmentID = document.data()["appointmentID"] as! String
             let helpSeekername = document.data()["helpSeekername"] as! String
             let helperName = document.data()["helperName"] as! String
-            let createAt = document.data()["createAt"] as! String
+            let createdAt = document.data()["createAt"] as! String
             let date = document.data()["daysSince"] as! String
             let time = document.data()["daysSince"] as! String
             
             // add new appointment object to collection
-            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: date, time: time, createAt: createAt)!)
+            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: date, time: time, createdAt: createdAt)!)
         }
         // reload table
         AppointmentTable.reloadData()
