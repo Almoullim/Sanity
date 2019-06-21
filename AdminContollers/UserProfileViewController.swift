@@ -129,7 +129,7 @@ class UserProfileViewController: UIViewController {
             }
         }
         
-        performSegue(withIdentifier: "save", sender: UIBarButtonItem.self)
+        dismiss(animated: true, completion: nil)
         }
     
     

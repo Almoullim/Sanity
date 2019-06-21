@@ -12,9 +12,10 @@ import Firebase
 class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
     
     
-    
+    // outlets
     @IBOutlet weak var SessionsTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    // pass info
     var sessionID: String?
     
     // firebase connection
