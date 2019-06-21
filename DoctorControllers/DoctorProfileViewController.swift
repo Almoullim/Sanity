@@ -59,7 +59,7 @@ class DoctorProfileViewController: UIViewController {
                             self.ageValue.text = String((secondsSince / 86400) / 365)
                         }
                         
-                        if let requestsCount = data["calls"] as? Int {
+                        if let requestsCount = data["callsCount"] as? Int {
                             self.callsCountValue.text = String(requestsCount)
                         } else {
                             self.callsCountValue.text = "0"
