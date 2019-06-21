@@ -11,6 +11,8 @@
 		2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */; };
 		2097BB4A22BAD18F00FE6662 /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */; };
 		2097BB4C22BAF25C00FE6662 /* AdminSettingCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */; };
+		2097BB4E22BC506100FE6662 /* ArticelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4D22BC506100FE6662 /* ArticelsViewController.swift */; };
+		2097BB5022BC53E500FE6662 /* AddArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4F22BC53E500FE6662 /* AddArticleViewController.swift */; };
 		20CD016B22B90035002623AB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016A22B90035002623AB /* QuestionsViewController.swift */; };
 		20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */; };
 		20CD016F22B97BCB002623AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016E22B97BCB002623AB /* Session.swift */; };
@@ -68,6 +70,8 @@
 		2077CD7822B8663A009F16D3 /* AdminSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsViewController.swift; sourceTree = "<group>"; };
 		2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingCellTableView.swift; sourceTree = "<group>"; };
+		2097BB4D22BC506100FE6662 /* ArticelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticelsViewController.swift; sourceTree = "<group>"; };
+		2097BB4F22BC53E500FE6662 /* AddArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArticleViewController.swift; sourceTree = "<group>"; };
 		20CD016A22B90035002623AB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionTableViewController.swift; sourceTree = "<group>"; };
 		20CD016E22B97BCB002623AB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */,
 				2097BB4922BAD18F00FE6662 /* QuestionsTableViewController.swift */,
 				2097BB4B22BAF25C00FE6662 /* AdminSettingCellTableView.swift */,
+				2097BB4D22BC506100FE6662 /* ArticelsViewController.swift */,
+				2097BB4F22BC53E500FE6662 /* AddArticleViewController.swift */,
 			);
 			path = AdminContollers;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A1AAB422AA13FA00F4468B /* ArticleViewController.swift in Sources */,
+				2097BB4E22BC506100FE6662 /* ArticelsViewController.swift in Sources */,
 				41074AF5229A246F00D6E58C /* AfterLoadViewController.swift in Sources */,
 				412E23F3229D36E000065303 /* Helpers.swift in Sources */,
 				20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */,
@@ -459,6 +466,7 @@
 				2097BB4A22BAD18F00FE6662 /* QuestionsTableViewController.swift in Sources */,
 				410A37E622515C8F002F1D22 /* UserCell.swift in Sources */,
 				41F459E722BA80A5002C1ADB /* Request.swift in Sources */,
+				2097BB5022BC53E500FE6662 /* AddArticleViewController.swift in Sources */,
 				410A37E422515326002F1D22 /* VolunteersViewController.swift in Sources */,
 				41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */,
 				20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */,

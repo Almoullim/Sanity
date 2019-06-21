@@ -31,7 +31,6 @@ class AddQuestionTableViewController: UITableViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -29,7 +29,7 @@ class AdminSettingsViewController: UITableViewController {
             logout()
         case [0, 0]:
             print("")
-            //self.performSegue(withIdentifier: "Qustions", sender: nil)
+            self.performSegue(withIdentifier: "Articles", sender: nil)
         case [0, 1]:
             self.performSegue(withIdentifier: "Qustions", sender: nil)
        
