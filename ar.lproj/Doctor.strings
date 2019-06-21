@@ -45,7 +45,7 @@
 "Hd5-2o-0hs.text" = "Ali Almoullim";
 
 /* Class = "UITableViewSection"; footerTitle = "First and last name"; ObjectID = "HdY-fv-ym8"; */
-"HdY-fv-ym8.footerTitle" = "الاسم الأول والأخير";
+"HdY-fv-ym8.footerTitle" = "";
 
 /* Class = "UITableViewSection"; headerTitle = "Your information"; ObjectID = "HdY-fv-ym8"; */
 "HdY-fv-ym8.headerTitle" = "معلوماتك";

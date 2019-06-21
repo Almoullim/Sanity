@@ -25,6 +25,8 @@ class DoctorEditProfileViewController: UITableViewController, UIImagePickerContr
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var imageView: DesignableUIImageView!
     @IBOutlet weak var mobileInput: UITextField!
+    @IBOutlet weak var availabilitySwitch: UISwitch!
+    @IBOutlet weak var addressInput: UITextField!
     
     // cases
     var alreadyRan: Bool = false
@@ -79,6 +81,12 @@ class DoctorEditProfileViewController: UITableViewController, UIImagePickerContr
                         self.specialityInput.text = data["issue"] as? String
                         self.languageInput.text = data["language"] as? String
                         self.locationInput.text = data["location"] as? String
+                        
+                        if let available = data["available"] as? Bool {
+                            self.availabilitySwitch.setOn(available, animated: true)
+                        }
+                        
+                        self.addressInput.text = data["address"] as? String
                         
                         let storageRef = self.storage.reference()
                         let imgRef = storageRef.child("images/" + self.username! + ".jpg")
@@ -148,6 +156,8 @@ class DoctorEditProfileViewController: UITableViewController, UIImagePickerContr
             "language": self.languageInput.text!,
             "location": self.locationInput.text!,
             "mobile": self.mobileInput.text!,
+            "available": self.availabilitySwitch.isOn,
+            "address": self.addressInput.text!,
             "dob": dob ?? NSNull(),
         ]
 
