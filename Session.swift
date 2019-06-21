@@ -79,10 +79,10 @@ class Appointment {
     var isDone: Bool
     var date: String
     var time: String
-    var createAt: String
+    var createdAt: String
     var getDaysSince: String {
         get {
-            return "Made since " + self.createAt
+            return "Made since " + self.createdAt
         }
     }
     
@@ -94,19 +94,19 @@ class Appointment {
         helpSeekerMobile = ""
         date = ""
         time = ""
-        createAt = ""
+        createdAt = ""
         isAproved = false
         isDone = false
     }
     
-    convenience init?(appointmentID: String, helpSeekerUserName: String, helperUserName: String, date: String, time: String, createAt: String){
+    convenience init?(appointmentID: String, helpSeekerUserName: String, helperUserName: String, date: String, time: String, createdAt: String){
         self.init()
         self.appointmentID = appointmentID
         self.helpSeekerUserName = helpSeekerUserName
         self.helperUserName = helperUserName
         self.date = date
         self.time = time
-        self.createAt = createAt
+        self.createdAt = createdAt
         self.isAproved = false
         self.isDone = false
     }
@@ -118,7 +118,7 @@ class Appointment {
         self.helpSeekerName = helpSeekerName
         self.helpSeekerMobile = helpSeekerMobile
         self.helperUserName = helperUserName
-        self.createAt = createAt
+        self.createdAt = createdAt
         self.isAproved = false
         self.isDone = false
     }
