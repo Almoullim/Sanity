@@ -107,14 +107,14 @@ class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITa
         for document in documents {
             let helpSeekername = document.data()["helpSeekerUserName"] as! String
             let helperName = document.data()["helperUserName"] as! String
-            sessionID = (document.documentID )
+            let sessionID = (document.documentID )
             var daysSince = ""
             if let timestamp = document.data()["daysSince"] as? Timestamp {
                 // Construct days since
                 daysSince = timeSince(timestamp: timestamp)
             }
             // add session to the sessions collection
-            self.sessions.append(Session(sessionID: sessionID!, helpSeekerUserName: helpSeekername, helperUserName: helperName, daysSince: daysSince)!)
+            self.sessions.append(Session(sessionID: sessionID, helpSeekerUserName: helpSeekername, helperUserName: helperName, daysSince: daysSince)!)
         }
         // reload table with new data
         SessionsTable.reloadData()
@@ -142,8 +142,14 @@ class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITa
         }
         return cell!
     }
-    
+     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.sessionID = self.sessions[indexPath.row].sessionID
+
+
+        
+    }
     @IBAction func showSession(_ sender: Any) {
+        
         performSegue(withIdentifier: "showSession", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

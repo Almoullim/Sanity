@@ -123,7 +123,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
         
         cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
-        
+        cell?.sessionID = self.appointments[indexPath.row].appointmentID
         
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.appointments[indexPath.row].helpSeekerUserName + ".jpg")
@@ -138,6 +138,11 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             cell?.userTwoImage.downloaded(from: downloadURL)
         }
         return cell!
+    }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // assign cell article to variable
+        appointmentID = self.appointments[indexPath.row].appointmentID
+        
     }
     
     @IBAction func showSession(_ sender: Any) {
