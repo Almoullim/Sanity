@@ -111,7 +111,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             let dateString = timeSince(timestamp: date)
 
             // add new appointment object to collection
-            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: dateString, time: dateString, createAt: createAtString)!)
+            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: dateString, time: dateString, createdAt: createAtString)!)
         }
         // reload table
         appointmentTable.reloadData()
