@@ -184,7 +184,7 @@
                         <outlet property="SearchBar" destination="FRa-kR-P9N" id="6pW-7P-Ls7"/>
                         <outlet property="UsersTable" destination="Q0W-Kd-uPE" id="FJV-AT-aw8"/>
                         <outlet property="searchBar" destination="FRa-kR-P9N" id="ogO-Le-IKi"/>
-                        <segue destination="VQB-L0-JtM" kind="show" identifier="UserProfile" id="roA-vr-Avi"/>
+                        <segue destination="aLw-7G-M5V" kind="show" identifier="UserProfile" id="roA-vr-Avi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BU-VM-cwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,12 +625,11 @@
                         <outlet property="MobileInput" destination="OGc-WT-lch" id="jpG-Ff-Pid"/>
                         <outlet property="UserImage" destination="1dY-ak-YXZ" id="HiF-3c-vwg"/>
                         <outlet property="UserNameInput" destination="K6N-Tg-RH0" id="Pf8-Yx-uR0"/>
-                        <segue destination="crX-y1-N2v" kind="show" identifier="backSetting" id="nNm-tp-fmf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55O-Dz-BVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="1472"/>
+            <point key="canvasLocation" x="3641" y="1472"/>
         </scene>
         <!--Main-->
         <scene sceneID="zvh-Pp-Tmx">
@@ -734,7 +733,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="sZ5-vp-zwz"/>
                     <connections>
                         <segue destination="KrO-ky-xEU" kind="showDetail" identifier="LoginView" animates="NO" id="sen-A1-gfk"/>
-                        <segue destination="qSw-st-Qk1" kind="show" identifier="EditProfile" id="wgs-7X-wrj"/>
+                        <segue destination="nVb-63-RtV" kind="show" identifier="EditProfile" id="wgs-7X-wrj"/>
                         <segue destination="4uV-jl-eHN" kind="show" identifier="Qustions" id="WW8-RB-Yjb"/>
                         <segue destination="qjw-Np-ZS8" kind="show" identifier="Articles" id="Eu0-09-qg1"/>
                     </connections>
@@ -1033,9 +1032,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Mg-kj-bD1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Users" image="user_male" id="4XW-Qp-f7y">
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" title="User Profile" id="Qc6-rx-AZh">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="l1M-yg-faw">
                             <connections>
@@ -1057,12 +1053,11 @@
                         <outlet property="UserName" destination="UrS-ty-cbu" id="zBU-0q-SbA"/>
                         <outlet property="backImage" destination="6Yf-vR-y1m" id="8NW-8z-I8S"/>
                         <outlet property="isAvtive" destination="VGj-ZU-NuB" id="huo-sr-fd2"/>
-                        <segue destination="qmY-YI-j7F" kind="show" identifier="save" id="Crj-a1-iJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJR-Mr-N1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818.840579710145" y="-708.42391304347836"/>
+            <point key="canvasLocation" x="3726.0869565217395" y="-708.42391304347836"/>
         </scene>
         <!--AddQuestion-->
         <scene sceneID="bDL-Ce-jCh">
@@ -1210,8 +1205,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worst Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g5-r1-S9h">
-                                                    <rect key="frame" x="19.999999999999993" y="11.333333333333336" width="106.33333333333331" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorstAnswer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g5-r1-S9h">
+                                                    <rect key="frame" x="20" y="11.333333333333336" width="102" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1262,7 +1257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVa-fh-sjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nDh-BU-Fc4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="2923"/>
+            <point key="canvasLocation" x="3641" y="2922"/>
         </scene>
         <!--Session-->
         <scene sceneID="Hix-cJ-Afl">
@@ -1653,10 +1648,10 @@
             </objects>
             <point key="canvasLocation" x="2818.840579710145" y="776.9021739130435"/>
         </scene>
-        <!--Appointment-->
+        <!--Appointments-->
         <scene sceneID="Vfm-lw-99P">
             <objects>
-                <viewController title="Appointment" id="0Ny-rk-GYt" customClass="AdminAppointmentsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Appointments" id="0Ny-rk-GYt" customClass="AdminAppointmentsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k75-pe-eF7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1665,7 +1660,7 @@
                                 <rect key="frame" x="0.0" y="120" width="414" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppointmentCell" id="EfF-vJ-Lee" userLabel="AppointmentCell" customClass="SessionRecoredTableViewCell" customModule="Sanity" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appimtmentCell" id="EfF-vJ-Lee" userLabel="AppointmentCell" customClass="SessionRecoredTableViewCell" customModule="Sanity" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EfF-vJ-Lee" id="rxd-nH-rEh">
@@ -1768,10 +1763,11 @@
                         <viewLayoutGuide key="safeArea" id="0Z8-ZK-98q"/>
                     </view>
                     <tabBarItem key="tabBarItem" enabled="NO" title="Sessions" image="wallet_app" id="wwY-o7-LaW"/>
-                    <navigationItem key="navigationItem" title="Sessions" id="Vxf-PS-yjN"/>
+                    <navigationItem key="navigationItem" title="Appointments" id="Vxf-PS-yjN"/>
                     <connections>
-                        <outlet property="Appointment" destination="Qco-g9-Whs" id="b1T-xr-9hZ"/>
+                        <outlet property="appointmentTable" destination="Qco-g9-Whs" id="226-3b-VBw"/>
                         <outlet property="searchBar" destination="O7V-22-50L" id="w14-5G-YA1"/>
+                        <segue destination="hS2-89-WRB" kind="show" identifier="showAppointment" id="oYa-RT-7oX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mxs-89-VY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1886,8 +1882,8 @@
                     <connections>
                         <outlet property="QuestionsTable" destination="raR-25-ydp" id="JCS-Wv-cZk"/>
                         <outlet property="SearchBar" destination="mhX-KW-exf" id="cSq-l5-fVI"/>
-                        <segue destination="xCu-6H-cPI" kind="show" identifier="EditQuestion" id="rz7-yp-Sov"/>
-                        <segue destination="xCu-6H-cPI" kind="show" identifier="AddQuestion" id="MUo-gd-Jtf"/>
+                        <segue destination="QM4-MX-Ivu" kind="show" identifier="EditQuestion" id="rz7-yp-Sov"/>
+                        <segue destination="QM4-MX-Ivu" kind="show" identifier="AddQuestion" id="MUo-gd-Jtf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCy-Ry-jvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1974,13 +1970,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OeT-lT-LO3">
                             <connections>
                                 <action selector="AddClicked:" destination="qjw-Np-ZS8" id="KZD-Q7-uPe"/>
-                                <segue destination="8WE-tb-edT" kind="show" identifier="addArticle" id="BTx-4R-YI4"/>
+                                <segue destination="C0w-bd-5qa" kind="show" identifier="addArticle" id="BTx-4R-YI4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ReadingsTable" destination="psN-pf-Z0m" id="Dz0-EX-AfQ"/>
-                        <segue destination="8WE-tb-edT" kind="show" identifier="editArticle" id="Tr9-54-bv3"/>
+                        <segue destination="C0w-bd-5qa" kind="show" identifier="editArticle" id="Tr9-54-bv3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIR-eM-6Ly" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2117,11 +2113,293 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZa-oQ-ZKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5l8-sT-a5f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="2923"/>
+            <point key="canvasLocation" x="330" y="2922"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wsH-mL-24G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QM4-MX-Ivu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9g1-T8-b6n">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xCu-6H-cPI" kind="relationship" relationship="rootViewController" id="Rxy-oA-B5X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFx-Q3-1YO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2819" y="2922"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yVJ-88-XJr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C0w-bd-5qa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0A0-94-i2m">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8WE-tb-edT" kind="relationship" relationship="rootViewController" id="g1F-go-rUO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zta-Yz-aCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156.521739130435" y="2922.554347826087"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TtC-dY-ICc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVb-63-RtV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xbN-3y-hk7">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qSw-st-Qk1" kind="relationship" relationship="rootViewController" id="pjX-xr-muW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QC9-bV-dIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818.840579710145" y="1471.467391304348"/>
+        </scene>
+        <!--Appointment-->
+        <scene sceneID="aTu-93-T7A">
+            <objects>
+                <viewController title="Appointment" id="hS2-89-WRB" customClass="AdminAppointmentViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I3w-yB-s8q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-S8-4ai">
+                                <rect key="frame" x="0.0" y="64" width="414" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-pa-KoC" userLabel="First User Stack View">
+                                        <rect key="frame" x="20" y="20" width="348" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="euA-KV-Z8T" userLabel="HelpSeekerImage" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="U5b-iC-eHf"/>
+                                                    <constraint firstAttribute="height" constant="80" id="hHu-fF-xa8"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhp-gb-wL6" userLabel="helpSeekerName" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
+                                                <rect key="frame" x="84" y="22" width="88" height="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1B-Jq-nzM" userLabel="doctorName" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
+                                                <rect key="frame" x="176" y="22" width="88" height="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lfy-6m-s7g" userLabel="doctorImage" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
+                                                <rect key="frame" x="268" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="6VO-AL-tFp"/>
+                                                    <constraint firstAttribute="width" constant="80" id="BWQ-a4-Kqt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Chl-RA-MNX" userLabel="State">
+                                        <rect key="frame" x="20" y="120" width="348" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call" translatesAutoresizingMaskIntoConstraints="NO" id="3Yn-23-ONd">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="tintColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="5xl-ni-xKx"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Yf7-Dw-srT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BS1-db-2Uh" userLabel="StateLabel">
+                                                <rect key="frame" x="60" y="0.0" width="288" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J2M-MG-XwC" userLabel="Date">
+                                        <rect key="frame" x="20" y="190" width="348" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="age" translatesAutoresizingMaskIntoConstraints="NO" id="xd6-td-xcn" userLabel="date">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="tintColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Q04-Me-QVE"/>
+                                                    <constraint firstAttribute="width" constant="50" id="buT-IW-TUP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcS-0a-P4D">
+                                                <rect key="frame" x="60" y="0.0" width="273.33333333333331" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqE-OE-eg6" userLabel="dateLabel">
+                                                <rect key="frame" x="343.33333333333331" y="0.0" width="4.6666666666666856" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kJw-ux-8Vk" userLabel="TimeSince">
+                                        <rect key="frame" x="20" y="260" width="348" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reqyests" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Z-BO-oSv">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="tintColor" name="MainColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="IRP-5p-jtd"/>
+                                                    <constraint firstAttribute="height" constant="50" id="kex-9C-HGa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-HD-bYd">
+                                                <rect key="frame" x="60" y="0.0" width="273.33333333333331" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvP-Vn-Hor" userLabel="timeLabel">
+                                                <rect key="frame" x="343.33333333333331" y="0.0" width="4.6666666666666856" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="J2M-MG-XwC" firstAttribute="leading" secondItem="pi7-S8-4ai" secondAttribute="leading" constant="20" id="1Ze-QX-GFO"/>
+                                    <constraint firstAttribute="trailing" secondItem="lBW-pa-KoC" secondAttribute="trailing" constant="20" id="1yh-NQ-gfg"/>
+                                    <constraint firstItem="J2M-MG-XwC" firstAttribute="top" secondItem="Chl-RA-MNX" secondAttribute="bottom" constant="20" id="74f-yn-wjj"/>
+                                    <constraint firstItem="kJw-ux-8Vk" firstAttribute="top" secondItem="J2M-MG-XwC" secondAttribute="bottom" constant="20" id="EAA-C4-UGU"/>
+                                    <constraint firstItem="kJw-ux-8Vk" firstAttribute="leading" secondItem="pi7-S8-4ai" secondAttribute="leading" constant="20" id="Jif-8I-Jtc"/>
+                                    <constraint firstItem="Chl-RA-MNX" firstAttribute="leading" secondItem="pi7-S8-4ai" secondAttribute="leading" constant="20" id="Mvp-1J-iUb"/>
+                                    <constraint firstAttribute="trailing" secondItem="kJw-ux-8Vk" secondAttribute="trailing" constant="20" id="Sd2-4e-Rhe"/>
+                                    <constraint firstItem="lBW-pa-KoC" firstAttribute="leading" secondItem="pi7-S8-4ai" secondAttribute="leading" constant="20" id="Sg0-cW-KcK"/>
+                                    <constraint firstItem="lBW-pa-KoC" firstAttribute="top" secondItem="pi7-S8-4ai" secondAttribute="top" constant="20" id="XbG-ID-gMq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Chl-RA-MNX" secondAttribute="trailing" constant="20" id="cN1-8B-XnS"/>
+                                    <constraint firstAttribute="bottom" secondItem="kJw-ux-8Vk" secondAttribute="bottom" constant="20" id="djc-Ps-Btc"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2M-MG-XwC" secondAttribute="trailing" constant="20" id="iQy-UQ-u49"/>
+                                    <constraint firstItem="Chl-RA-MNX" firstAttribute="top" secondItem="lBW-pa-KoC" secondAttribute="bottom" constant="20" id="x1R-Fe-2oR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pi7-S8-4ai" firstAttribute="leading" secondItem="I3w-yB-s8q" secondAttribute="leading" id="5bw-z9-7gj"/>
+                            <constraint firstAttribute="bottom" secondItem="pi7-S8-4ai" secondAttribute="bottom" constant="20" id="bjl-dc-pPw"/>
+                            <constraint firstItem="pi7-S8-4ai" firstAttribute="top" secondItem="FKn-7z-4mm" secondAttribute="top" id="kkQ-np-cvM"/>
+                            <constraint firstAttribute="trailing" secondItem="pi7-S8-4ai" secondAttribute="trailing" id="wsS-PS-yMS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FKn-7z-4mm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Users" image="user_male" id="mEb-c5-ifu">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Appointment" id="fdF-hX-JQZ"/>
+                    <connections>
+                        <outlet property="appointmentDate" destination="yqE-OE-eg6" id="QSc-TS-UN6"/>
+                        <outlet property="appointmentStatus" destination="BS1-db-2Uh" id="hl7-Uk-0VT"/>
+                        <outlet property="appointmentTime" destination="ZvP-Vn-Hor" id="yGt-XQ-BUv"/>
+                        <outlet property="doctorImage" destination="Lfy-6m-s7g" id="6Vm-cO-fOG"/>
+                        <outlet property="doctorName" destination="a1B-Jq-nzM" id="Zhf-2F-PMb"/>
+                        <outlet property="helpSeekerImage" destination="euA-KV-Z8T" id="5tn-9F-5qw"/>
+                        <outlet property="helpSeekerName" destination="fhp-gb-wL6" id="ABz-zu-fdu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4H-5P-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2819" y="60"/>
+        </scene>
+        <!--Users-->
+        <scene sceneID="Zd3-WM-CdA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aLw-7G-M5V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Users" image="user_male" id="4XW-Qp-f7y">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eZg-ei-VBr">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VQB-L0-JtM" kind="relationship" relationship="rootViewController" id="qXc-04-SkV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-Am-nMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818.840579710145" y="-708.42391304347836"/>
         </scene>
     </scenes>
     <resources>
         <image name="age" width="96" height="96"/>
+        <image name="call" width="96" height="96"/>
         <image name="home" width="30" height="30"/>
         <image name="issue" width="96" height="96"/>
         <image name="language" width="96" height="96"/>
@@ -2138,7 +2416,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="Tr9-54-bv3"/>
         <segue reference="rz7-yp-Sov"/>
-        <segue reference="VFc-qn-qJU"/>
-        <segue reference="B59-8M-706"/>
     </inferredMetricsTieBreakers>
 </document>

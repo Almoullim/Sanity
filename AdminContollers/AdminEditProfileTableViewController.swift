@@ -171,7 +171,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
         }
         
         if !imageChanged {
-            performSegue(withIdentifier: "backSetting", sender: sender)
+            dismiss(animated: true, completion: nil)
             return
         }
         
@@ -184,13 +184,13 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
         print("uploading image")
         imgRef.putData(imgData!, metadata: nil) { (metadata, error) in
             print("image uploading finished")
-            self.performSegue(withIdentifier: "backSetting", sender: sender)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
         
     @IBAction func cancelButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "backSetting", sender: sender)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func datePickerValueChanged(datePicker: UIDatePicker) {

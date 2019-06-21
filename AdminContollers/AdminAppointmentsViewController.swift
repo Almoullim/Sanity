@@ -13,7 +13,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
 
     
     // outlet
-    @IBOutlet weak var AppointmentTable: UITableView!
+    @IBOutlet weak var appointmentTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     // pass info
@@ -35,12 +35,34 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         
         loadAppointment(searchText: nil)
         
+        searchBar.delegate = self
+        appointmentTable.delegate = self
+        appointmentTable.dataSource = self
+        
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
+        // get search text and reload sessions
+        if let text = searchBar.text {
+            appointments = []
+            self.appointmentTable.reloadData()
+            loadAppointment(searchText: text)
+        }
+        
+        searchBar.resignFirstResponder()
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // discharge search and reload all sessions
+        searchBar.text = nil
+        appointments = []
+        self.appointmentTable.reloadData()
+        loadAppointment(searchText: nil)
+        searchBar.resignFirstResponder()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // get appointments coun and assign to rows count
@@ -49,7 +71,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     
     func loadAppointment(searchText: String?) {
         // set collection [table]
-        let collection = db.collection("appointment")
+        let collection = db.collection("appointments")
         var query: Query?
         if searchText != nil {
             // set search query
@@ -80,26 +102,28 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     func addAppointment(_ documents: [QueryDocumentSnapshot]) {
         // get each document info and assign to new appointment object
         for document in documents {
-            let appointmentID = document.data()["appointmentID"] as! String
-            let helpSeekername = document.data()["helpSeekername"] as! String
-            let helperName = document.data()["helperName"] as! String
-            let createdAt = document.data()["createAt"] as! String
-            let date = document.data()["daysSince"] as! String
-            let time = document.data()["daysSince"] as! String
-            
+            let appointmentID = document.documentID
+            let helpSeekername = document.data()["helpSeekerName"] as! String
+            let helperName = document.data()["doctorName"] as! String
+            let createAt = document.data()["createAt"] as! Timestamp
+            let date = document.data()["appointmentDate"] as! Timestamp
+            let createAtString = timeSince(timestamp: createAt)
+            let dateString = timeSince(timestamp: date)
+
             // add new appointment object to collection
-            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: date, time: time, createdAt: createdAt)!)
+            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: dateString, time: dateString, createAt: createAtString)!)
         }
         // reload table
-        AppointmentTable.reloadData()
+        appointmentTable.reloadData()
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // get appointment info to cell
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "AppointmentCell") as? SessionRecoredTableViewCell
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "appimtmentCell") as? SessionRecoredTableViewCell
         cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
-        cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
         
+        cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
+        cell?.sessionID = self.appointments[indexPath.row].appointmentID
         
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.appointments[indexPath.row].helpSeekerUserName + ".jpg")
@@ -115,18 +139,23 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         }
         return cell!
     }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // assign cell article to variable
+        appointmentID = self.appointments[indexPath.row].appointmentID
+        
+    }
     
     @IBAction func showSession(_ sender: Any) {
         
-        performSegue(withIdentifier: "Appointment", sender: nil)
+        performSegue(withIdentifier: "showAppointment", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // pass info to next view
-        if segue.identifier == "Appointment" {
-            if segue.destination is AdminSessionViewController
+        if segue.identifier == "showAppointment" {
+            if segue.destination is AdminAppointmentViewController
             {
-                let view = segue.destination as? AdminSessionViewController
-                view?.sessionID = self.appointmentID
+                let view = segue.destination as? AdminAppointmentViewController
+                view?.appointmentID = self.appointmentID
             }
         }
     }

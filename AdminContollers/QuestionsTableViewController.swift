@@ -42,6 +42,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
         SearchBar.delegate = self
         QuestionsTable.delegate = self
         QuestionsTable.dataSource = self
+        
     }
     
     
