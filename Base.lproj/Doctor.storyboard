@@ -1108,6 +1108,7 @@
                         <outlet property="articleTags" destination="BHv-IJ-mnu" id="Y9H-KT-8VR"/>
                         <outlet property="articleTitle" destination="fO4-Bd-FIL" id="r5n-fX-yCK"/>
                         <segue destination="wZX-5G-91z" kind="unwind" identifier="unwindToReadingList" unwindAction="unwindToReadingsListWithSegue:" id="wR0-ii-xfg"/>
+                        <segue destination="8qG-W9-ouF" kind="show" identifier="editArticle" id="2Cm-Vx-1tf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhg-yc-gus" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1283,4 +1284,7 @@
             <color red="0.14901960784313725" green="0.61960784313725492" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Cm-Vx-1tf"/>
+    </inferredMetricsTieBreakers>
 </document>

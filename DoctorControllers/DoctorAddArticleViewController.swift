@@ -32,6 +32,16 @@ class DoctorAddArticleViewController: UITableViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
+//        if let id = articleIDValue {
+//            let ref = db.collection("articles").document(id)
+//            ref.getDocument { (snapshot, err) in
+//                if let data = snapshot?.data() {
+//                    print(data)
+//                } else {
+//                    print("Couldn't find the document")
+//                }
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +57,7 @@ class DoctorAddArticleViewController: UITableViewController {
         if let description = self.articleDescriptionValue {
             self.Article.text = description
         }
-        if let tags = self.self.articleTagsValue {
+        if let tags = self.articleTagsValue {
             self.TagsInput.text = tags
         }
         

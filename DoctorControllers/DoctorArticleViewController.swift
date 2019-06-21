@@ -43,5 +43,13 @@ class DoctorArticleViewController: UIViewController {
     }
     
     @IBAction func editArticle(_ sender: Any) {
+        self.performSegue(withIdentifier: "editArticle", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editArticle" {
+            guard let view = segue.destination as? DoctorAddArticleViewController else { return }
+            view.articleIDValue = self.articleId
+        }
     }
 }

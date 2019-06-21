@@ -188,8 +188,8 @@
 				40A0AA0522AAF16C008189E2 /* DoctorProfileViewController.swift */,
 				40B8764922AAF6CA006DE401 /* DoctorEditProfileViewController.swift */,
 				404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */,
-				41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */,
 				41D79E7322BD596E00EAC4FF /* DoctorReadingsViewController.swift */,
+				41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */,
 				415A552C22BD60760051029F /* DoctorAddArticleViewController.swift */,
 			);
 			path = DoctorControllers;
