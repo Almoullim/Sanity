@@ -65,7 +65,7 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
         appointments = []
         self.appointmentsTable.reloadData()
         
-        let query = db.collection("appointments").whereField("helperUserName", isEqualTo: username!)
+        let query = db.collection("appointments").whereField("doctorName", isEqualTo: username!)
         
         query.getDocuments() { (querySnapshot, err) in
             if let err = err {

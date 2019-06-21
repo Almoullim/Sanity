@@ -61,23 +61,28 @@ class RequestViewController: UITableViewController {
     
     @IBAction func saveClicked(_ sender: Any) {
         var docData: [String: Any] = [
+            "appointmentDate": Timestamp.init(),
+            "created_at": Timestamp.init(),
             "helpSeekerName": self.name!,
             "helpSeekerUserName": self.currentUsername!,
             "issue": self.issueInput.text!,
             "description": self.descriptionInput.text!,
-            "created_at": Timestamp.init(),
-            "helpSeekerMobile": mobileInput.text!
+            "helpSeekerMobile": mobileInput.text!,
+            "isApproved": false,
+            "isCompleted": false
         ]
         var collectionName: String = ""
 
         if self.requestType == "volunteer" {
+            if let requestedUser = self.requestedUser {
+                docData["helperUserName"] = requestedUser
+            }
             collectionName = "requests"
         } else if self.requestType == "doctor" {
+            if let requestedUser = self.requestedUser {
+                docData["doctorName"] = requestedUser
+            }
             collectionName = "appointments"
-        }
-        
-        if let requestedUser = self.requestedUser {
-            docData["helperUserName"] = requestedUser
         }
         
         self.db

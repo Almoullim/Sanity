@@ -138,7 +138,7 @@
         <!--Readings-->
         <scene sceneID="vIp-px-xP5">
             <objects>
-                <tableViewController id="x9j-Gg-JCh" customClass="ReadingsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="x9j-Gg-JCh" customClass="VolunteerReadingsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AUJ-Ip-Se5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

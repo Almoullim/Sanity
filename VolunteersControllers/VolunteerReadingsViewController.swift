@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ReadingsViewController: UITableViewController {
+class VolunteerReadingsViewController: UITableViewController {
     
     var db: Firestore!
     
@@ -77,6 +77,7 @@ class ReadingsViewController: UITableViewController {
             view?.articleTitleValue = selectedArticle?.title
             view?.articleTagsValue = selectedArticle?.tags
             view?.articleDescriptionValue = selectedArticle?.description
+            view?.articleId = selectedArticle?.uid
         }
     }
     
