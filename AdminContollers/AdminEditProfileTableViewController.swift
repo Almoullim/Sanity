@@ -11,6 +11,7 @@ import Firebase
 
 class AdminEditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
+    // Outlets
     var imagePicker = UIImagePickerController()
     @IBOutlet weak var UserImage: DesignableUIImageView!
     @IBOutlet weak var UserNameInput: UITextField!
@@ -27,30 +28,34 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     var alreadyRan: Bool = false
     var imageChanged: Bool = false
     
+    // pass info
     var username: String?
+    
+    // firebase connection
     var db: Firestore!
     var storage: Storage!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // firebase api
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
         self.hideKeyboardWhenTappedAround()
         imagePicker.delegate = self
-        
         storage = Storage.storage()
     }
 
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // breack if runed before
         if alreadyRan { return }
         
+        
+        // Modife Firebase API refrence code to get user info
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
                 .getDocuments() { (querySnapshot, err) in
@@ -58,14 +63,12 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
                     if let data = querySnapshot?.documents[0].data() {
                         self.username = data["username"] as? String
                         self.UserNameInput.text = data["name"] as? String
-                        
                         if let mobile = data["mobile"] as? String {
                             self.MobileInput.text = mobile
                         }
                         
                         if let timestamp = data["dob"] as? Timestamp {
                             // Construct days since
-                            
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat = "dd/MM/yyyy"
                             
@@ -78,9 +81,12 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
                         self.Language.text = data["language"] as? String
                         self.Location.text = data["location"] as? String
                         
+                        // get storage path
                         let storageRef = self.storage.reference()
+                        // add image path to storage path
                         let imgRef = storageRef.child("images/" + self.username! + ".jpg")
                         
+                        // get image
                         imgRef.downloadURL { (url, error) in
                             guard let downloadURL = url else { return }
                             self.UserImage.downloaded(from: downloadURL)
@@ -94,8 +100,9 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     
     
     @IBAction func imageClicked(_ sender: Any) {
+        // show alert to user to chose image source
         let alert = UIAlertController(title: "Profile Image", message: "Please Select an Option", preferredStyle: .actionSheet)
-        
+        // get image from photo library
         alert.addAction(UIAlertAction(title: "Choose from photos", style: .default , handler:{ (UIAlertAction)in
             self.imagePicker = UIImagePickerController()
             self.imagePicker.delegate = self
@@ -103,7 +110,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
-        
+        // get image from camera
         alert.addAction(UIAlertAction(title: "Take a picture", style: .default , handler:{ (UIAlertAction)in
             self.imagePicker = UIImagePickerController()
             self.imagePicker.delegate = self
@@ -111,7 +118,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
             self.imagePicker.allowsEditing = false
             self.present(self.imagePicker, animated: true, completion: nil)
         }))
-        
+        // cancel
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
         }))
         
@@ -121,6 +128,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // get image from user mobile and assign to user image
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.UserImage.image = image
             self.imageChanged = true
@@ -149,6 +157,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
             "dob": dob ?? NSNull(),
         ]
         
+        // firebase api code to update
         self.db
             .collection("users")
             .document(self.username!)
@@ -160,6 +169,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
                     print("user info successfully updated!")
                 }
         }
+        
         if !imageChanged {
             performSegue(withIdentifier: "backSetting", sender: sender)
             return
@@ -198,8 +208,10 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case [1, 2]:
+            // show or hide date picker cell
             return datePickerIsHidden ? 0.0 : 216.0
         case [0, 0]:
+            // image cell size
             return 180.0
         default:
             return 44.0
@@ -210,6 +222,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
         case [1, 1]:
+            // change variable state to update row size
             tableView.beginUpdates()
             datePickerIsHidden = !datePickerIsHidden
             tableView.endUpdates()

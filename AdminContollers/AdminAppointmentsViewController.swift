@@ -12,9 +12,11 @@ import Firebase
 class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
 
     
-    
+    // outlet
     @IBOutlet weak var AppointmentTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    // pass info
     var appointmentID: String?
     
     // Google Firestore connection
@@ -25,7 +27,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     
     override func viewDidLoad() {
         
-        // [START setup]
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -41,17 +43,20 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // get appointments coun and assign to rows count
         return appointments.count
     }
     
     func loadAppointment(searchText: String?) {
+        // set collection [table]
         let collection = db.collection("appointment")
         var query: Query?
-        
         if searchText != nil {
+            // set search query
             query = collection.order(by: "name").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
         }
         
+        // get documents
         if query == nil {
             collection.getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -73,6 +78,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     }
     
     func addAppointment(_ documents: [QueryDocumentSnapshot]) {
+        // get each document info and assign to new appointment object
         for document in documents {
             let appointmentID = document.data()["appointmentID"] as! String
             let helpSeekername = document.data()["helpSeekername"] as! String
@@ -81,16 +87,16 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             let date = document.data()["daysSince"] as! String
             let time = document.data()["daysSince"] as! String
             
-            
+            // add new appointment object to collection
             self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: date, time: time, createAt: createAt)!)
         }
-        
+        // reload table
         AppointmentTable.reloadData()
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // get appointment info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "AppointmentCell") as? SessionRecoredTableViewCell
-        
         cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
         cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
         
@@ -115,6 +121,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         performSegue(withIdentifier: "Appointment", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // pass info to next view
         if segue.identifier == "Appointment" {
             if segue.destination is AdminSessionViewController
             {

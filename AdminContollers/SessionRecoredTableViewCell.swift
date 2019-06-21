@@ -10,8 +10,11 @@ import UIKit
 import Firebase
 
 class SessionRecoredTableViewCell: UITableViewCell {
-
+    
+    // ID variable
     var sessionID: String!
+    
+    // outlet
     @IBOutlet weak var usersName: UILabel!
     @IBOutlet weak var timeSince: UILabel!
     @IBOutlet weak var userOneImage: UIImageView!

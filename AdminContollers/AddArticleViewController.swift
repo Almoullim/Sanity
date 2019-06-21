@@ -11,11 +11,12 @@ import Firebase
 
 class AddArticleViewController: UITableViewController {
     
-    
+    // outlets
     @IBOutlet weak var TitleInput: UITextField!
     @IBOutlet weak var Article: UITextView!
     @IBOutlet weak var TagsInput: UITextField!
     
+    // firebase connection
     var db: Firestore!
 
     // pass info
@@ -27,22 +28,17 @@ class AddArticleViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // firebase api
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
-        
+        // set outlets info using passed info if available
         if let title = self.articleTitleValue {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
             self.navigationItem.title = "Edit Article"
@@ -59,11 +55,10 @@ class AddArticleViewController: UITableViewController {
     }
     
     @IBAction func cancelClicked(_ sender: Any) {
-       // dismiss(animated: true, completion: nil)
     }
     
     @IBAction func AddClicked(_ sender: Any) {
-        
+        // get outlets values and assign to array
         let docData: [String: Any] = [
             "title": self.TitleInput.text!,
             "description": self.Article.text!,
@@ -71,7 +66,7 @@ class AddArticleViewController: UITableViewController {
 
         ]
         if let id = self.articleIDValue {
-
+            // update article value in database if pass info is not null
         self.db
             .collection("articles")
             .document(id)
@@ -84,6 +79,7 @@ class AddArticleViewController: UITableViewController {
                 }
         }
         }else {
+            // add new article to database
             self.db
                 .collection("articles")
                 .document()
@@ -97,7 +93,7 @@ class AddArticleViewController: UITableViewController {
             }
         }
         
-        // dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     

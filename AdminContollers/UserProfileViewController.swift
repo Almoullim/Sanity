@@ -11,7 +11,7 @@ import Firebase
 
 class UserProfileViewController: UIViewController {
 
-    
+    // outlets
     @IBOutlet weak var UserImage: UIImageView!
     @IBOutlet weak var SaveEditButton: UIBarButtonItem!
     @IBOutlet weak var UserName: DesignableUILabel!
@@ -26,14 +26,17 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var isAvtive: UISwitch!
     @IBOutlet weak var backImage: UIImageView!
     
+    // pass info
     var username: String?
+    var userType: String?
+    
+    // firebase connection
     var db: Firestore!
     var storage: Storage!
-    var userType: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -41,40 +44,33 @@ class UserProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // get user info and assign to outlets
         if let currentUser = username {
-
             db.collection("users").whereField("username", isEqualTo: currentUser)
                 .getDocuments() { (querySnapshot, err) in
                     
                     if let data = querySnapshot?.documents[0].data() {
-                        
                         self.userType = data["userType"] as? String
                         if self.userType == "help-seeker" {
                             self.CallsLable.text = "Requests count"
                             self.SpecialityLable.text = "Issue"
-                            
                         }
-                        
                         self.username = data["username"] as? String
                         self.UserName.text = data["name"] as? String
                         self.isAvtive.isOn = (data["isActive"] as? Bool)!
-
                         if let location = data["location"] as? String {
                             self.Location.text = location
                         }
-                        
                         if let timestamp = data["created_at"] as? Timestamp {
                             self.MemberSince.text = "Member since " + timeSince(timestamp: timestamp)
                         }
-                        
                         if let date = data["dob"] as? Timestamp {
                             // Construct days since
                             let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
                             self.Age.text = String((secondsSince / 86400) / 365)
                         }
-                        
                         if let requestsCount = data["requestsCount"] as? Int {
                             self.CallsNumber.text = String(requestsCount)
                         } else {
@@ -96,7 +92,6 @@ class UserProfileViewController: UIViewController {
                         
                         let storageRef = self.storage.reference()
                         let imgRef = storageRef.child("images/" + self.username! + ".jpg")
-                        
                         imgRef.downloadURL { (url, error) in
                             guard let downloadURL = url else { return }
                             print("image download started")
@@ -120,11 +115,10 @@ class UserProfileViewController: UIViewController {
     
     
     @IBAction func SaveEditClicked(_ sender: UIBarButtonItem) {
-        if self.userType == "doctor" {
-        }
-        let user = db.collection("users").document(self.username!)
+        // if self.userType == "doctor" {}
         
-        // Set the "capital" field of the city 'DC'
+        // update user state using firebase api code
+        let user = db.collection("users").document(self.username!)
         user.updateData([
             "isActive": self.isAvtive.isOn
         ]) { err in
@@ -134,8 +128,7 @@ class UserProfileViewController: UIViewController {
                 print("Document successfully updated")
             }
         }
-        print("edit")
-            
+        
         performSegue(withIdentifier: "save", sender: UIBarButtonItem.self)
         }
     

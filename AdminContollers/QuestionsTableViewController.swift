@@ -15,10 +15,11 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     var db: Firestore!
     var storage: Storage!
     
+    // outlet
     @IBOutlet weak var QuestionsTable: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
     
-    
+    // pass info
     var selectedQuestion: String?
     var userType: String?
     
@@ -28,13 +29,16 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // firebase api coce
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         storage = Storage.storage()
         
+        // load help seeker question(default fillter)
         loadQuestions(userType: "help-seeker", searchText: nil)
         
+        // dalegate
         SearchBar.delegate = self
         QuestionsTable.delegate = self
         QuestionsTable.dataSource = self
@@ -50,6 +54,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
+        // get search text and reload sessions
         if let text = searchBar.text {
             questions = []
             self.QuestionsTable.reloadData()
@@ -61,8 +66,8 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // discharge search and reload all sessions
         searchBar.text = nil
-        
         questions = []
         self.QuestionsTable.reloadData()
         loadQuestions(userType: "help-seeker", searchText: nil)
@@ -72,9 +77,9 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
+        // change user type fillter and reload user
         questions = []
         self.QuestionsTable.reloadData()
-
         if (sender.selectedSegmentIndex == 0) {
             loadQuestions(userType: "help-seeker", searchText: nil)
             self.userType = "help-seeker"
@@ -86,42 +91,32 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // get questions count and assign to rows count
         return questions.count
     }
     
     func loadQuestions(userType: String, searchText: String?) {
+        // set collection [table]
         let collection = db.collection("qustions")
-        var query: Query?
-        
-        if userType != "all" {
-            print("\(userType) usertype")
-            query = collection.whereField("userType", isEqualTo: userType)
-        }
+        // set query
+        var query = collection.whereField("userType", isEqualTo: userType)
         
         if searchText != nil {
+            // set search query
             query = collection.order(by: "name").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
         }
-        if query == nil {
-            collection.getDocuments() { (querySnapshot, err) in
+            // get document
+            query.getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     self.addQuestion(querySnapshot!.documents)
                 }
             }
-            
-        } else {
-            query?.getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    self.addQuestion(querySnapshot!.documents)
-                }
-            }
-        }
     }
     
     func addQuestion(_ documents: [QueryDocumentSnapshot]) {
+        // get each documnt info and assign to new question
         for document in documents {
             // Get the volunteer name of the document
             let question = document.data()["question"] as! String
@@ -136,7 +131,8 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
             self.userType = userType
 
             let qusetion = Question(text: question, usertype: userTypeCase, answers: [Answer(text: "", type: .good)])
-            print(qusetion)
+            
+            // add new quetion to the collection
             self.questions.append(qusetion)
         }
         
@@ -144,6 +140,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // assign quetion info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? AdminSettingCellTableView
         
         cell?.qustion.text = self.questions[indexPath.row].text
@@ -160,6 +157,8 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // pass info to next view
         if segue.identifier == "EditQuestion" {
             if segue.destination is AddQuestionTableViewController
             {
@@ -181,7 +180,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     
     @IBAction func unwindToQustions(unwindSegue: UIStoryboardSegue) {
-        
+        // unwind from add/edit question
     }
     
     

@@ -10,10 +10,13 @@ import UIKit
 import Firebase
 
 class AdminSettingsViewController: UITableViewController {
+    
+    // firebase connection
     var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -28,7 +31,6 @@ class AdminSettingsViewController: UITableViewController {
         case [1,1]:
             logout()
         case [0, 0]:
-            print("")
             self.performSegue(withIdentifier: "Articles", sender: nil)
         case [0, 1]:
             self.performSegue(withIdentifier: "Qustions", sender: nil)
@@ -39,6 +41,7 @@ class AdminSettingsViewController: UITableViewController {
     }
     
     func logout() {
+        // lougout 
         try? Auth.auth().signOut()
        // self.performSegue(withIdentifier: "LoginView", sender: nil)
     }

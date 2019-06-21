@@ -15,6 +15,8 @@ class AddQuestionTableViewController: UITableViewController {
     var selectedQuestion: String?
     var userType: String?
     
+    
+    // outlet
     @IBOutlet weak var QuestionInput: UITextView!
     @IBOutlet weak var BestAnswer: UITextField!
     @IBOutlet weak var goodAnswerInput: UITextField!
@@ -22,11 +24,12 @@ class AddQuestionTableViewController: UITableViewController {
     @IBOutlet weak var worstAnswerInput: UITextField!
     @IBOutlet weak var AddEditButton: UIBarButtonItem!
     
+    // firebase connection
     var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -34,11 +37,10 @@ class AddQuestionTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
-        
+        // get user info if there is passed information
         if let question = self.selectedQuestion {
-            
             db.collection("qustions").whereField("question", isEqualTo: question)
                 .getDocuments() { (querySnapshot, err) in
                     
@@ -54,6 +56,7 @@ class AddQuestionTableViewController: UITableViewController {
             }
             
         }else {
+            // change title and button type if there isn't passed information
             navigationItem.title = "Add Question"
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
 
@@ -66,6 +69,7 @@ class AddQuestionTableViewController: UITableViewController {
     
     @IBAction func AddClicked(_ sender: Any) {
         
+        // get data from outlets and insert/ overwrite information to database
         let docData: [String: Any] = [
             "question": self.QuestionInput.text!,
             "userType": self.userType!,

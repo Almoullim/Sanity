@@ -11,28 +11,32 @@ import Firebase
 
 class UsersListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate  {
     
-    // Google Firestore connection
+    // Firestore connection
     var db: Firestore!
     var storage: Storage!
     
+    // outlets
     @IBOutlet weak var UsersTable: UITableView!
     @IBOutlet weak var SearchBar: UISearchBar!
     
+    // variables
     var selectedUser: String?
     var userType: String?
-    
     var users: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         storage = Storage.storage()
         
+        // load users
         loadUsers(userType: "all", searchText: nil)
         
+        // dalegate
         SearchBar.delegate = self
         UsersTable.delegate = self
         UsersTable.dataSource = self
@@ -55,10 +59,10 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
+        // get search text and reload sessions
         if let text = searchBar.text {
             users = []
             self.UsersTable.reloadData()
-            
             loadUsers(userType: "all", searchText: text)
         }
         
@@ -66,8 +70,8 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // discharge search and reload all sessions
         searchBar.text = nil
-        
         users = []
         self.UsersTable.reloadData()
         loadUsers(userType: "all", searchText: nil)
@@ -77,9 +81,9 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
+        // clear users collection and reload users with fillter user type
         users = []
         self.UsersTable.reloadData()
-        
         if (sender.selectedSegmentIndex == 1) {
             loadUsers(userType: "help-seeker", searchText: nil)
         } else if (sender.selectedSegmentIndex == 2) {
@@ -92,20 +96,26 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // get users count and assign to rows count
         return users.count
     }
     
     func loadUsers(userType: String, searchText: String?) {
+        // set collection [table]
         let collection = db.collection("users")
         var query: Query?
         
         if userType != "all" {
+            // set a query to get users with single user type
             query = collection.whereField("userType", isEqualTo: userType)
         }
         
         if searchText != nil {
+            // set search query
             query = collection.order(by: "name").start(at: [searchText!]).end(at: [searchText! + "\u{f8ff}"])
         }
+        
+        // firebase api code to get documents
         if query == nil {
             collection.getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -127,6 +137,7 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func addUsers(_ documents: [QueryDocumentSnapshot]) {
+        // get each document data and add to users collection
         for document in documents {
             // Get the volunteer name of the document
             let username = document.data()["username"] as! String
@@ -140,15 +151,16 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
                 daysSince = timeSince(timestamp: timestamp)
             }
             let user = User(username: username, name: name, daysSince: daysSince)
-            
             user?.userType = userType
             self.users.append(user!)
         }
-        
+        // reload table
         UsersTable.reloadData()
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // asign user info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
         
         cell?.userFullName.text = self.users[indexPath.row].name
@@ -169,6 +181,8 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // send info to next view
         if segue.identifier == "UserProfile" {
             if segue.destination is UserProfileViewController
             {

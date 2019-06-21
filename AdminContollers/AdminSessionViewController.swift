@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AdminSessionViewController: UIViewController {
-
+    // outlet
     @IBOutlet weak var FirstUserImage: DesignableUIImageView!
     @IBOutlet weak var FirstUserName: DesignableUILabel!
     @IBOutlet weak var FirstUserUserType: DesignableUILabel!
@@ -24,12 +24,18 @@ class AdminSessionViewController: UIViewController {
     @IBOutlet weak var FirstUserRating: UILabel!
     @IBOutlet weak var SecondUserRatingLabel: UILabel!
     
+    
+    // pass info
     var sessionID: String?
+    
+    // firebase connection
     var db: Firestore!
     var storage: Storage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // firebase api code
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -38,11 +44,12 @@ class AdminSessionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
+        
+        // get session info from datapase if passed ID is available using query
+        // firebase api code to get single documnt code isn't work
         if let currentSession = sessionID {
             let query = db.collection("sessions").whereField("sessionID", isEqualTo: currentSession)
-            
-            
                 query.getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
@@ -50,15 +57,14 @@ class AdminSessionViewController: UIViewController {
                         self.getSession(querySnapshot!.documents)
                     }
                 }
-            
-            
         }
         
     }
     
     func getSession(_ documents: [QueryDocumentSnapshot]) {
+        
+        // set documnt information to outlets
         for document in documents {
-
             self.FirstUserName.text = document.data()["helpSeekerUserName"] as? String
             self.FirstUserReview.text = document.data()["helpSeekerReview"] as? String
             if let firstUserRating = document.data()["helpSeekerRating"] as? Int {
@@ -77,14 +83,14 @@ class AdminSessionViewController: UIViewController {
             if let durationTimestamp = document.data()["duration"] as? String {
                 self.SessionDuration.text = duration(duration: durationTimestamp)
             }
-            print("before image")
             
             
-            
+            // get storage path
             let storageRef = self.storage.reference()
             let imgRef = storageRef.child("images/" + self.FirstUserName.text! + ".jpg")
             let imgRef2 = storageRef.child("images/" + self.SecoundUserName.text! + ".jpg")
             
+            // get images and assign to UIImage
             imgRef.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
                 print("image download started")

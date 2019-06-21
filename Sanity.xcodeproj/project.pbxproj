@@ -20,7 +20,6 @@
 		20CD017322B9B1CB002623AB /* AdminAppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */; };
 		20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */; };
 		20ED1B4C22B4D57400FD27A0 /* AdminSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */; };
-		20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */; };
 		20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */; };
 		20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */; };
 		20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5722B4FE6F00FD27A0 /* Question.swift */; };
@@ -79,7 +78,6 @@
 		20CD017222B9B1CB002623AB /* AdminAppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppointmentsViewController.swift; sourceTree = "<group>"; };
 		20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEditProfileTableViewController.swift; sourceTree = "<group>"; };
 		20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSessionsViewController.swift; sourceTree = "<group>"; };
-		20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B5722B4FE6F00FD27A0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			children = (
 				20ED1B4922B4D05200FD27A0 /* AdminEditProfileTableViewController.swift */,
 				20ED1B4B22B4D57400FD27A0 /* AdminSessionsViewController.swift */,
-				20ED1B4D22B4D5AC00FD27A0 /* AdminProfileViewController.swift */,
 				20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */,
 				20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */,
 				2077CD7422B7F756009F16D3 /* SessionRecoredTableViewCell.swift */,
@@ -477,7 +474,6 @@
 				41A84D4022A77D810025A1DB /* ReadingCell.swift in Sources */,
 				41074AEB229A0C6900D6E58C /* DoctorsViewController.swift in Sources */,
 				41B62C1A22A7751B00A731AF /* VolunteerEditProfileViewController.swift in Sources */,
-				20ED1B4E22B4D5AC00FD27A0 /* AdminProfileViewController.swift in Sources */,
 				40A0AA0622AAF16C008189E2 /* DoctorProfileViewController.swift in Sources */,
 				20ED1B4A22B4D05200FD27A0 /* AdminEditProfileTableViewController.swift in Sources */,
 				4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */,

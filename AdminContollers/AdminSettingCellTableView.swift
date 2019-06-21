@@ -11,8 +11,9 @@ import UIKit
 class AdminSettingCellTableView: UITableViewCell {
     
     
-
+    // delegate
     weak var delegate: UserCellDelegate?
+    // outlets
     @IBOutlet weak var qustion: UILabel!
     @IBOutlet weak var userType: UILabel!
 
