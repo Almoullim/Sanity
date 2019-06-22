@@ -13,7 +13,7 @@ class UserProfileViewController: UIViewController {
 
     // outlets
     @IBOutlet weak var UserImage: UIImageView!
-    @IBOutlet weak var SaveEditButton: UIBarButtonItem!
+    @IBOutlet weak var EditButton: UIBarButtonItem!
     @IBOutlet weak var UserName: DesignableUILabel!
     @IBOutlet weak var MemberSince: UILabel!
     @IBOutlet weak var Location: UILabel!
@@ -23,8 +23,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var Speciality: UILabel!
     @IBOutlet weak var SpecialityLable: UILabel!
     @IBOutlet weak var Language: UILabel!
-    @IBOutlet weak var isAvtive: UISwitch!
     @IBOutlet weak var backImage: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
     
     // pass info
     var username: String?
@@ -59,7 +59,13 @@ class UserProfileViewController: UIViewController {
                         }
                         self.username = data["username"] as? String
                         self.UserName.text = data["name"] as? String
-                        self.isAvtive.isOn = (data["isActive"] as? Bool)!
+                        if let status = data["isActive"] as? Bool {
+                            if status == true {
+                                self.statusLabel.text = "Active"
+                            }else{
+                                self.statusLabel.text = "Pending"
+                            }
+                        }
                         if let location = data["location"] as? String {
                             self.Location.text = location
                         }
@@ -111,24 +117,17 @@ class UserProfileViewController: UIViewController {
     }
     
     
+    @IBAction func unwindToUsersProfile(segue:UIStoryboardSegue) { }
+
     
     
-    
-    @IBAction func SaveEditClicked(_ sender: UIBarButtonItem) {
-        
-        }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UserList" {
-            // update user state using firebase api code
-            let user = db.collection("users").document(self.username!)
-            user.updateData([
-                "isActive": self.isAvtive.isOn
-            ]) { err in
-                if let err = err {
-                    print("Error updating document: \(err)")
-                } else {
-                    print("Document successfully updated")
-                }
+        if segue.identifier == "editUser" {
+            if segue.destination is EditUserProfileViewController
+            {
+                let view = segue.destination as? EditUserProfileViewController
+                view?.username = self.username
+                view?.userType = self.userType
             }
         }
     }

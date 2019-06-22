@@ -17,7 +17,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var searchBar: UISearchBar!
     
     // pass info
-    var appointmentID: String?
+    var sellectedAppointment: String?
     
     // Google Firestore connection
     var db: Firestore!
@@ -114,10 +114,11 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .medium
+            let timestamp = document.data()["created_at"] as? Timestamp
+                // Construct days since
+                createdAt = timeSince(timestamp: timestamp!)
             let dateTimeStamp = document.data()["appointmentDate"] as! Timestamp
                 date = dateFormatter.string(from: dateTimeStamp.dateValue())
-            let createdTimeStamp = document.data()["created_at"] as! Timestamp
-                createdAt = dateFormatter.string(from: createdTimeStamp.dateValue())
 
             
             // add new appointment object to collection
@@ -130,9 +131,47 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // get appointment info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "appimtmentCell") as? SessionRecoredTableViewCell
+        // get each user name
+        var helper: String?
+        var helpSeeker: String?
+        var docRef = db.collection("users").document(self.appointments[indexPath.row].helpSeekerUserName)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                if let data = document.data() {
+                    helpSeeker = (data["name"] as? String)!
+                    cell?.usersName.text =  helpSeeker
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+        docRef = db.collection("users").document(self.appointments[indexPath.row].helperUserName)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                if let data = document.data() {
+                    helper = (data["name"] as? String)!
+                    
+                    if let oldtext = cell?.usersName.text {
+                        let newText = "\(oldtext) & \(helper!)"
+                        cell?.usersName.text = newText
+                    
+                }
+            } else {
+                
+                print("Document does not exist")
+            }
+        }
+        }
+            
         cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
         cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
         cell?.ID = self.appointments[indexPath.row].appointmentID
+        cell?.delegate = self
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.appointments[indexPath.row].helpSeekerUserName + ".jpg")
         let imgRef1 = storageRef.child("images/" + self.appointments[indexPath.row].helperUserName + ".jpg")
@@ -148,7 +187,8 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
     }
 
     func segueWith(ID: String) {
-        appointmentID = ID
+        print(ID)
+        self.sellectedAppointment = ID
         showAppointment(self)
     }
     @IBAction func showAppointment(_ sender: Any) {
@@ -160,7 +200,7 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
             if segue.destination is AdminAppointmentViewController
             {
                 let view = segue.destination as? AdminAppointmentViewController
-                view?.appointmentID = self.appointmentID
+                view?.appointmentID = self.sellectedAppointment
             }
         }
     }

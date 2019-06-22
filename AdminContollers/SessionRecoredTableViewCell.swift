@@ -31,7 +31,6 @@ class SessionRecoredTableViewCell: UITableViewCell {
 
     @IBAction func requestButtonClicked(_ sender: Any) {
         delegate?.segueWith(ID: ID)
-        
     }
     
     

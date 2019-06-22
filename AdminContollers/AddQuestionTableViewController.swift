@@ -65,7 +65,25 @@ class AddQuestionTableViewController: UITableViewController {
             // change title and button type if there isn't passed information
             self.navigationItem.title = "Add Question"
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
-            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 4
+        case 2:
+            if let question = self.selectedQuestion{
+                return 1
+            } else {
+                return 0
+            }
+        default:
+            return 0
+        
+        
         }
     }
     
@@ -77,7 +95,7 @@ class AddQuestionTableViewController: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "questions" {
-            
+            if sender == nil {
             if segue.destination is QuestionsTableViewController
             {
                 // pass userType back
@@ -95,10 +113,10 @@ class AddQuestionTableViewController: UITableViewController {
                     "worst": self.worstAnswerInput.text!
                 ]
             ]
-            if let qustionID = self.selectedQuestion {
+            if let questionID = self.selectedQuestion {
             self.db
                 .collection("qustions")
-                .document(qustionID)
+                .document(questionID)
                 .setData(docData, merge: true)
                 { err in
                     if let err = err {
@@ -122,10 +140,31 @@ class AddQuestionTableViewController: UITableViewController {
         }
     }
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // assign cell article to variable
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath {
+        case [2, 0]:
+            if let questionID = self.selectedQuestion {
+                db.collection("qustions").document(questionID).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+                performSegue(withIdentifier: "questions", sender: "delete")
+            }
+        default:
+            break
+        }
+        
+        
+        }
 }
     
 

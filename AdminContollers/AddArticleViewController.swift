@@ -62,6 +62,7 @@ class AddArticleViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "articles" {
+            if sender == nil {
             // get outlets values and assign to array
             let docData: [String: Any] = [
                 "title": self.TitleInput.text!,
@@ -79,7 +80,7 @@ class AddArticleViewController: UITableViewController {
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
-                            print("Question updated!")
+                            print("article updated!")
                         }
                 }
             }else {
@@ -92,13 +93,50 @@ class AddArticleViewController: UITableViewController {
                         if let err = err {
                             print("Error updating document: \(err)")
                         } else {
-                            print("Question insert!")
+                            print("article insert!")
                         }
                 }
             }
             
+            }
+        }
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            if let id = self.articleIDValue {
+                return 1
+            } else {
+                return 0
+            }        default:
+            return 0
+            
             
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // assign cell article to variable
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath {
+        case [1, 0]:
+            if let id = self.articleIDValue {
+                db.collection("articles").document(id).delete() { err in
+                    if let err = err {
+                        print("Error removing document: \(err)")
+                    } else {
+                        print("Document successfully removed!")
+                    }
+                }
+                performSegue(withIdentifier: "articles", sender: "delete")
+            }
+        default:
+            break
+        }
+        
+        
     }
     
     

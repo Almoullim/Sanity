@@ -49,33 +49,38 @@ class AdminAppointmentViewController: UIViewController {
         // get session info from datapase if passed ID is available using query
         // firebase api code to get single documnt code isn't work
         if let currentAppointment = appointmentID {
-            let query = db.collection("appointments").whereField("appointmentID", isEqualTo: currentAppointment)
-            query.getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
+            
+            let docRef = db.collection("appointments").document(currentAppointment)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        self.getAppointments(data)
+                    }
                 } else {
-                    self.getAppointments(querySnapshot!.documents)
+                    print("Document does not exist")
                 }
             }
         }
         
     }
     
-    func getAppointments(_ documents: [QueryDocumentSnapshot]) {
+    func getAppointments(_ data: [String : Any]) {
         
         // set documnt information to outlets
-        for document in documents {
-            self.helpSeekerName.text = document.data()["helpSeekerName"] as? String
-            self.doctorName.text = document.data()["doctorName"] as? String
-            if let timeStamp = document.data()["appointmentDate"] as? Timestamp {
+            self.helpSeekerName.text = data["helpSeekerName"] as? String
+            self.doctorName.text = data["doctorName"] as? String
+            if let timeStamp = data["appointmentDate"] as? Timestamp {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             self.appointmentDate.text = dateFormatter.string(from: timeStamp.dateValue())
-            dateFormatter.timeStyle = .long
+            dateFormatter.timeStyle = .short
             self.appointmentTime.text = dateFormatter.string(from: timeStamp.dateValue())
             }
-            self.isApproved = document.data()["isApproved"] as? Bool
-            self.isCompleted = document.data()["isCompleted"] as? Bool
+            self.isApproved = data["isApproved"] as? Bool
+            self.isCompleted = data["isCompleted"] as? Bool
             if isCompleted! {
                 self.appointmentStatus.text = "Completed"
             } else if isApproved! {
@@ -114,6 +119,4 @@ class AdminAppointmentViewController: UIViewController {
             }
         }
     }
-    
 
-}

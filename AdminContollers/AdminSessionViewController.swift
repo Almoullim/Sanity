@@ -65,18 +65,45 @@ class AdminSessionViewController: UIViewController {
         
         // set documnt information to outlets
         for document in documents {
-            self.FirstUserName.text = document.data()["helpSeekerUserName"] as? String
+            let helpSeekerUserName = document.data()["helpSeekerUserName"] as? String
+
+            var docRef = db.collection("users").document(helpSeekerUserName!)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        self.FirstUserName.text = data["name"] as? String
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
             self.FirstUserReview.text = document.data()["helpSeekerReview"] as? String
             if let firstUserRating = document.data()["helpSeekerRating"] as? Int {
-                self.FirstUserRating.text = String(firstUserRating)
+                self.FirstUserRating.text = "\(String(firstUserRating))/5"
             }
-            self.SecoundUserName.text = document.data()["helperUserName"] as? String
+            let helperUserName = document.data()["helperUserName"] as? String
+
+            docRef = db.collection("users").document(helperUserName!)
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        self.SecoundUserName.text = data["name"] as? String
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
             self.SecoundUserReview.text = document.data()["helperReview"] as? String
             if let secondUserRating = document.data()["helperRating"] as? Int {
-                self.SecondUserRatingLabel.text = String(secondUserRating)
+                self.SecondUserRatingLabel.text = "\(String(secondUserRating))/5"
             }
-            self.FirstUserUserType.text = "help seeker"
-            self.SecoundUserUserType.text = "volnteer"
+            self.FirstUserUserType.text = "Help Seeker"
+            self.SecoundUserUserType.text = "Volunteer"
             if let sinceTimestamp = document.data()["daysSince"] as? Timestamp {
                 self.SessionTime.text = "Since " + timeSince(timestamp: sinceTimestamp)
             }
