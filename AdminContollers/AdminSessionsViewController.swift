@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
+class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SessionRecoredCellDelegate {
     
     
     // outlets
@@ -127,7 +127,7 @@ class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITa
         cell?.usersName.text = "\(self.sessions[indexPath.row].helpSeekerUserName) & \(self.sessions[indexPath.row].helperUserName)"
         cell?.timeSince.text = self.sessions[indexPath.row].getDaysSince
         cell?.delegate = self
-        
+        cell?.ID = self.sessions[indexPath.row].sessionID
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.sessions[indexPath.row].helpSeekerUserName + ".jpg")
         let imgRef1 = storageRef.child("images/" + self.sessions[indexPath.row].helperUserName + ".jpg")
@@ -142,11 +142,15 @@ class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITa
         }
         return cell!
     }
+    
      internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.sessionID = self.sessions[indexPath.row].sessionID
-
-
         
+    }
+    
+    func segueWith(ID: String) {
+        sessionID = ID
+        showSession(self)
     }
     @IBAction func showSession(_ sender: Any) {
         

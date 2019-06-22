@@ -33,6 +33,9 @@ class ArticelsViewController: UITableViewController {
     }
     
     func loadArticles() {
+        
+        // empty articles collection
+        articles = []
         // set collection [table]
         let collection = db.collection("articles")
         
@@ -106,7 +109,11 @@ class ArticelsViewController: UITableViewController {
         return cell!
     }
     @IBAction func unwindToArticles(unwindSegue: UIStoryboardSegue) {
-        // unwind from add article
+        // unwind from add article and reload table
+        
+        loadArticles()
+        self.ReadingsTable.reloadData()
+        
     }
 
 }

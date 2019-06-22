@@ -29,7 +29,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var questionProgressView: UIProgressView!
     
     var questions: [Question] = [
-        Question(text: "Which food do you like the most?",
+        Question(ID: "", text: "Which food do you like the most?",
                  usertype: .Volunteer,
                  answers: [
                     Answer(text: "Steak", type: .veryGood),

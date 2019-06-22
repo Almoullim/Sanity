@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class QuestionsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
+class QuestionsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, AdminSettingDelegate {
 
     // Google Firestore connection
     var db: Firestore!
@@ -46,7 +46,10 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
-    
+    func segueWith(ID: String) {
+        selectedQuestion = ID
+        requestedButtonClicked(self)
+    }
     @IBAction func requestedButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "EditQuestion", sender: nil)
     }
@@ -120,8 +123,9 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
         // get each documnt info and assign to new question
         for document in documents {
             // Get the volunteer name of the document
+            let questionID = document.documentID
+            self.selectedQuestion = questionID
             let question = document.data()["question"] as! String
-            self.selectedQuestion = question
             let userType = document.data()["userType"] as! String
             var userTypeCase: Usertype
             if userType == "help-seeker" {
@@ -131,7 +135,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.userType = userType
 
-            let qusetion = Question(text: question, usertype: userTypeCase, answers: [Answer(text: "", type: .good)])
+            let qusetion = Question(ID: questionID, text: question, usertype: userTypeCase, answers: [Answer(text: "", type: .good)])
             
             // add new quetion to the collection
             self.questions.append(qusetion)
@@ -150,6 +154,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
         } else {
             cell?.userType.text = "volunteer"
         }
+        cell?.ID = self.questions[indexPath.row].ID
         cell?.delegate = self
         
         
@@ -182,6 +187,9 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBAction func unwindToQustions(unwindSegue: UIStoryboardSegue) {
         // unwind from add/edit question
+        questions = []
+        loadQuestions(userType: userType!, searchText: nil)
+        self.QuestionsTable.reloadData()
     }
     
     

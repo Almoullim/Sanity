@@ -41,10 +41,13 @@ class AddQuestionTableViewController: UITableViewController {
         
         // get user info if there is passed information
         if let question = self.selectedQuestion {
-            db.collection("qustions").whereField("question", isEqualTo: question)
-                .getDocuments() { (querySnapshot, err) in
-                    
-                    if let data = querySnapshot?.documents[0].data() {
+            let docRef = db.collection("qustions").document(question)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
                         self.QuestionInput.text = data["question"] as? String
                         if let answers = data["answers"] as? [String: String] {
                             self.BestAnswer.text = answers["best"]
@@ -53,36 +56,49 @@ class AddQuestionTableViewController: UITableViewController {
                             self.worstAnswerInput.text = answers["worst"]
                         }
                     }
+                } else {
+                    print("Document does not exist")
+                }
             }
             
         }else {
             // change title and button type if there isn't passed information
-            navigationItem.title = "Add Question"
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
-
+            self.navigationItem.title = "Add Question"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
+            
         }
     }
     
-    @IBAction func cancelClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func AddClicked(_ sender: Any) {
-        
-        // get data from outlets and insert/ overwrite information to database
-        let docData: [String: Any] = [
-            "question": self.QuestionInput.text!,
-            "userType": self.userType!,
-            "answers": [
-                "best": self.BestAnswer.text!,
-                "good": self.goodAnswerInput.text!,
-                "bad": self.badAnswerInput.text!,
-                "worst": self.worstAnswerInput.text!
+        // go back to questions list
+        performSegue(withIdentifier: "questions", sender: nil)
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "questions" {
+            
+            if segue.destination is QuestionsTableViewController
+            {
+                // pass userType back
+                let view = segue.destination as? QuestionsTableViewController
+                view?.userType = self.userType
+            }
+            // get data from outlets and insert/ overwrite information to database
+            let docData: [String: Any] = [
+                "question": self.QuestionInput.text!,
+                "userType": self.userType!,
+                "answers": [
+                    "best": self.BestAnswer.text!,
+                    "good": self.goodAnswerInput.text!,
+                    "bad": self.badAnswerInput.text!,
+                    "worst": self.worstAnswerInput.text!
+                ]
             ]
-        ]
+            if let qustionID = self.selectedQuestion {
             self.db
                 .collection("qustions")
-                .document(self.QuestionInput.text!)
+                .document(qustionID)
                 .setData(docData, merge: true)
                 { err in
                     if let err = err {
@@ -90,11 +106,21 @@ class AddQuestionTableViewController: UITableViewController {
                     } else {
                         print("Question updated!")
                     }
+                }
+            } else {
+                self.db
+                    .collection("qustions")
+                    .document()
+                    .setData(docData, merge: true)
+                    { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Question updated!")
+                        }
             }
-        
-        
-        dismiss(animated: true, completion: nil)
-
+        }
+    }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

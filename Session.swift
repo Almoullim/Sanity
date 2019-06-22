@@ -75,10 +75,9 @@ class Appointment {
     var helpSeekerName: String
     var helpSeekerMobile: String
     var helperUserName: String
-    var isAproved: Bool
-    var isDone: Bool
+    var isApproved: Bool
+    var isCompleted: Bool
     var date: String
-    var time: String
     var createdAt: String
     var getDaysSince: String {
         get {
@@ -93,23 +92,11 @@ class Appointment {
         helpSeekerName = ""
         helpSeekerMobile = ""
         date = ""
-        time = ""
         createdAt = ""
-        isAproved = false
-        isDone = false
+        isApproved = false
+        isCompleted = false
     }
     
-    convenience init?(appointmentID: String, helpSeekerUserName: String, helperUserName: String, date: String, time: String, createdAt: String){
-        self.init()
-        self.appointmentID = appointmentID
-        self.helpSeekerUserName = helpSeekerUserName
-        self.helperUserName = helperUserName
-        self.date = date
-        self.time = time
-        self.createdAt = createdAt
-        self.isAproved = false
-        self.isDone = false
-    }
     
     convenience init?(appointmentID: String, helpSeekerUserName: String, helpSeekerName: String, helpSeekerMobile: String, helperUserName: String, createdAt: String){
         self.init()
@@ -119,7 +106,20 @@ class Appointment {
         self.helpSeekerMobile = helpSeekerMobile
         self.helperUserName = helperUserName
         self.createdAt = createdAt
-        self.isAproved = false
-        self.isDone = false
+        self.isApproved = false
+        self.isCompleted = false
+    }
+    
+    convenience init?(appointmentID: String, helpSeekerUserName: String, helpSeekerName: String, helpSeekerMobile: String, helperUserName: String, createdAt: String, isApproved: Bool, isCompleted: Bool , date: String){
+        self.init()
+        self.appointmentID = appointmentID
+        self.helpSeekerUserName = helpSeekerUserName
+        self.helpSeekerName = helpSeekerName
+        self.helpSeekerMobile = helpSeekerMobile
+        self.helperUserName = helperUserName
+        self.createdAt = createdAt
+        self.isApproved = isApproved
+        self.isCompleted = isCompleted
+        self.date = date
     }
 }

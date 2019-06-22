@@ -9,6 +9,7 @@
 import Foundation
 
 struct Question {
+    var ID: String
     var text: String
     var usertype: Usertype
     var answers: [Answer]

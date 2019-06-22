@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UserCellDelegate {
+class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SessionRecoredCellDelegate {
 
     
     // outlet
@@ -103,15 +103,25 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         // get each document info and assign to new appointment object
         for document in documents {
             let appointmentID = document.documentID
-            let helpSeekername = document.data()["helpSeekerName"] as! String
+            let helpSeekerUserName = document.data()["helpSeekerUserName"] as! String
             let helperName = document.data()["doctorName"] as! String
-            let createAt = document.data()["createAt"] as! Timestamp
-            let date = document.data()["appointmentDate"] as! Timestamp
-            let createAtString = timeSince(timestamp: createAt)
-            let dateString = timeSince(timestamp: date)
+            let helpSeekerName = document.data()["helpSeekerName"] as! String
+            let helpSeekerMobile = document.data()["helpSeekerMobile"] as! String
+            let isApproved = document.data()["isApproved"] as! Bool
+            let isCompleted = document.data()["isCompleted"] as! Bool
+            let date: String?
+            let createdAt:String?
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .medium
+            let dateTimeStamp = document.data()["appointmentDate"] as! Timestamp
+                date = dateFormatter.string(from: dateTimeStamp.dateValue())
+            let createdTimeStamp = document.data()["created_at"] as! Timestamp
+                createdAt = dateFormatter.string(from: createdTimeStamp.dateValue())
 
+            
             // add new appointment object to collection
-            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekername, helperUserName: helperName, date: dateString, time: dateString, createdAt: createAtString)!)
+            self.appointments.append(Appointment(appointmentID: appointmentID, helpSeekerUserName: helpSeekerUserName, helpSeekerName: helpSeekerName, helpSeekerMobile: helpSeekerMobile, helperUserName: helperName, createdAt: createdAt!, isApproved: isApproved, isCompleted: isCompleted, date: date!)!)
         }
         // reload table
         appointmentTable.reloadData()
@@ -121,14 +131,11 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         // get appointment info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "appimtmentCell") as? SessionRecoredTableViewCell
         cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
-        
         cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
-        cell?.sessionID = self.appointments[indexPath.row].appointmentID
-        
+        cell?.ID = self.appointments[indexPath.row].appointmentID
         let storageRef = self.storage.reference()
         let imgRef = storageRef.child("images/" + self.appointments[indexPath.row].helpSeekerUserName + ".jpg")
         let imgRef1 = storageRef.child("images/" + self.appointments[indexPath.row].helperUserName + ".jpg")
-        
         imgRef.downloadURL { (url, error) in
             guard let downloadURL = url else { return }
             cell?.userOneImage.downloaded(from: downloadURL)
@@ -139,15 +146,13 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         }
         return cell!
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // assign cell article to variable
-        appointmentID = self.appointments[indexPath.row].appointmentID
-        
+
+    func segueWith(ID: String) {
+        appointmentID = ID
+        showAppointment(self)
     }
-    
-    @IBAction func showSession(_ sender: Any) {
-        
-        performSegue(withIdentifier: "showAppointment", sender: nil)
+    @IBAction func showAppointment(_ sender: Any) {
+            performSegue(withIdentifier: "showAppointment", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // pass info to next view

@@ -54,47 +54,51 @@ class AddArticleViewController: UITableViewController {
       
     }
     
-    @IBAction func cancelClicked(_ sender: Any) {
-    }
     
     @IBAction func AddClicked(_ sender: Any) {
-        // get outlets values and assign to array
-        let docData: [String: Any] = [
-            "title": self.TitleInput.text!,
-            "description": self.Article.text!,
-            "tags": self.TagsInput.text!,
-
-        ]
-        if let id = self.articleIDValue {
-            // update article value in database if pass info is not null
-        self.db
-            .collection("articles")
-            .document(id)
-            .setData(docData, merge: true)
-            { err in
-                if let err = err {
-                    print("Error updating document: \(err)")
-                } else {
-                    print("Question updated!")
+        // go back to articles list
+        performSegue(withIdentifier: "articles", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "articles" {
+            // get outlets values and assign to array
+            let docData: [String: Any] = [
+                "title": self.TitleInput.text!,
+                "description": self.Article.text!,
+                "tags": self.TagsInput.text!,
+                
+                ]
+            if let id = self.articleIDValue {
+                // update article value in database if pass info is not null
+                self.db
+                    .collection("articles")
+                    .document(id)
+                    .setData(docData, merge: true)
+                    { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Question updated!")
+                        }
                 }
-        }
-        }else {
-            // add new article to database
-            self.db
-                .collection("articles")
-                .document()
-                .setData(docData, merge: true)
-                { err in
-                    if let err = err {
-                        print("Error updating document: \(err)")
-                    } else {
-                        print("Question updated!")
-                    }
+            }else {
+                // add new article to database
+                self.db
+                    .collection("articles")
+                    .document()
+                    .setData(docData, merge: true)
+                    { err in
+                        if let err = err {
+                            print("Error updating document: \(err)")
+                        } else {
+                            print("Question insert!")
+                        }
+                }
             }
+            
+            
         }
-        
-        dismiss(animated: true, completion: nil)
-        
     }
     
     

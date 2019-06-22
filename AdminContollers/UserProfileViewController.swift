@@ -115,23 +115,23 @@ class UserProfileViewController: UIViewController {
     
     
     @IBAction func SaveEditClicked(_ sender: UIBarButtonItem) {
-        // if self.userType == "doctor" {}
         
-        // update user state using firebase api code
-        let user = db.collection("users").document(self.username!)
-        user.updateData([
-            "isActive": self.isAvtive.isOn
-        ]) { err in
-            if let err = err {
-                print("Error updating document: \(err)")
-            } else {
-                print("Document successfully updated")
+        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserList" {
+            // update user state using firebase api code
+            let user = db.collection("users").document(self.username!)
+            user.updateData([
+                "isActive": self.isAvtive.isOn
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
             }
         }
-        
-        dismiss(animated: true, completion: nil)
-        }
-    
+    }
     
     
 
