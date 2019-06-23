@@ -8,18 +8,13 @@
 
 import Foundation
 
-struct Question2 {
-    var id: String
-    var title: String
-    var answer: Bool?
-}
-
 struct Question {
     var ID: String
     var text: String
     var usertype: Usertype
     var answers: [Answer]
 }
+
 enum Usertype {
     case helpSeeker, Volunteer
 }
@@ -30,5 +25,5 @@ struct Answer {
 }
 
 enum Rate {
-    case veryGood,good,bad,VeryBad
+    case best, good, bad, worst
 }
