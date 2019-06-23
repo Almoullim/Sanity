@@ -753,7 +753,7 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-Ff-51P" customClass="DesignableUILabel" customModule="Sanity" customModuleProvider="target">
-                                <rect key="frame" x="140" y="160" width="274" height="36"/>
+                                <rect key="frame" x="135" y="162" width="279" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -780,7 +780,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBb-fb-AAa" customClass="DesignableUIImageView" customModule="Sanity" customModuleProvider="target">
-                                <rect key="frame" x="20" y="150" width="100" height="100"/>
+                                <rect key="frame" x="20" y="153" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="CGZ-4O-BZa"/>
                                     <constraint firstAttribute="height" constant="100" id="twY-Ng-OXx"/>
@@ -797,21 +797,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS1-EC-Zp0">
-                                <rect key="frame" x="140" y="210" width="274" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS1-EC-Zp0">
+                                <rect key="frame" x="140" y="213" width="274" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="MainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn5-F7-uRF">
-                                <rect key="frame" x="140" y="233" width="8" height="18"/>
+                                <rect key="frame" x="140" y="236" width="8" height="18"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-R8-Qmd">
-                                <rect key="frame" x="50" y="301" width="314" height="278"/>
+                                <rect key="frame" x="50" y="293" width="314" height="278"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4ig-K9-NbK">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
@@ -960,16 +960,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2kF-R8-Qmd" firstAttribute="top" secondItem="wn5-F7-uRF" secondAttribute="bottom" constant="50" id="4vg-pt-GLY"/>
+                            <constraint firstItem="2kF-R8-Qmd" firstAttribute="top" secondItem="vRm-Ze-2Ld" secondAttribute="bottom" constant="20" id="1xM-yn-Y3l"/>
                             <constraint firstItem="YdS-w3-sdV" firstAttribute="trailing" secondItem="9bZ-Ff-51P" secondAttribute="trailing" id="B1m-D4-qK6"/>
                             <constraint firstItem="YdS-w3-sdV" firstAttribute="trailing" secondItem="2kF-R8-Qmd" secondAttribute="trailing" constant="50" id="GAv-CM-C6T"/>
+                            <constraint firstItem="vRm-Ze-2Ld" firstAttribute="top" secondItem="9bZ-Ff-51P" secondAttribute="bottom" constant="5" id="JaM-me-Hxm"/>
                             <constraint firstItem="YdS-w3-sdV" firstAttribute="trailing" secondItem="wCo-le-0od" secondAttribute="trailing" constant="20" id="Jse-du-cah"/>
-                            <constraint firstItem="9bZ-Ff-51P" firstAttribute="top" secondItem="YdS-w3-sdV" secondAttribute="top" constant="140" id="LIr-8t-fmp"/>
                             <constraint firstItem="NS1-EC-Zp0" firstAttribute="leading" secondItem="CBb-fb-AAa" secondAttribute="trailing" constant="20" id="LK7-Re-9AC"/>
                             <constraint firstItem="CBb-fb-AAa" firstAttribute="leading" secondItem="YdS-w3-sdV" secondAttribute="leading" constant="20" id="OFw-l3-zJT"/>
                             <constraint firstItem="Bop-xq-tIc" firstAttribute="trailing" secondItem="YdS-w3-sdV" secondAttribute="trailing" id="OfR-pe-TqC"/>
                             <constraint firstItem="YdS-w3-sdV" firstAttribute="trailing" secondItem="NS1-EC-Zp0" secondAttribute="trailing" id="QGc-iA-FJJ"/>
-                            <constraint firstItem="NS1-EC-Zp0" firstAttribute="top" secondItem="nOV-Jr-Iec" secondAttribute="bottom" constant="40" id="Rql-gW-o2p"/>
+                            <constraint firstItem="NS1-EC-Zp0" firstAttribute="top" secondItem="vRm-Ze-2Ld" secondAttribute="top" constant="10" id="Rql-gW-o2p"/>
                             <constraint firstItem="Bop-xq-tIc" firstAttribute="leading" secondItem="YdS-w3-sdV" secondAttribute="leading" id="XpE-DW-zIA"/>
                             <constraint firstItem="2kF-R8-Qmd" firstAttribute="leading" secondItem="YdS-w3-sdV" secondAttribute="leading" constant="50" id="YOM-dI-VRL"/>
                             <constraint firstItem="Bop-xq-tIc" firstAttribute="centerX" secondItem="f1y-gB-NRX" secondAttribute="centerX" id="b8v-mE-BUy"/>
@@ -977,15 +977,15 @@
                             <constraint firstItem="vRm-Ze-2Ld" firstAttribute="leading" secondItem="YdS-w3-sdV" secondAttribute="leading" id="dhT-45-axZ"/>
                             <constraint firstItem="nOV-Jr-Iec" firstAttribute="leading" secondItem="YdS-w3-sdV" secondAttribute="leading" id="eSQ-h1-TLd"/>
                             <constraint firstItem="wn5-F7-uRF" firstAttribute="top" secondItem="NS1-EC-Zp0" secondAttribute="bottom" constant="5" id="f1v-rJ-eNS"/>
-                            <constraint firstItem="CBb-fb-AAa" firstAttribute="top" secondItem="YdS-w3-sdV" secondAttribute="top" constant="130" id="kCt-7u-mYX"/>
                             <constraint firstItem="nOV-Jr-Iec" firstAttribute="centerX" secondItem="f1y-gB-NRX" secondAttribute="centerX" id="lbm-UY-z6x"/>
                             <constraint firstItem="vRm-Ze-2Ld" firstAttribute="top" secondItem="Bop-xq-tIc" secondAttribute="bottom" constant="3" id="lnW-6U-9P4"/>
                             <constraint firstItem="wn5-F7-uRF" firstAttribute="leading" secondItem="CBb-fb-AAa" secondAttribute="trailing" constant="20" id="mwi-0I-u1l"/>
                             <constraint firstItem="nOV-Jr-Iec" firstAttribute="trailing" secondItem="YdS-w3-sdV" secondAttribute="trailing" id="qhj-Bm-24W"/>
                             <constraint firstItem="nOV-Jr-Iec" firstAttribute="top" secondItem="YdS-w3-sdV" secondAttribute="top" id="qvJ-2Y-0oi"/>
                             <constraint firstItem="Bop-xq-tIc" firstAttribute="top" secondItem="f1y-gB-NRX" secondAttribute="top" id="rM3-Zs-eUe"/>
-                            <constraint firstItem="9bZ-Ff-51P" firstAttribute="leading" secondItem="CBb-fb-AAa" secondAttribute="trailing" constant="20" id="rXJ-qm-PI0"/>
+                            <constraint firstItem="9bZ-Ff-51P" firstAttribute="leading" secondItem="CBb-fb-AAa" secondAttribute="trailing" constant="15" id="rXJ-qm-PI0"/>
                             <constraint firstItem="YdS-w3-sdV" firstAttribute="bottom" secondItem="wCo-le-0od" secondAttribute="bottom" constant="20" id="uKG-Pd-L6H"/>
+                            <constraint firstItem="vRm-Ze-2Ld" firstAttribute="bottom" secondItem="CBb-fb-AAa" secondAttribute="bottom" constant="20" id="uUm-y2-hmN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YdS-w3-sdV"/>
                     </view>
@@ -1310,6 +1310,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q8c-DT-FNT"/>
+        <segue reference="p7a-Ht-geS"/>
     </inferredMetricsTieBreakers>
 </document>
