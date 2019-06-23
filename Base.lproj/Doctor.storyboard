@@ -499,6 +499,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="gP2-wT-0R4"/>
                     <connections>
                         <segue destination="ucE-eF-bng" kind="show" identifier="EditProfile" id="D4y-jz-Kxf"/>
+                        <segue destination="5Hw-J2-eIa" kind="show" identifier="LoginView" id="X17-qh-uhV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDF-p4-ZEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1265,6 +1266,14 @@
                 <exit id="HdV-uc-10E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2509" y="1636"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="llT-9B-jaR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="5Hw-J2-eIa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUx-bU-PX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="-1379"/>
         </scene>
     </scenes>
     <resources>
