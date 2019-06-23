@@ -43,6 +43,6 @@ class AdminSettingsViewController: UITableViewController {
     func logout() {
         // lougout 
         try? Auth.auth().signOut()
-       // self.performSegue(withIdentifier: "LoginView", sender: nil)
+       self.performSegue(withIdentifier: "LoginView", sender: nil)
     }
 }

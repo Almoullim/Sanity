@@ -130,6 +130,7 @@ class RegisterViewController: UIViewController {
                 .document(self.registerUsername.text!)
                 .setData([
                     "uid": Auth.auth().currentUser?.uid as Any,
+                    "isAcrive": true,
                     "name": self.registerName.text!,
                     "email": self.registerEmail.text!,
                     "phone": self.registerPhone.text!,
