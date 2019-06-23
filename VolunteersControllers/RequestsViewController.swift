@@ -62,10 +62,10 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if let number = URL(string: "tel://" + mobile.replacingOccurrences(of: " ", with: "")) {
             UIApplication.shared.open(number, options: [:]) { (success:Bool) in
-//                self.db
-//                    .collection("requests")
-//                    .document(self.selectedHelpSeeker!)
-//                    .delete()
+                self.db
+                    .collection("requests")
+                    .document(self.selectedHelpSeeker!)
+                    .delete()
             }
         }
     }
