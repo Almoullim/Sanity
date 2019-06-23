@@ -66,10 +66,20 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         
         if score! > passScore {
             print("Pass")
-            self.performSegue(withIdentifier: "RegisterView", sender: nil)
+            
+            let alert = UIAlertController(title: "You have passed the exam!", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "RegisterView", sender: nil)
+            }))
+            self.present(alert, animated: true)
         } else {
             print("Failed")
-            self.performSegue(withIdentifier: "LoginView", sender: nil)
+            
+            let alert = UIAlertController(title: "You have failed the exam!", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "LoginView", sender: nil)
+            }))
+            self.present(alert, animated: true)
         }
     }
     
