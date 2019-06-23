@@ -375,6 +375,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="questionAnswerController" destination="hw7-k2-GFR" id="SWV-cZ-7To"/>
                                     <outlet property="questionTitle" destination="6J2-js-qS1" id="BiR-lh-nVs"/>
                                 </connections>
                             </tableViewCell>

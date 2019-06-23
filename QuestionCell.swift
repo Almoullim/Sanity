@@ -15,14 +15,19 @@ protocol QuestionCellDelegate: class {
 class QuestionCell: UITableViewCell {
 
     @IBOutlet weak var questionTitle: UILabel!
-//    @IBOutlet weak var questionAnswerController: UISegmentedControl!
+    @IBOutlet weak var questionAnswerController: UISegmentedControl!
     
     var questionId: String?
     var questionAnswer: Bool?
     var delegate: QuestionCellDelegate?
     
-    @IBAction func answerChanged(_ sender: UISegmentedControl) {
-        self.questionAnswer = sender.selectedSegmentIndex == 0
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        answerChanged(nil)
+    }
+    
+    @IBAction func answerChanged(_ sender: Any?) {
+        self.questionAnswer = questionAnswerController.selectedSegmentIndex == 0
         delegate?.answerChanged(id: questionId!, answer: questionAnswer!)
     }
     

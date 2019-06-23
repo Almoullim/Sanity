@@ -18,9 +18,9 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         super.viewDidLoad()
         
         let q1 = Question2(id: "1", title: "First Question", answer: nil)
-        let q2 = Question2(id: "1", title: "First Question", answer: nil)
-        let q3 = Question2(id: "1", title: "First Question", answer: nil)
-        let q4 = Question2(id: "1", title: "First Question", answer: nil)
+        let q2 = Question2(id: "2", title: "Second Question", answer: nil)
+        let q3 = Question2(id: "3", title: "Third Question", answer: nil)
+        let q4 = Question2(id: "4", title: "Fourth Question", answer: nil)
         
         questions = [q1,q2,q3,q4]
         
@@ -49,6 +49,7 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         print("Building Cell")
         cell.questionTitle.text = questions[indexPath.row].title
         cell.questionId = questions[indexPath.row].id
+        cell.delegate = self
         
         return cell
     }
