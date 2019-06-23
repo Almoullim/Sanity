@@ -81,7 +81,7 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     @IBAction func filterClicked(_ sender: UISegmentedControl) {
-        // clear users collection and reload users with fillter user type
+        // clear users collection and reload users with filter user type
         users = []
         self.UsersTable.reloadData()
         if (sender.selectedSegmentIndex == 1) {
@@ -160,7 +160,7 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // asign user info to cell
+        // assign user info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
         
         cell?.userFullName.text = self.users[indexPath.row].name
