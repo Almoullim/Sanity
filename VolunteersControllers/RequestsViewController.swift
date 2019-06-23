@@ -65,7 +65,14 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.db
                     .collection("requests")
                     .document(self.selectedHelpSeeker!)
-                    .delete()
+                    .delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            self.requests = []
+                            self.loadRequests(requestedUser: "all", searchText: nil)
+                        }
+                }
             }
         }
     }
