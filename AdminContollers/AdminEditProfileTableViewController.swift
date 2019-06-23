@@ -51,11 +51,11 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // breack if runed before
+        // break if ran before
         if alreadyRan { return }
         
         
-        // Modife Firebase API refrence code to get user info
+        // Modify Firebase API refrence code to get user info
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
                 .getDocuments() { (querySnapshot, err) in
@@ -100,7 +100,7 @@ class AdminEditProfileTableViewController: UITableViewController, UIImagePickerC
     
     
     @IBAction func imageClicked(_ sender: Any) {
-        // show alert to user to chose image source
+        // show alert to user to choose image source
         let alert = UIAlertController(title: "Profile Image", message: "Please Select an Option", preferredStyle: .actionSheet)
         // get image from photo library
         alert.addAction(UIAlertAction(title: "Choose from photos", style: .default , handler:{ (UIAlertAction)in
