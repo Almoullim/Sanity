@@ -19,45 +19,46 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let a1 = Answer(text: "Best", type: .best)
-        let a2 = Answer(text: "Good", type: .good)
-        let a3 = Answer(text: "Bad", type: .bad)
-        let a4 = Answer(text: "Worst", type: .worst)
+        let a1 = Answer(text: "Best", rate: .best)
+        let a2 = Answer(text: "Good", rate: .good)
+        let a3 = Answer(text: "Bad", rate: .bad)
+        let a4 = Answer(text: "Worst", rate: .worst)
         let answers = [a1,a2,a3,a4]
         
-        let a12 = Answer(text: "Yes", type: .best)
-        let a22 = Answer(text: "No", type: .good)
-        let a32 = Answer(text: "MAYBE", type: .bad)
-        let a42 = Answer(text: "SURE", type: .worst)
+        let a12 = Answer(text: "Yes", rate: .best)
+        let a22 = Answer(text: "No", rate: .good)
+        let a32 = Answer(text: "MAYBE", rate: .bad)
+        let a42 = Answer(text: "SURE", rate: .worst)
         let answers2 = [a12,a22,a32,a42]
         
-        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers)
-        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2)
-        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers)
-        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2)
+        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
+        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
+        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
+        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
 
         questions = [q1,q2,q3,q4]
         
     }
     
     @IBAction func submited(_ sender: Any) {
-//        self.score = 0
-//
-//        for question in questions {
+        self.score = 0
+
+        for question in questions {
+            
 //            self.score =  self.score! + question.answerScore
-//        }
-//
-//        print(score!)
+        }
+
+        print(score!)
     }
     
     func answerChanged(id: String, answer: Int) {
-//        var count = 0
-//        for question in questions {
-//            if question.id == id {
-//                questions[count].userAnswer = answer
-//            }
-//            count += 1
-//        }
+        var count = 0
+        for question in questions {
+            if question.ID == id {
+                questions[count].userAnswer = question.answers[answer]
+            }
+            count += 1
+        }
     }
 
     // MARK: - Table view data source

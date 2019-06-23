@@ -13,6 +13,7 @@ struct Question {
     var text: String
     var usertype: Usertype
     var answers: [Answer]
+    var userAnswer: Answer?
 }
 
 enum Usertype {
@@ -21,7 +22,7 @@ enum Usertype {
 
 struct Answer {
     var text: String
-    var type: Rate
+    var rate: Rate
 }
 
 enum Rate {
