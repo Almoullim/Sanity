@@ -25,6 +25,7 @@
 		20ED1B5022B4D5FE00FD27A0 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */; };
 		20ED1B5222B4D64200FD27A0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */; };
 		20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20ED1B5722B4FE6F00FD27A0 /* Question.swift */; };
+		20FE254022C0069D00B5850F /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE253F22C0069D00B5850F /* AppointmentViewController.swift */; };
 		2FC1EB9D86D2D7C1A77F120F /* Pods_Sanity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9C4C41ED2B64F6C05BF3F /* Pods_Sanity.framework */; };
 		404EC3E422AC55EC0044856F /* EditArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */; };
 		4074CAD822AAE57500D1412F /* AppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4074CAD722AAE57500D1412F /* AppointmentsViewController.swift */; };
@@ -90,6 +91,7 @@
 		20ED1B4F22B4D5FE00FD27A0 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		20ED1B5122B4D64200FD27A0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		20ED1B5722B4FE6F00FD27A0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		20FE253F22C0069D00B5850F /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
 		404EC3E322AC55EC0044856F /* EditArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditArticlesViewController.swift; sourceTree = "<group>"; };
 		4074CAD722AAE57500D1412F /* AppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewController.swift; sourceTree = "<group>"; };
 		40A0AA0522AAF16C008189E2 /* DoctorProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfileViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				41B62C0B22A73A5800A731AF /* RequestViewController.swift */,
 				4186AF6E229D0712004E4010 /* HelpSeekerProfileViewController.swift */,
 				412E23F4229D3EED00065303 /* HelpSeekerEditProfileViewController.swift */,
+				20FE253F22C0069D00B5850F /* AppointmentViewController.swift */,
 			);
 			path = HelpSeekerControllers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				4186AF6F229D0712004E4010 /* HelpSeekerProfileViewController.swift in Sources */,
 				4074CAD822AAE57500D1412F /* AppointmentsViewController.swift in Sources */,
 				2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */,
+				20FE254022C0069D00B5850F /* AppointmentViewController.swift in Sources */,
 				412E23F5229D3EED00065303 /* HelpSeekerEditProfileViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
