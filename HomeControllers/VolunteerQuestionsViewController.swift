@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class VolunteerQuestionsViewController: UITableViewController {
+class VolunteerQuestionsViewController: UITableViewController, QuestionCellDelegate {
     
     @IBOutlet var questionsTable: UITableView!
     var questions: [Question2] = []
@@ -24,6 +24,22 @@ class VolunteerQuestionsViewController: UITableViewController {
         
         questions = [q1,q2,q3,q4]
         
+    }
+    
+    @IBAction func submited(_ sender: Any) {
+        for question in questions {
+            print(question)
+        }
+    }
+    
+    func answerChanged(id: String, answer: Bool) {
+        var count = 0
+        for question in questions {
+            if question.id == id {
+                questions[count].answer = answer
+            }
+            count += 1
+        }
     }
 
     // MARK: - Table view data source

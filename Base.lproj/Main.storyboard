@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XAq-1v-SEX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qft-D1-Pqs">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -386,7 +386,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Quizz" id="b0l-2s-lBF">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ii1-aI-5Xh"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ii1-aI-5Xh">
+                            <connections>
+                                <action selector="submited:" destination="XuV-ef-PdI" id="gaC-kA-MQA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="questionsTable" destination="Nfd-hv-fqR" id="Oed-f8-MiA"/>

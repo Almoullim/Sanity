@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol QuestionCellDelegate: class {
+    func answerChanged(id: String, answer: Bool)
+}
+
 class QuestionCell: UITableViewCell {
 
     @IBOutlet weak var questionTitle: UILabel!
@@ -15,10 +19,11 @@ class QuestionCell: UITableViewCell {
     
     var questionId: String?
     var questionAnswer: Bool?
+    var delegate: QuestionCellDelegate?
     
     @IBAction func answerChanged(_ sender: UISegmentedControl) {
-        
         self.questionAnswer = sender.selectedSegmentIndex == 0
+        delegate?.answerChanged(id: questionId!, answer: questionAnswer!)
     }
     
 }
