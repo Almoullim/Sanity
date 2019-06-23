@@ -46,76 +46,85 @@ class AdminSessionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // get session info from datapase if passed ID is available using query
-        // firebase api code to get single documnt code isn't work
+        // get session info from datapase
         if let currentSession = sessionID {
-            let query = db.collection("sessions").whereField("sessionID", isEqualTo: currentSession)
-                query.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        self.getSession(querySnapshot!.documents)
+            let docRef = db.collection("sessions").document(currentSession)
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        self.getSession(data)
                     }
+                } else {
+                    print("Document does not exist")
                 }
+            }
         }
         
     }
     
-    func getSession(_ documents: [QueryDocumentSnapshot]) {
+    func getUserName(userName: String, completion: @escaping (String) -> Void) {
+        
+        // get user full name using function with closure
+        // code reference
+        // https://stackoverflow.com/questions/54988558/how-to-return-expected-value-from-within-another-function-in-swift
+        let docRef = db.collection("users").document(userName)
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion("")
+                
+            } else {
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        completion((data["name"] as? String)!)
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    func getSession(_ document: [String : Any]) {
         
         // set documnt information to outlets
-        for document in documents {
-            let helpSeekerUserName = document.data()["helpSeekerUserName"] as? String
-
-            var docRef = db.collection("users").document(helpSeekerUserName!)
-            
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                    print("Document data: \(dataDescription)")
-                    if let data = document.data() {
-                        self.FirstUserName.text = data["name"] as? String
-                    }
-                } else {
-                    print("Document does not exist")
-                }
+        let helpseekeruser = document["helpSeekerUserName"] as? String
+        getUserName(userName: helpseekeruser!) { helpSeeker in
+                // get help seeker user name
+                 self.FirstUserName.text = helpSeeker
             }
-            self.FirstUserReview.text = document.data()["helpSeekerReview"] as? String
-            if let firstUserRating = document.data()["helpSeekerRating"] as? Int {
+            
+            
+            self.FirstUserReview.text = document["helpSeekerReview"] as? String
+            if let firstUserRating = document["helpSeekerRating"] as? Int {
                 self.FirstUserRating.text = "\(String(firstUserRating))/5"
             }
-            let helperUserName = document.data()["helperUserName"] as? String
-
-            docRef = db.collection("users").document(helperUserName!)
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                    print("Document data: \(dataDescription)")
-                    if let data = document.data() {
-                        self.SecoundUserName.text = data["name"] as? String
-                    }
-                } else {
-                    print("Document does not exist")
-                }
+        let volunteerUser = document["helperUserName"] as? String
+            getUserName(userName: volunteerUser!) { volunteer in
+                // get volunteer user name
+                self.SecoundUserName.text = volunteer
             }
-            self.SecoundUserReview.text = document.data()["helperReview"] as? String
-            if let secondUserRating = document.data()["helperRating"] as? Int {
+            self.SecoundUserReview.text = document["helperReview"] as? String
+            if let secondUserRating = document["helperRating"] as? Int {
                 self.SecondUserRatingLabel.text = "\(String(secondUserRating))/5"
             }
             self.FirstUserUserType.text = "Help Seeker"
             self.SecoundUserUserType.text = "Volunteer"
-            if let sinceTimestamp = document.data()["daysSince"] as? Timestamp {
+            if let sinceTimestamp = document["daysSince"] as? Timestamp {
                 self.SessionTime.text = "Since " + timeSince(timestamp: sinceTimestamp)
             }
-            if let durationTimestamp = document.data()["duration"] as? String {
+            if let durationTimestamp = document["duration"] as? String {
                 self.SessionDuration.text = duration(duration: durationTimestamp)
             }
             
             
             // get storage path
             let storageRef = self.storage.reference()
-            let imgRef = storageRef.child("images/" + self.FirstUserName.text! + ".jpg")
-            let imgRef2 = storageRef.child("images/" + self.SecoundUserName.text! + ".jpg")
+            let imgRef = storageRef.child("images/" + helpseekeruser! + ".jpg")
+            let imgRef2 = storageRef.child("images/" + volunteerUser! + ".jpg")
             
             // get images and assign to UIImage
             imgRef.downloadURL { (url, error) in
@@ -143,8 +152,7 @@ class AdminSessionViewController: UIViewController {
         }
     }
     
-    }
-    
+
 
     
     /*

@@ -194,7 +194,11 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-    @IBAction func unwindToUsersList(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToUsersList(segue:UIStoryboardSegue) {
+        users = []
+        self.UsersTable.reloadData()
+        loadUsers(userType: "all", searchText: nil)
+    }
 
     
     

@@ -66,12 +66,40 @@ class AdminAppointmentViewController: UIViewController {
         }
         
     }
+    func getUserName(userName: String, completion: @escaping (String) -> Void) {
+        
+        // get user full name using function with closure
+        // code reference
+        // https://stackoverflow.com/questions/54988558/how-to-return-expected-value-from-within-another-function-in-swift
+        let docRef = db.collection("users").document(userName)
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion("")
+                
+            } else {
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        completion((data["name"] as? String)!)
+                    }
+                    
+                }
+            }
+        }
+    }
     
     func getAppointments(_ data: [String : Any]) {
         
         // set documnt information to outlets
+            let doctorUser = data["doctorName"] as? String
+            getUserName(userName: doctorUser!) { doctor in
+            // get doctor user name
+            self.doctorName.text = doctor
+            }
+        let helpSeekerUserName = data["helpSeekerUserName"] as? String
             self.helpSeekerName.text = data["helpSeekerName"] as? String
-            self.doctorName.text = data["doctorName"] as? String
             if let timeStamp = data["appointmentDate"] as? Timestamp {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -91,8 +119,8 @@ class AdminAppointmentViewController: UIViewController {
             
             // get storage path
             let storageRef = self.storage.reference()
-            let imgRef = storageRef.child("images/" + self.helpSeekerName.text! + ".jpg")
-            let imgRef2 = storageRef.child("images/" + self.doctorName.text! + ".jpg")
+            let imgRef = storageRef.child("images/" + helpSeekerUserName! + ".jpg")
+            let imgRef2 = storageRef.child("images/" + doctorUser! + ".jpg")
             
             // get images and assign to UIImage
             imgRef.downloadURL { (url, error) in

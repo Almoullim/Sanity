@@ -120,7 +120,6 @@ class LoginViewController: UIViewController {
                     self.present(alert, animated: true)
                     return
                 }
-                
                 guard let loginEmail = querySnapshot?.documents[0]["email"] as? String else {
                     self.loginActivity.stopAnimating()
                     self.loginBtn.isEnabled = true
@@ -144,8 +143,16 @@ class LoginViewController: UIViewController {
                         strongSelf.loginActivity.stopAnimating()
                         strongSelf.loginBtn.isEnabled = true
                         */
+                        if let userStatus = querySnapshot?.documents[0]["isActive"] as? Bool  {
+                            if userStatus == true {
+                                strongSelf.switchStoryBoard(userType)
+                            } else {
+                             alert.title = "Account is pending"
+                            strongSelf.present(alert, animated: true)
+                            }
+                        }
+
                         
-                        strongSelf.switchStoryBoard(userType)
                     }
                 }
                 

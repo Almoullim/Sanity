@@ -20,7 +20,7 @@ class Session {
     var daysSince: String
     var getDaysSince: String {
         get {
-            return "since " + self.daysSince
+            return "Since " + self.daysSince
         }
     }
     
@@ -81,7 +81,7 @@ class Appointment {
     var createdAt: String
     var getDaysSince: String {
         get {
-            return "Made since " + self.createdAt
+            return "Since " + self.createdAt
         }
     }
     

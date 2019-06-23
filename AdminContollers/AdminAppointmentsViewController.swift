@@ -128,47 +128,45 @@ class AdminAppointmentsViewController: UIViewController, UITableViewDataSource, 
         appointmentTable.reloadData()
     }
     
+    func getUserName(userName: String, completion: @escaping (String) -> Void) {
+        
+        // get user full name using function with closure
+        // code reference
+        // https://stackoverflow.com/questions/54988558/how-to-return-expected-value-from-within-another-function-in-swift
+        let docRef = db.collection("users").document(userName)
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion("")
+                
+            } else {
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        completion((data["name"] as? String)!)
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // get appointment info to cell
         let cell =  tableView.dequeueReusableCell(withIdentifier: "appimtmentCell") as? SessionRecoredTableViewCell
-        // get each user name
-        var helper: String?
-        var helpSeeker: String?
-        var docRef = db.collection("users").document(self.appointments[indexPath.row].helpSeekerUserName)
         
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-                if let data = document.data() {
-                    helpSeeker = (data["name"] as? String)!
-                    cell?.usersName.text =  helpSeeker
-                }
-            } else {
-                print("Document does not exist")
+        self.getUserName(userName: self.appointments[indexPath.row].helperUserName) { helper in
+            // doctor user name
+            self.getUserName(userName: self.appointments[indexPath.row].helpSeekerUserName) { helpSeeker in
+                // get help seeker user name
+                // assign users full names to cell property
+                cell?.usersName.text = "\(helper) & \(helpSeeker)"
             }
         }
-        docRef = db.collection("users").document(self.appointments[indexPath.row].helperUserName)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-                if let data = document.data() {
-                    helper = (data["name"] as? String)!
-                    
-                    if let oldtext = cell?.usersName.text {
-                        let newText = "\(oldtext) & \(helper!)"
-                        cell?.usersName.text = newText
-                    
-                }
-            } else {
-                
-                print("Document does not exist")
-            }
-        }
-        }
-            
-        cell?.usersName.text = "\(self.appointments[indexPath.row].helpSeekerUserName) & \(self.appointments[indexPath.row].helperUserName)"
+        
+        
         cell?.timeSince.text = self.appointments[indexPath.row].getDaysSince
         cell?.ID = self.appointments[indexPath.row].appointmentID
         cell?.delegate = self

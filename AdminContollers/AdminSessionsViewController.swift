@@ -120,11 +120,62 @@ class AdminSessionsViewController: UIViewController, UITableViewDataSource, UITa
         SessionsTable.reloadData()
     }
     
+    func getUserName(userName: String, completion: @escaping (String) -> Void) {
+        
+        // get user full name using function with closure
+        // code reference
+        // https://stackoverflow.com/questions/54988558/how-to-return-expected-value-from-within-another-function-in-swift
+        let docRef = db.collection("users").document(userName)
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                completion("")
+
+            } else {
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    if let data = document.data() {
+                        completion((data["name"] as? String)!)
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    func getUserNames(Helper helperPar: String, HelpSeeker helpSeekerPar:String, completion: @escaping (String) -> Void)  {
+        // get helpseeker and helper full names using function with closure
+        // code reference
+        // https://stackoverflow.com/questions/54988558/how-to-return-expected-value-from-within-another-function-in-swift
+        var helperUserName:String = ""
+        var helpSeekerUserName:String = ""
+        // get helprer user name
+        self.getUserName(userName: helperPar) { helper in
+            helperUserName = helper
+            self.getUserName(userName: helpSeekerPar) { helpSeeker in
+                // get help seeker user name
+                helpSeekerUserName = helpSeeker
+                // send both users full name back
+                completion("\(helpSeekerUserName) & \(helperUserName)")
+            }
+        }
+    }
+    
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "SessionCell") as? SessionRecoredTableViewCell
         
         // assign session data to cells
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "SessionCell") as? SessionRecoredTableViewCell
-        cell?.usersName.text = "\(self.sessions[indexPath.row].helpSeekerUserName) & \(self.sessions[indexPath.row].helperUserName)"
+        self.getUserName(userName: self.sessions[indexPath.row].helperUserName) { volunteer in
+            // get volunteer user name
+
+            self.getUserName(userName: self.sessions[indexPath.row].helpSeekerUserName) { helpSeeker in
+                // get help seeker user name
+                // send both users full name back
+                cell?.usersName.text = "\(helpSeeker) & \(volunteer)"
+            }
+        }
+        
         cell?.timeSince.text = self.sessions[indexPath.row].getDaysSince
         cell?.delegate = self
         cell?.ID = self.sessions[indexPath.row].sessionID
