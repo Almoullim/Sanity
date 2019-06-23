@@ -6,6 +6,8 @@
 //  Copyright © 2019 Almoullim. All rights reserved.
 //
 
+// VolunteerQuestions
+
 import UIKit
 import Firebase
 
@@ -31,10 +33,10 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         let a42 = Answer(text: "SURE", rate: .worst)
         let answers2 = [a12,a22,a32,a42]
         
-        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
-        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
-        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
-        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
+        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0].rate)
+        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0].rate)
+        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0].rate)
+        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0].rate)
 
         questions = [q1,q2,q3,q4]
         
@@ -44,18 +46,38 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         self.score = 0
 
         for question in questions {
-            
-//            self.score =  self.score! + question.answerScore
+            switch question.userAnswer! {
+            case Rate.best:
+                self.score = self.score! + 3
+                break
+            case Rate.good:
+                self.score = self.score! + 2
+                break
+            case Rate.bad:
+                self.score = self.score! + 1
+                break
+            case Rate.worst:
+                self.score = self.score! + 0
+                break
+            }
         }
 
         print(score!)
+        
+        let passScore = (questions.count * 4) / 2
+        
+        if score! > passScore {
+            print("Pass")
+        } else {
+            print("Failed")
+        }
     }
     
     func answerChanged(id: String, answer: Int) {
         var count = 0
         for question in questions {
             if question.ID == id {
-                questions[count].userAnswer = question.answers[answer]
+                questions[count].userAnswer = question.answers[answer].rate
             }
             count += 1
         }
