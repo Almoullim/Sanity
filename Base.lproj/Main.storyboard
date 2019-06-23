@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XAq-1v-SEX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qft-D1-Pqs">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -323,13 +323,14 @@
                     <navigationItem key="navigationItem" id="odF-JM-fQw"/>
                     <connections>
                         <segue destination="2lw-V3-tpi" kind="show" identifier="RegisterView" id="TLQ-sh-Xx1"/>
+                        <segue destination="XAq-1v-SEX" kind="show" identifier="VolunteerQuestions" id="S11-hd-kt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymU-5K-NLr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2723.1884057971015" y="23.64130434782609"/>
         </scene>
-        <!--Quizz-->
+        <!--Volunteer Exam-->
         <scene sceneID="BJy-O7-Moh">
             <objects>
                 <tableViewController id="XuV-ef-PdI" customClass="VolunteerQuestionsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,7 +385,7 @@
                             <outlet property="delegate" destination="XuV-ef-PdI" id="SVQ-g0-0mz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Quizz" id="b0l-2s-lBF">
+                    <navigationItem key="navigationItem" title="Volunteer Exam" id="b0l-2s-lBF">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="ii1-aI-5Xh">
                             <connections>
                                 <action selector="submited:" destination="XuV-ef-PdI" id="gaC-kA-MQA"/>
@@ -393,6 +394,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="questionsTable" destination="Nfd-hv-fqR" id="Oed-f8-MiA"/>
+                        <segue destination="2lw-V3-tpi" kind="show" identifier="RegisterView" id="mrX-iH-CUY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2DJ-zA-LOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -707,6 +709,7 @@
         <segue reference="a3K-QZ-amH"/>
         <segue reference="3LC-0O-kfI"/>
         <segue reference="7PU-DV-OaO"/>
-        <segue reference="yZl-Wc-Utu"/>
+        <segue reference="mrX-iH-CUY"/>
+        <segue reference="Iij-zd-sWt"/>
     </inferredMetricsTieBreakers>
 </document>
