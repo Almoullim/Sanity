@@ -12,31 +12,50 @@ import Firebase
 class VolunteerQuestionsViewController: UITableViewController, QuestionCellDelegate {
     
     @IBOutlet var questionsTable: UITableView!
-    var questions: [Question2] = []
+    
+    var questions: [Question] = []
+    var score: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let q1 = Question2(id: "1", title: "First Question", answer: nil)
-        let q2 = Question2(id: "2", title: "Second Question", answer: nil)
-        let q3 = Question2(id: "3", title: "Third Question", answer: nil)
-        let q4 = Question2(id: "4", title: "Fourth Question", answer: nil)
+        let a1 = Answer(text: "Best", rate: .best)
+        let a2 = Answer(text: "Good", rate: .good)
+        let a3 = Answer(text: "Bad", rate: .bad)
+        let a4 = Answer(text: "Worst", rate: .worst)
+        let answers = [a1,a2,a3,a4]
         
+        let a12 = Answer(text: "Yes", rate: .best)
+        let a22 = Answer(text: "No", rate: .good)
+        let a32 = Answer(text: "MAYBE", rate: .bad)
+        let a42 = Answer(text: "SURE", rate: .worst)
+        let answers2 = [a12,a22,a32,a42]
+        
+        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
+        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
+        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
+        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
+
         questions = [q1,q2,q3,q4]
         
     }
     
     @IBAction func submited(_ sender: Any) {
+        self.score = 0
+
         for question in questions {
-            print(question)
+            
+//            self.score =  self.score! + question.answerScore
         }
+
+        print(score!)
     }
     
-    func answerChanged(id: String, answer: Bool) {
+    func answerChanged(id: String, answer: Int) {
         var count = 0
         for question in questions {
-            if question.id == id {
-                questions[count].answer = answer
+            if question.ID == id {
+                questions[count].userAnswer = question.answers[answer]
             }
             count += 1
         }
@@ -46,9 +65,15 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionCell else { return UITableViewCell() }
-        print("Building Cell")
-        cell.questionTitle.text = questions[indexPath.row].title
-        cell.questionId = questions[indexPath.row].id
+        
+        cell.questionTitle.text = questions[indexPath.row].text
+        cell.questionId = questions[indexPath.row].ID
+        
+        cell.questionAnswerController.setTitle(questions[indexPath.row].answers[0].text, forSegmentAt: 0)
+        cell.questionAnswerController.setTitle(questions[indexPath.row].answers[1].text, forSegmentAt: 1)
+        cell.questionAnswerController.setTitle(questions[indexPath.row].answers[2].text, forSegmentAt: 2)
+        cell.questionAnswerController.setTitle(questions[indexPath.row].answers[3].text, forSegmentAt: 3)
+        
         cell.delegate = self
         
         return cell

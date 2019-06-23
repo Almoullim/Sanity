@@ -32,11 +32,11 @@ class QuestionsViewController: UIViewController {
         Question(ID: "", text: "Which food do you like the most?",
                  usertype: .Volunteer,
                  answers: [
-                    Answer(text: "Steak", type: .veryGood),
-                    Answer(text: "Fish", type: .good),
-                    Answer(text: "Carrots", type: .bad),
-                    Answer(text: "Corn", type: .VeryBad)
-            ])
+                    Answer(text: "Steak", rate: .best),
+                    Answer(text: "Fish", rate: .good),
+                    Answer(text: "Carrots", rate: .bad),
+                    Answer(text: "Corn", rate: .worst)
+            ], userAnswer: nil)
     ]
     
     var questionIndex = 0

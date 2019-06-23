@@ -1,6 +1,6 @@
 
 /* Class = "UIButton"; normalTitle = "Join Now →"; ObjectID = "03E-uX-ozi"; */
-"03E-uX-ozi.normalTitle" = "سجل الآن→";
+"03E-uX-ozi.normalTitle" = "← سجل الآن";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "6gp-5R-MBN"; */
 "6gp-5R-MBN.placeholder" = "اسم المستخدم";

@@ -135,7 +135,7 @@ class QuestionsTableViewController: UIViewController, UITableViewDataSource, UIT
             }
             self.userType = userType
 
-            let qusetion = Question(ID: questionID, text: question, usertype: userTypeCase, answers: [Answer(text: "", type: .good)])
+            let qusetion = Question(ID: questionID, text: question, usertype: userTypeCase, answers: [Answer(text: "", rate: .good)], userAnswer: nil)
             
             // add new quetion to the collection
             self.questions.append(qusetion)

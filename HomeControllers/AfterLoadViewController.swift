@@ -28,7 +28,7 @@ class AfterLoadViewController: UIViewController {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
                 .getDocuments() { (querySnapshot, err) in
                     
-                    if let userStatus = querySnapshot?.documents[0]["isActive"] as? Bool {
+                    if let userStatus = querySnapshot?.documents[0].data()["isActive"] as? Bool {
                         if userStatus == false {
                             try? Auth.auth().signOut()
                             self.performSegue(withIdentifier: "LoginView", sender: nil)
@@ -46,7 +46,10 @@ class AfterLoadViewController: UIViewController {
                                 self.performSegue(withIdentifier: "Admin", sender: nil)
                             default:
                                 self.performSegue(withIdentifier: "LoginView", sender: nil)
-                            }                        }
+                            }
+                        }
+                    } else {
+                        self.performSegue(withIdentifier: "LoginView", sender: nil)
                     }
                     
             }

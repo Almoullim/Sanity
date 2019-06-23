@@ -60,51 +60,58 @@ class UserProfileViewController: UIViewController {
                             self.CallsLable.text = "Requests count"
                             self.SpecialityLable.text = "Issue"
                         }
+                        
                         self.username = data["username"] as? String
                         self.UserName.text = data["name"] as? String
                         if let status = data["isActive"] as? Bool {
                             if status == true {
                                 self.statusLabel.text = "Active"
-                            }else{
+                            } else {
                                 self.statusLabel.text = "Pending"
                             }
                         }
+                        
                         if let location = data["location"] as? String {
                             self.Location.text = location
                         }
+                        
                         if let timestamp = data["created_at"] as? Timestamp {
                             self.MemberSince.text = "Member since " + timeSince(timestamp: timestamp)
                         }
+                        
                         if let date = data["dob"] as? Timestamp {
                             // Construct days since
                             let secondsSince = Int64(Date().timeIntervalSince1970) - date.seconds
                             self.Age.text = String((secondsSince / 86400) / 365)
                         }
+                        
                         if let requestsCount = data["requestsCount"] as? Int {
                             self.CallsNumber.text = String(requestsCount)
                         } else {
                             self.CallsNumber.text = "0"
                         }
+                        
                         if self.userType == "help-seeker" {
-                        if let issue = data["issue"] as? String {
-                            self.Speciality.text = issue
-                        }
-                        }else{
-                            if let issue = data["speciality"] as? String {
+                            if let issue = data["issue"] as? String {
                                 self.Speciality.text = issue
                             }
-                        }
+                            
+                        } else {
+                                if let issue = data["speciality"] as? String {
+                                    self.Speciality.text = issue
+                                }
+                          }
                         
                         if let language = data["language"] as? String {
                             self.Language.text = language
                         }
+                        
                         if self.userType == "doctor"{
                             if let address = data["address"] as? String {
                                 self.addressStack.isHidden = false
                                 self.addressLabelStack.isHidden = false
                                 self.addressLabel.text = address
                             }
-                            
                         }
                         
                         let storageRef = self.storage.reference()
@@ -119,7 +126,7 @@ class UserProfileViewController: UIViewController {
                                     self.UserImage.image = image
                                     self.backImage.image = image
                                 }
-                                }.resume()
+                            }.resume()
                         }
                     }
             }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol QuestionCellDelegate: class {
-    func answerChanged(id: String, answer: Bool)
+    func answerChanged(id: String, answer: Int)
 }
 
 class QuestionCell: UITableViewCell {
@@ -18,16 +18,11 @@ class QuestionCell: UITableViewCell {
     @IBOutlet weak var questionAnswerController: UISegmentedControl!
     
     var questionId: String?
-    var questionAnswer: Bool?
+    var questionAnswer: Int?
     var delegate: QuestionCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        answerChanged(nil)
-    }
-    
     @IBAction func answerChanged(_ sender: Any?) {
-        self.questionAnswer = questionAnswerController.selectedSegmentIndex == 0
+        self.questionAnswer = questionAnswerController.selectedSegmentIndex
         delegate?.answerChanged(id: questionId!, answer: questionAnswer!)
     }
     
