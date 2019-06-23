@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct Question2 {
+    var id: String
+    var title: String
+    var answer: Bool?
+}
+
 struct Question {
     var ID: String
     var text: String
