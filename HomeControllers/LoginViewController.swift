@@ -125,7 +125,13 @@ class LoginViewController: UIViewController {
                     self.loginBtn.isEnabled = true
                     return
                 }
-                
+                guard let userStatus = querySnapshot?.documents[0]["isActive"] as? Bool else {
+                    self.loginActivity.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    return
+                }
+                if userStatus == true {
+                  print("start")
                 Auth.auth().signIn(withEmail: loginEmail, password: self.loginPassword.text!) { [weak self] result, error in
                     guard let strongSelf = self else { return }
                     
@@ -143,19 +149,17 @@ class LoginViewController: UIViewController {
                         strongSelf.loginActivity.stopAnimating()
                         strongSelf.loginBtn.isEnabled = true
                         */
-                        if let userStatus = querySnapshot?.documents[0]["isActive"] as? Bool  {
-                            if userStatus == true {
-                                strongSelf.switchStoryBoard(userType)
-                            } else {
-                             alert.title = "Account is pending"
-                            strongSelf.present(alert, animated: true)
-                            }
-                        }
-
-                        
+                        strongSelf.switchStoryBoard(userType)
                     }
                 }
-                
+                    
+                } else {
+                    self.loginActivity.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    alert.title = "Account is pending"
+                    alert.message = "This account has been suspended"
+                    self.present(alert, animated: true)
+                }
                 
         }
     }

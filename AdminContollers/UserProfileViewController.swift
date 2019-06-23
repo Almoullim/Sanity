@@ -25,6 +25,9 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var Language: UILabel!
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var addressStack: UIStackView!
+    @IBOutlet weak var addressLabelStack: UIStackView!
+    @IBOutlet weak var addressLabel: UILabel!
     
     // pass info
     var username: String?
@@ -94,6 +97,14 @@ class UserProfileViewController: UIViewController {
                         
                         if let language = data["language"] as? String {
                             self.Language.text = language
+                        }
+                        if self.userType == "doctor"{
+                            if let address = data["address"] as? String {
+                                self.addressStack.isHidden = false
+                                self.addressLabelStack.isHidden = false
+                                self.addressLabel.text = address
+                            }
+                            
                         }
                         
                         let storageRef = self.storage.reference()

@@ -27,20 +27,28 @@ class AfterLoadViewController: UIViewController {
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
                 .getDocuments() { (querySnapshot, err) in
-                    let userType = querySnapshot?.documents[0].data()["userType"]! as! String
                     
-                    switch userType {
-                    case "help-seeker":
-                        self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
-                    case "volunteer":
-                        self.performSegue(withIdentifier: "Volunteer", sender: nil)
-                    case "doctor":
-                        self.performSegue(withIdentifier: "Doctor", sender: nil)
-                    case "admin":
-                        self.performSegue(withIdentifier: "Admin", sender: nil)
-                    default:
-                        self.performSegue(withIdentifier: "LoginView", sender: nil)
+                    if let userStatus = querySnapshot?.documents[0]["isActive"] as? Bool {
+                        if userStatus == false {
+                            try? Auth.auth().signOut()
+                            self.performSegue(withIdentifier: "LoginView", sender: nil)
+                        } else {
+                            let userType = querySnapshot?.documents[0].data()["userType"]! as! String
+                            
+                            switch userType {
+                            case "help-seeker":
+                                self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                            case "volunteer":
+                                self.performSegue(withIdentifier: "Volunteer", sender: nil)
+                            case "doctor":
+                                self.performSegue(withIdentifier: "Doctor", sender: nil)
+                            case "admin":
+                                self.performSegue(withIdentifier: "Admin", sender: nil)
+                            default:
+                                self.performSegue(withIdentifier: "LoginView", sender: nil)
+                            }                        }
                     }
+                    
             }
         } else {
             print("No login found")
