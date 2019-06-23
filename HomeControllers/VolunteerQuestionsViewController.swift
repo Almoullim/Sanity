@@ -12,6 +12,7 @@ import Firebase
 class VolunteerQuestionsViewController: UITableViewController, QuestionCellDelegate {
     
     @IBOutlet var questionsTable: UITableView!
+    var db: Firestore!
 
     var questions: [Question] = []
     var score: Int?
@@ -19,25 +20,29 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let a1 = Answer(text: "Best", rate: .best)
-        let a2 = Answer(text: "Good", rate: .good)
-        let a3 = Answer(text: "Bad", rate: .bad)
-        let a4 = Answer(text: "Worst", rate: .worst)
-        let answers = [a1,a2,a3,a4]
-        
-        let a12 = Answer(text: "Yes", rate: .best)
-        let a22 = Answer(text: "No", rate: .good)
-        let a32 = Answer(text: "MAYBE", rate: .bad)
-        let a42 = Answer(text: "SURE", rate: .worst)
-        let answers2 = [a12,a22,a32,a42]
-        
-        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0].rate)
-        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0].rate)
-        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0].rate)
-        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0].rate)
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
 
-        questions = [q1,q2,q3,q4]
-        
+        db.collection("qustions").getDocuments() { querySnapshot, err in
+            let questions = querySnapshot?.documents
+            
+            for question in questions! {
+                let questionData = question.data()
+                let questionDataAnswers = questionData["answers"]! as! Dictionary<String, String>
+                let questionAnswers = [
+                    Answer(text: questionDataAnswers["best"]!, rate: .best),
+                    Answer(text: questionDataAnswers["good"]!, rate: .good),
+                    Answer(text: questionDataAnswers["bad"]!, rate: .bad),
+                    Answer(text: questionDataAnswers["worst"]!, rate: .worst)
+                ]
+                
+                let questionObj = Question(ID: question.documentID, text: questionData["question"] as! String, usertype: .Volunteer, answers: questionAnswers, userAnswer: .best)
+                self.questions.append(questionObj)
+                
+                self.questionsTable.reloadData()
+            }
+        }
     }
     
     @IBAction func submited(_ sender: Any) {
