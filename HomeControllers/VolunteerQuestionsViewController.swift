@@ -24,7 +24,7 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
 
-        db.collection("qustions").getDocuments() { querySnapshot, err in
+        db.collection("qustions").whereField("userType", isEqualTo: "volunteer").getDocuments() { querySnapshot, err in
             let questions = querySnapshot?.documents
             
             for question in questions! {
