@@ -18,7 +18,7 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var appointmentsTable: UITableView!
     private let refreshControl = UIRefreshControl()
     
-    var selectedVolunteer: String?
+    var selectedAppointmentID: String?
     
     var appointments: [Appointment] = []
     var username: String?
@@ -50,11 +50,25 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func segueWith(user: String) {
-        selectedVolunteer = user
+        selectedAppointmentID = user
     }
     
     func call(_ mobile: String) {
-        print(mobile)
+        if let number = URL(string: "tel://" + mobile.replacingOccurrences(of: " ", with: "")) {
+            UIApplication.shared.open(number, options: [:]) { (success:Bool) in
+                self.db
+                    .collection("appointments")
+                    .document(self.selectedAppointmentID!)
+                    .delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            self.loadAppointments()
+                        }
+                }
+                
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,7 +138,7 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
         if segue.identifier == "Request" {
             let nav = segue.destination as? UINavigationController
             let view = nav?.viewControllers.first as? RequestViewController
-            view?.requestedUser = self.selectedVolunteer
+            view?.requestedUser = self.selectedAppointmentID
             view?.requestType = "volunteer"
         }
     }
