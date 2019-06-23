@@ -6,15 +6,13 @@
 //  Copyright © 2019 Almoullim. All rights reserved.
 //
 
-// VolunteerQuestions
-
 import UIKit
 import Firebase
 
 class VolunteerQuestionsViewController: UITableViewController, QuestionCellDelegate {
     
     @IBOutlet var questionsTable: UITableView!
-    
+
     var questions: [Question] = []
     var score: Int?
     
@@ -68,8 +66,18 @@ class VolunteerQuestionsViewController: UITableViewController, QuestionCellDeleg
         
         if score! > passScore {
             print("Pass")
+            self.performSegue(withIdentifier: "RegisterView", sender: nil)
         } else {
             print("Failed")
+            self.performSegue(withIdentifier: "LoginView", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RegisterView" {
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as? RegisterViewController
+            view?.userType = "doctor"
         }
     }
     

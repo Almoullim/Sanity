@@ -29,7 +29,7 @@ class UserTypeViewController: UIViewController {
     
     @IBAction func volunteerClicked(_ sender: UIButton) {
         userType = "volunteer"
-        self.performSegue(withIdentifier: "RegisterView", sender: nil)
+        self.performSegue(withIdentifier: "VolunteerQuestions", sender: nil)
     }
     
     @IBAction func doctorClicked(_ sender: UIButton) {
