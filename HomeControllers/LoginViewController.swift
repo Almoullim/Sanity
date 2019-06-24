@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // Set the button to 'empty' when the its disabled
+        // Set the button to 'empty' when its disabled
         loginBtn.setTitle("", for: .disabled)
         
         // Show the activityIndicator and disable the button
