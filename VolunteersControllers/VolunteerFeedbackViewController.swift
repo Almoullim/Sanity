@@ -31,13 +31,30 @@ class VolunteerFeedbackViewController: UITableViewController {
         db = Firestore.firestore()
         
         self.hideKeyboardWhenTappedAround()
+        
+        db.collection("users").whereField("username", isEqualTo: self.username!).getDocuments() { querySnapshot, err in
+            self.name.text = querySnapshot?.documents[0].data()["name"] as? String
+        }
     }
     
     @IBAction func saveFeedback(_ sender: Any) {
-        var data: [String: Any] = [
-            :
+        let duration = (Date().inMilliseconds - started!) / 1000
+        
+        let data: [String: Any] = [
+            "daysSince": Timestamp.init(),
+            "duration": String(duration),
+            "helperUserName": self.username!,
+            "helperRating": Int(round(self.ratingSlider.value)),
+            "helperReview": self.feedbackMessage.text!,
+            "helpSeekerUserName": self.helpSeekerUsername!,
+            "isCompleted": false
         ]
         
-        db.collection("sessions").addDocument(data: data)
+        let document = db.collection("sessions").addDocument(data: data) { err in
+            if err == nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        self.sessionId = document.documentID
     }
 }
