@@ -62,18 +62,29 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if let number = URL(string: "tel://" + mobile.replacingOccurrences(of: " ", with: "")) {
             UIApplication.shared.open(number, options: [:]) { (success:Bool) in
-                self.db
-                    .collection("requests")
-                    .document(self.selectedHelpSeeker!)
-                    .delete() { err in
-                        if let err = err {
-                            print("Error removing document: \(err)")
-                        } else {
-                            self.requests = []
-                            self.loadRequests(requestedUser: "all", searchText: nil)
-                        }
-                }
+//                self.db
+//                    .collection("requests")
+//                    .document(self.selectedHelpSeeker!)
+//                    .delete() { err in
+//                        if let err = err {
+//                            print("Error removing document: \(err)")
+//                        } else {
+//                            self.requests = []
+//                            self.loadRequests(requestedUser: "all", searchText: nil)
+//                        }
+//                }
+                self.performSegue(withIdentifier: "Feedback", sender: nil)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Feedback" {
+            let view = segue.destination as! VolunteerFeedbackViewController
+            view.username = self.username
+            view.helpSeekerUsername = self.selectedHelpSeeker
+            let date = Date()
+            view.started = date.inMilliseconds
         }
     }
     

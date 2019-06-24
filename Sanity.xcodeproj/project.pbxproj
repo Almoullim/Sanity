@@ -58,6 +58,7 @@
 		41AF80A1224EA67A0007F98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A0224EA67A0007F98F /* Assets.xcassets */; };
 		41AF80A4224EA67A0007F98F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A2224EA67A0007F98F /* LaunchScreen.storyboard */; };
 		41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */; };
+		41B1BECE22C161D800092E34 /* VolunteerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1BECD22C161D800092E34 /* VolunteerFeedbackViewController.swift */; };
 		41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0B22A73A5800A731AF /* RequestViewController.swift */; };
 		41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0F22A75DA700A731AF /* RequestsViewController.swift */; };
 		41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */; };
@@ -125,6 +126,7 @@
 		41AF80A3224EA67A0007F98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41AF80A5224EA67A0007F98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41B1BECD22C161D800092E34 /* VolunteerFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFeedbackViewController.swift; sourceTree = "<group>"; };
 		41B62C0B22A73A5800A731AF /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		41B62C0F22A75DA700A731AF /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerProfileViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */,
 				41B62C1922A7751B00A731AF /* VolunteerEditProfileViewController.swift */,
 				41A1AAB322AA13FA00F4468B /* VolunteerArticleViewController.swift */,
+				41B1BECD22C161D800092E34 /* VolunteerFeedbackViewController.swift */,
 			);
 			path = VolunteersControllers;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				20CD017322B9B1CB002623AB /* AdminAppointmentsViewController.swift in Sources */,
 				415A552D22BD60760051029F /* DoctorAddArticleViewController.swift in Sources */,
 				41D79E7422BD596E00EAC4FF /* DoctorReadingsViewController.swift in Sources */,
+				41B1BECE22C161D800092E34 /* VolunteerFeedbackViewController.swift in Sources */,
 				20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */,
 				41AF809A224EA6780007F98F /* AppDelegate.swift in Sources */,
 				41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */,
