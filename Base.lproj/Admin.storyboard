@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <color key="barTintColor" red="0.095429306569999997" green="0.1003025301" blue="0.10913084269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" name="MainColor"/>
                     </tabBar>
                     <connections>
@@ -1342,7 +1342,6 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="edit" id="p5n-mP-hhm">
                             <connections>
                                 <action selector="AddClicked:" destination="xCu-6H-cPI" id="G1t-g4-7pu"/>
-                                <segue destination="nDh-BU-Fc4" kind="unwind" identifier="questions" unwindAction="unwindToQustionsWithUnwindSegue:" id="NS7-5e-hKb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1353,6 +1352,7 @@
                         <outlet property="badAnswerInput" destination="Np5-qN-s5v" id="r9i-Rs-YDJ"/>
                         <outlet property="goodAnswerInput" destination="rqe-31-x0U" id="lqK-eI-0t6"/>
                         <outlet property="worstAnswerInput" destination="dzW-id-zZ6" id="uiC-kj-Imh"/>
+                        <segue destination="nDh-BU-Fc4" kind="unwind" unwindAction="unwindToQustionsWithUnwindSegue:" id="QuZ-KV-9hv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVa-fh-sjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1869,7 +1869,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Z8-ZK-98q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Sessions" image="wallet_app" id="wwY-o7-LaW"/>
+                    <tabBarItem key="tabBarItem" title="Sessions" image="wallet_app" id="wwY-o7-LaW"/>
                     <navigationItem key="navigationItem" title="Appointments" id="Vxf-PS-yjN"/>
                     <connections>
                         <outlet property="appointmentTable" destination="Qco-g9-Whs" id="226-3b-VBw"/>
@@ -2663,9 +2663,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Clinic Address" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6G-Jc-Pig" userLabel="Address">
-                                                    <rect key="frame" x="144" y="11.333333333333336" width="250" height="21"/>
+                                                    <rect key="frame" x="93" y="11.333333333333336" width="301" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="250" id="IpE-tY-Ngf"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="IpE-tY-Ngf"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2673,6 +2673,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="o6G-Jc-Pig" firstAttribute="leading" secondItem="1Xs-vY-AcU" secondAttribute="trailing" constant="10" id="4eq-k2-HK7"/>
                                                 <constraint firstItem="o6G-Jc-Pig" firstAttribute="centerY" secondItem="ZKo-HK-kkF" secondAttribute="centerY" id="Oh5-hF-lc5"/>
                                                 <constraint firstItem="1Xs-vY-AcU" firstAttribute="centerY" secondItem="ZKo-HK-kkF" secondAttribute="centerY" id="czc-pV-T2M"/>
                                                 <constraint firstItem="1Xs-vY-AcU" firstAttribute="leading" secondItem="ZKo-HK-kkF" secondAttribute="leading" constant="20" symbolic="YES" id="hkM-Ka-JnT"/>
