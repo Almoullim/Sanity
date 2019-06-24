@@ -18,6 +18,7 @@ class RequestViewController: UITableViewController {
     var requestedUser: String?
     var requestType: String?
     var currentUsername: String?
+    var requests: Int?
     var name: String?
     var db: Firestore!
     
@@ -46,6 +47,11 @@ class RequestViewController: UITableViewController {
                         if let issue = data["issue"] as? String {
                             self.issueInput.text = issue
                         }
+                        if let requestsCount = data["requestsCount"] as? Int {
+                            self.requests = requestsCount
+                        } else {
+                            self.requests = 0
+                        }
                         
                         self.currentUsername = data["username"] as? String
                         self.name =  data["name"] as? String
@@ -60,15 +66,19 @@ class RequestViewController: UITableViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        let docData: [String: Any] = [
+
+        var docData: [String: Any] = [
             "created_at": Timestamp.init(),
             "helpSeekerName": self.name!,
             "helpSeekerUserName": self.currentUsername!,
             "issue": self.issueInput.text!,
             "description": self.descriptionInput.text!,
-            "helpSeekerMobile": self.mobileInput.text!,
-            "helperUserName": self.requestedUser!
+            "helpSeekerMobile": self.mobileInput.text!
         ]
+        
+        if let helper = self.requestedUser {
+            docData["helperUserName"] = helper
+        }
         
         self.db
             .collection("requests")
@@ -82,6 +92,25 @@ class RequestViewController: UITableViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
         }
+        
+        let userData: [String: Any] = [
+            "requestsCount": (requests! + 1)
+        ]
+        
+        self.db
+            .collection("users")
+            .document(self.currentUsername!)
+            .setData(userData, merge: true)
+            { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("requestsCount increased!")
+                    self.dismiss(animated: true, completion: nil)
+                }
+        }
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
