@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -706,11 +705,10 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S11-hd-kt6"/>
         <segue reference="fuR-uo-pdy"/>
-        <segue reference="a3K-QZ-amH"/>
-        <segue reference="3LC-0O-kfI"/>
-        <segue reference="7PU-DV-OaO"/>
+        <segue reference="fkz-Lw-xLb"/>
+        <segue reference="VmQ-Xw-Ij8"/>
+        <segue reference="hDo-Mf-2fP"/>
         <segue reference="mrX-iH-CUY"/>
         <segue reference="lYX-lc-E4u"/>
     </inferredMetricsTieBreakers>
