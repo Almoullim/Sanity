@@ -341,23 +341,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-OM-9bm">
-                                                    <rect key="frame" x="40" y="11" width="25.333333333333329" height="21"/>
+                                                    <rect key="frame" x="40" y="11.333333333333336" width="25.333333333333329" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="MainColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ali Almoullim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dab-R4-iJY">
-                                                    <rect key="frame" x="276" y="11" width="98" height="21"/>
+                                                    <rect key="frame" x="276" y="11.333333333333336" width="98" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="uGv-OM-9bm" firstAttribute="top" secondItem="3UG-qi-zxB" secondAttribute="topMargin" id="UIj-TV-5ZR"/>
+                                                <constraint firstItem="uGv-OM-9bm" firstAttribute="centerY" secondItem="3UG-qi-zxB" secondAttribute="centerY" id="c23-Kc-z6u"/>
                                                 <constraint firstItem="uGv-OM-9bm" firstAttribute="leading" secondItem="3UG-qi-zxB" secondAttribute="leadingMargin" constant="20" id="e6M-mo-tLS"/>
-                                                <constraint firstItem="Dab-R4-iJY" firstAttribute="top" secondItem="3UG-qi-zxB" secondAttribute="topMargin" id="eyw-zW-pUc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Dab-R4-iJY" secondAttribute="trailing" constant="20" id="hry-IA-m72"/>
+                                                <constraint firstItem="Dab-R4-iJY" firstAttribute="centerY" secondItem="3UG-qi-zxB" secondAttribute="centerY" id="q2Y-hA-FL4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -400,7 +400,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGE-Oo-yxV">
-                                                    <rect key="frame" x="40" y="11" width="128.33333333333334" height="21"/>
+                                                    <rect key="frame" x="40" y="11.333333333333336" width="128.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="MainColor"/>
                                                     <nil key="highlightedColor"/>
@@ -410,9 +410,9 @@
                                                 </slider>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jGE-Oo-yxV" firstAttribute="top" secondItem="YRF-ao-JY5" secondAttribute="topMargin" id="J1k-WE-EAJ"/>
                                                 <constraint firstItem="jGE-Oo-yxV" firstAttribute="leading" secondItem="YRF-ao-JY5" secondAttribute="leadingMargin" constant="20" id="LRC-Cj-PC7"/>
                                                 <constraint firstItem="ytf-PK-tjb" firstAttribute="centerY" secondItem="YRF-ao-JY5" secondAttribute="centerY" id="LgR-a6-FVu"/>
+                                                <constraint firstItem="jGE-Oo-yxV" firstAttribute="centerY" secondItem="YRF-ao-JY5" secondAttribute="centerY" id="bZg-PG-sBe"/>
                                                 <constraint firstItem="ytf-PK-tjb" firstAttribute="leading" secondItem="jGE-Oo-yxV" secondAttribute="trailing" constant="10" id="c2U-17-yPa"/>
                                                 <constraint firstAttribute="trailing" secondItem="ytf-PK-tjb" secondAttribute="trailing" constant="20" id="gi7-Xj-2HC"/>
                                             </constraints>
