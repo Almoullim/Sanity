@@ -42,7 +42,6 @@ class AddArticleViewController: UITableViewController {
         if let title = self.articleTitleValue {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
             self.navigationItem.title = "Edit Article"
-
             self.TitleInput.text = title
         }
         if let description = self.articleDescriptionValue {
@@ -62,8 +61,9 @@ class AddArticleViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "articles" {
-            if sender == nil {
             // get outlets values and assign to array
+            print(sender)
+            if sender == nil {
             let docData: [String: Any] = [
                 "title": self.TitleInput.text!,
                 "description": self.Article.text!,
@@ -83,7 +83,7 @@ class AddArticleViewController: UITableViewController {
                             print("article updated!")
                         }
                 }
-            }else {
+            } else {
                 // add new article to database
                 self.db
                     .collection("articles")
@@ -91,16 +91,17 @@ class AddArticleViewController: UITableViewController {
                     .setData(docData, merge: true)
                     { err in
                         if let err = err {
-                            print("Error updating document: \(err)")
+                            print("Error insert document: \(err)")
                         } else {
                             print("article insert!")
                         }
                 }
             }
             
-            }
         }
+      }
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
