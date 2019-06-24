@@ -98,7 +98,7 @@ class AdminAppointmentViewController: UIViewController {
             // get doctor user name
             self.doctorName.text = doctor
             }
-        let helpSeekerUserName = data["helpSeekerUserName"] as? String
+            let helpSeekerUserName = data["helpSeekerUserName"] as? String
             self.helpSeekerName.text = data["helpSeekerName"] as? String
             if let timeStamp = data["appointmentDate"] as? Timestamp {
             let dateFormatter = DateFormatter()
