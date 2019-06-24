@@ -35,11 +35,11 @@
             </objects>
             <point key="canvasLocation" x="-107" y="242"/>
         </scene>
-        <!--Appointment-->
+        <!--Appointments-->
         <scene sceneID="bgU-3d-yYj">
             <objects>
                 <navigationController id="pWl-CH-5hR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Appointment" image="home" id="xGv-QM-KBa"/>
+                    <tabBarItem key="tabBarItem" title="Appointments" id="xGv-QM-KBa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="wyv-XB-JBl">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2733,7 +2733,6 @@
         <image name="address" width="600" height="450"/>
         <image name="age" width="96" height="96"/>
         <image name="duration" width="766" height="766"/>
-        <image name="home" width="30" height="30"/>
         <image name="issue" width="96" height="96"/>
         <image name="language" width="96" height="96"/>
         <image name="rating" width="406" height="406"/>

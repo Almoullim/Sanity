@@ -12,50 +12,95 @@ import Firebase
 class VolunteerQuestionsViewController: UITableViewController, QuestionCellDelegate {
     
     @IBOutlet var questionsTable: UITableView!
-    
+    var db: Firestore!
+
     var questions: [Question] = []
     var score: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let a1 = Answer(text: "Best", rate: .best)
-        let a2 = Answer(text: "Good", rate: .good)
-        let a3 = Answer(text: "Bad", rate: .bad)
-        let a4 = Answer(text: "Worst", rate: .worst)
-        let answers = [a1,a2,a3,a4]
-        
-        let a12 = Answer(text: "Yes", rate: .best)
-        let a22 = Answer(text: "No", rate: .good)
-        let a32 = Answer(text: "MAYBE", rate: .bad)
-        let a42 = Answer(text: "SURE", rate: .worst)
-        let answers2 = [a12,a22,a32,a42]
-        
-        let q1 = Question(ID: "1", text: "First Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
-        let q2 = Question(ID: "2", text: "Second Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
-        let q3 = Question(ID: "3", text: "Third Question?", usertype: .Volunteer, answers: answers, userAnswer: answers[0])
-        let q4 = Question(ID: "4", text: "Fourth Question?", usertype: .Volunteer, answers: answers2, userAnswer: answers[0])
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
 
-        questions = [q1,q2,q3,q4]
-        
+        db.collection("qustions").whereField("userType", isEqualTo: "volunteer").getDocuments() { querySnapshot, err in
+            let questions = querySnapshot?.documents
+            
+            for question in questions! {
+                let questionData = question.data()
+                let questionDataAnswers = questionData["answers"]! as! Dictionary<String, String>
+                let questionAnswers = [
+                    Answer(text: questionDataAnswers["best"]!, rate: .best),
+                    Answer(text: questionDataAnswers["good"]!, rate: .good),
+                    Answer(text: questionDataAnswers["bad"]!, rate: .bad),
+                    Answer(text: questionDataAnswers["worst"]!, rate: .worst)
+                ]
+                
+                let questionObj = Question(ID: question.documentID, text: questionData["question"] as! String, usertype: .Volunteer, answers: questionAnswers, userAnswer: .best)
+                self.questions.append(questionObj)
+                
+                self.questionsTable.reloadData()
+            }
+        }
     }
     
     @IBAction func submited(_ sender: Any) {
         self.score = 0
 
         for question in questions {
-            
-//            self.score =  self.score! + question.answerScore
+            switch question.userAnswer! {
+            case Rate.best:
+                self.score = self.score! + 3
+                break
+            case Rate.good:
+                self.score = self.score! + 2
+                break
+            case Rate.bad:
+                self.score = self.score! + 1
+                break
+            case Rate.worst:
+                self.score = self.score! + 0
+                break
+            }
         }
 
         print(score!)
+        
+        let passScore = (questions.count * 4) / 2
+        
+        if score! > passScore {
+            print("Pass")
+            
+            let alert = UIAlertController(title: "You have passed the exam!", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "RegisterView", sender: nil)
+            }))
+            self.present(alert, animated: true)
+        } else {
+            print("Failed")
+            
+            let alert = UIAlertController(title: "You have failed the exam!", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "LoginView", sender: nil)
+            }))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RegisterView" {
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as? RegisterViewController
+            view?.userType = "doctor"
+        }
     }
     
     func answerChanged(id: String, answer: Int) {
         var count = 0
         for question in questions {
             if question.ID == id {
-                questions[count].userAnswer = question.answers[answer]
+                questions[count].userAnswer = question.answers[answer].rate
             }
             count += 1
         }

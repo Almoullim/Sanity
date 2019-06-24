@@ -44,7 +44,7 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func requestButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "Request", sender: nil)
+        performSegue(withIdentifier: "newAppointment", sender: nil)
     }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar) {
@@ -145,11 +145,15 @@ class DoctorsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Request" {
-            let nav = segue.destination as? UINavigationController
-            let view = nav?.viewControllers.first as? RequestViewController
-            view?.requestedUser = self.selectedDoctor
-            view?.requestType = "doctor"
+        if segue.identifier == "newAppointment" {
+            if segue.destination is AppointmentViewController
+            {
+                let view = segue.destination as? AppointmentViewController
+                view?.requestedDoctor = self.selectedDoctor
+            }
         }
+    }
+    @IBAction func unwindToDoctors(segue:UIStoryboardSegue) {
+        
     }
 }

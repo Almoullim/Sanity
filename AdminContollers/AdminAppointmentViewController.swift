@@ -119,10 +119,8 @@ class AdminAppointmentViewController: UIViewController {
             
             // get storage path
             let storageRef = self.storage.reference()
-            let imgRef = storageRef.child("images/" + helpSeekerUserName! + ".jpg")
-            let imgRef2 = storageRef.child("images/" + doctorUser! + ".jpg")
-            
-            // get images and assign to UIImage
+        if let helpPath = helpSeekerUserName {
+            let imgRef = storageRef.child("images/" + helpPath + ".jpg")
             imgRef.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
                 print("image download started")
@@ -134,6 +132,13 @@ class AdminAppointmentViewController: UIViewController {
                     }
                     }.resume()
             }
+            
+        }
+        if let doctorPath = doctorUser {
+            let imgRef2 = storageRef.child("images/" + doctorPath + ".jpg")
+            
+            // get images and assign to UIImage
+        
             imgRef2.downloadURL { (url, error) in
                 guard let downloadURL = url else { return }
                 print("image download started")
@@ -146,5 +151,7 @@ class AdminAppointmentViewController: UIViewController {
                     }.resume()
             }
         }
+        }
+        
     }
 
