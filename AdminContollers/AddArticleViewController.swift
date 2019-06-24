@@ -62,7 +62,6 @@ class AddArticleViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "articles" {
             // get outlets values and assign to array
-            print(sender)
             if sender == nil {
             let docData: [String: Any] = [
                 "title": self.TitleInput.text!,
