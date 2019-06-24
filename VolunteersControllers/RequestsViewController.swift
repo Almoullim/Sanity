@@ -80,7 +80,9 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Feedback" {
-            let view = segue.destination as! VolunteerFeedbackViewController
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as! VolunteerFeedbackViewController
+            
             view.username = self.username
             view.helpSeekerUsername = self.selectedHelpSeeker
             let date = Date()
