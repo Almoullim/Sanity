@@ -726,11 +726,12 @@
 				DEBUG_ACTIVITY_MODE = default;
 				DEVELOPMENT_TEAM = 53V53JSQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.almoullim.sanity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ali.sanity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -746,11 +747,12 @@
 				DEBUG_ACTIVITY_MODE = default;
 				DEVELOPMENT_TEAM = 53V53JSQ98;
 				INFOPLIST_FILE = "$(SRCROOT)/Sanity/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.almoullim.sanity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ali.sanity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

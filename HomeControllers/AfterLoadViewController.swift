@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import LocalAuthentication
 
 class AfterLoadViewController: UIViewController {
 
     var db: Firestore!
-    
+    var context = LAContext()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,18 +37,38 @@ class AfterLoadViewController: UIViewController {
                         } else {
                             let userType = querySnapshot?.documents[0].data()["userType"]! as! String
                             
-                            switch userType {
-                            case "help-seeker":
-                                self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
-                            case "volunteer":
-                                self.performSegue(withIdentifier: "Volunteer", sender: nil)
-                            case "doctor":
-                                self.performSegue(withIdentifier: "Doctor", sender: nil)
-                            case "admin":
-                                self.performSegue(withIdentifier: "Admin", sender: nil)
-                            default:
-                                self.performSegue(withIdentifier: "LoginView", sender: nil)
+            // log in using face ID
+            // https://developer.apple.com/documentation/localauthentication/logging_a_user_into_your_app_with_face_id_or_touch_id
+                            self.context = LAContext()
+                            self.context.localizedCancelTitle = "Login using user name and password"
+                            var error: NSError?
+                            if self.context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+                                
+                                let reason = "Log in to your account"
+                                self.context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
+                                    if success {
+                                        switch userType {
+                                        case "help-seeker":
+                                            self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                                        case "volunteer":
+                                            self.performSegue(withIdentifier: "Volunteer", sender: nil)
+                                        case "doctor":
+                                            self.performSegue(withIdentifier: "Doctor", sender: nil)
+                                        case "admin":
+                                            self.performSegue(withIdentifier: "Admin", sender: nil)
+                                        default:
+                                            self.performSegue(withIdentifier: "LoginView", sender: nil)
+                                        }
+                                    } else {
+                                        print(error?.localizedDescription ?? "Failed to authenticate")
+                                        try? Auth.auth().signOut()
+                                        self.performSegue(withIdentifier: "LoginView", sender: nil)
+
+                                    }
+                                }
                             }
+
+                            
                         }
                     } else {
                         self.performSegue(withIdentifier: "LoginView", sender: nil)
