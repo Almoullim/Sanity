@@ -15,6 +15,8 @@
 		2097BB5022BC53E500FE6662 /* AddArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB4F22BC53E500FE6662 /* AddArticleViewController.swift */; };
 		2097BB5222BD343E00FE6662 /* AdminAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB5122BD343E00FE6662 /* AdminAppointmentViewController.swift */; };
 		2097BB5422BEB3C500FE6662 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097BB5322BEB3C500FE6662 /* EditUserProfileViewController.swift */; };
+		20C4025422C18E5600A55D38 /* DoctorQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4025322C18E5600A55D38 /* DoctorQuestionsViewController.swift */; };
+		20C4025622C1913300A55D38 /* DoctorAddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4025522C1913300A55D38 /* DoctorAddQuestionViewController.swift */; };
 		20CD016B22B90035002623AB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016A22B90035002623AB /* QuestionsViewController.swift */; };
 		20CD016D22B902B4002623AB /* AddQuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */; };
 		20CD016F22B97BCB002623AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD016E22B97BCB002623AB /* Session.swift */; };
@@ -83,6 +85,8 @@
 		2097BB4F22BC53E500FE6662 /* AddArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArticleViewController.swift; sourceTree = "<group>"; };
 		2097BB5122BD343E00FE6662 /* AdminAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppointmentViewController.swift; sourceTree = "<group>"; };
 		2097BB5322BEB3C500FE6662 /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
+		20C4025322C18E5600A55D38 /* DoctorQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorQuestionsViewController.swift; sourceTree = "<group>"; };
+		20C4025522C1913300A55D38 /* DoctorAddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAddQuestionViewController.swift; sourceTree = "<group>"; };
 		20CD016A22B90035002623AB /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		20CD016C22B902B4002623AB /* AddQuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionTableViewController.swift; sourceTree = "<group>"; };
 		20CD016E22B97BCB002623AB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				41D79E7322BD596E00EAC4FF /* DoctorReadingsViewController.swift */,
 				41D79E7122BD56F900EAC4FF /* DoctorArticleViewController.swift */,
 				415A552C22BD60760051029F /* DoctorAddArticleViewController.swift */,
+				20C4025322C18E5600A55D38 /* DoctorQuestionsViewController.swift */,
+				20C4025522C1913300A55D38 /* DoctorAddQuestionViewController.swift */,
 			);
 			path = DoctorControllers;
 			sourceTree = "<group>";
@@ -517,8 +523,10 @@
 				2077CD7922B8663A009F16D3 /* AdminSettingsViewController.swift in Sources */,
 				20FE254022C0069D00B5850F /* AppointmentViewController.swift in Sources */,
 				412E23F5229D3EED00065303 /* HelpSeekerEditProfileViewController.swift in Sources */,
+				20C4025622C1913300A55D38 /* DoctorAddQuestionViewController.swift in Sources */,
 				414AF68B224FA2B300EA9B93 /* RegisterViewController.swift in Sources */,
 				4186AF71229D0AEC004E4010 /* Extensions.swift in Sources */,
+				20C4025422C18E5600A55D38 /* DoctorQuestionsViewController.swift in Sources */,
 				41A84D3E22A77C950025A1DB /* Article.swift in Sources */,
 				2097BB4C22BAF25C00FE6662 /* AdminSettingCellTableView.swift in Sources */,
 				41074AEE229A0CDD00D6E58C /* User.swift in Sources */,
