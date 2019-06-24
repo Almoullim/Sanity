@@ -14,6 +14,7 @@ class AfterLoadViewController: UIViewController {
 
     var db: Firestore!
     var context = LAContext()
+    var sessionId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,20 @@ class AfterLoadViewController: UIViewController {
                                     if success {
                                         switch userType {
                                         case "help-seeker":
-                                            self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                                            let username = querySnapshot?.documents[0].data()["username"]! as! String
+                                            self.db.collection("sessions").whereField("helpSeekerUserName", isEqualTo: username).whereField("isCompleted", isEqualTo: false).getDocuments() { querySnapshot, err in
+                                                if let docCount = querySnapshot?.documents.count {
+                                                    if docCount <= 0 {
+                                                        self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                                                    } else {
+                                                        self.sessionId = querySnapshot?.documents[0].documentID
+                                                        self.performSegue(withIdentifier: "Feedback", sender: nil)
+                                                    }
+                                                } else {
+                                                    self.performSegue(withIdentifier: "HelpSeeker", sender: nil)
+                                                }
+                                            }
+                                            
                                         case "volunteer":
                                             self.performSegue(withIdentifier: "Volunteer", sender: nil)
                                         case "doctor":
@@ -84,5 +98,14 @@ class AfterLoadViewController: UIViewController {
     // Set the stuatus bar content to white
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Feedback" {
+            let nav = segue.destination as? UINavigationController
+            let view = nav?.viewControllers.first as! HelpSeekerFeedbackViewController
+            
+            view.sessionId = self.sessionId
+        }
     }
 }

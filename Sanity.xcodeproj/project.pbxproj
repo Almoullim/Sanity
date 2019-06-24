@@ -59,6 +59,7 @@
 		41AF80A4224EA67A0007F98F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80A2224EA67A0007F98F /* LaunchScreen.storyboard */; };
 		41AF80B0224EDB0B0007F98F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */; };
 		41B1BECE22C161D800092E34 /* VolunteerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1BECD22C161D800092E34 /* VolunteerFeedbackViewController.swift */; };
+		41B1BED022C17AA200092E34 /* HelpSeekerFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1BECF22C17AA200092E34 /* HelpSeekerFeedbackViewController.swift */; };
 		41B62C0C22A73A5800A731AF /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0B22A73A5800A731AF /* RequestViewController.swift */; };
 		41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C0F22A75DA700A731AF /* RequestsViewController.swift */; };
 		41B62C1822A7712200A731AF /* VolunteerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */; };
@@ -127,6 +128,7 @@
 		41AF80A5224EA67A0007F98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AF80AF224EDB0B0007F98F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41B1BECD22C161D800092E34 /* VolunteerFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerFeedbackViewController.swift; sourceTree = "<group>"; };
+		41B1BECF22C17AA200092E34 /* HelpSeekerFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSeekerFeedbackViewController.swift; sourceTree = "<group>"; };
 		41B62C0B22A73A5800A731AF /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		41B62C0F22A75DA700A731AF /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		41B62C1722A7712200A731AF /* VolunteerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerProfileViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				41074AF4229A246F00D6E58C /* AfterLoadViewController.swift */,
 				20CD016A22B90035002623AB /* QuestionsViewController.swift */,
 				4107D85922BFF5DA0018F8CE /* VolunteerQuestionsViewController.swift */,
+				41B1BECF22C17AA200092E34 /* HelpSeekerFeedbackViewController.swift */,
 			);
 			path = HomeControllers;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				412E23F3229D36E000065303 /* Helpers.swift in Sources */,
 				20ED1B5822B4FE6F00FD27A0 /* Question.swift in Sources */,
 				414AF698224FE7E300EA9B93 /* HomeViewController.swift in Sources */,
+				41B1BED022C17AA200092E34 /* HelpSeekerFeedbackViewController.swift in Sources */,
 				41B62C1022A75DA700A731AF /* RequestsViewController.swift in Sources */,
 				41074AF9229A2CE600D6E58C /* SettingsViewController.swift in Sources */,
 				2097BB4A22BAD18F00FE6662 /* QuestionsTableViewController.swift in Sources */,
