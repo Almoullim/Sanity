@@ -138,3 +138,15 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+
+// Author Travis Griggs
+// https://stackoverflow.com/questions/40134323/date-to-milliseconds-and-back-to-date-in-swift
+extension Date {
+    var inMilliseconds:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
+    }
+}
