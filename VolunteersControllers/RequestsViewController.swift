@@ -62,17 +62,17 @@ class RequestsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if let number = URL(string: "tel://" + mobile.replacingOccurrences(of: " ", with: "")) {
             UIApplication.shared.open(number, options: [:]) { (success:Bool) in
-//                self.db
-//                    .collection("requests")
-//                    .document(self.selectedHelpSeeker!)
-//                    .delete() { err in
-//                        if let err = err {
-//                            print("Error removing document: \(err)")
-//                        } else {
-//                            self.requests = []
-//                            self.loadRequests(requestedUser: "all", searchText: nil)
-//                        }
-//                }
+                self.db
+                    .collection("requests")
+                    .document(self.selectedHelpSeeker!)
+                    .delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            self.requests = []
+                            self.loadRequests(requestedUser: "all", searchText: nil)
+                        }
+                }
                 self.performSegue(withIdentifier: "Feedback", sender: nil)
             }
         }
