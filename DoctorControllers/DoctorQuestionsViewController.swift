@@ -35,7 +35,7 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
         storage = Storage.storage()
         
         // load help seeker question(default fillter)
-        loadQuestions(userType: "help-seeker", searchText: nil)
+        loadQuestions(userType: "volunteer", searchText: nil)
         
         // dalegate
         SearchBar.delegate = self
@@ -62,7 +62,7 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
             questions = []
             self.QuestionsTable.reloadData()
             
-            loadQuestions(userType: "help-seeker", searchText: text)
+            loadQuestions(userType: "volunteer", searchText: text)
         }
         
         searchBar.resignFirstResponder()
@@ -73,7 +73,7 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
         searchBar.text = nil
         questions = []
         self.QuestionsTable.reloadData()
-        loadQuestions(userType: "help-seeker", searchText: nil)
+        loadQuestions(userType: "volunteer", searchText: nil)
         
         searchBar.resignFirstResponder()
     }
@@ -132,10 +132,9 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
         let cell =  tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? AdminSettingCellTableView
         
         cell?.qustion.text = self.questions[indexPath.row].text
-                    cell?.userType.text = "help-seeker"
+        cell?.userType.text = "volunteer"
         cell?.ID = self.questions[indexPath.row].ID
         cell?.delegate = self
-        
         
         return cell!
     }
@@ -156,7 +155,7 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
             {
                 let view = segue.destination as? AddQuestionTableViewController
                 
-                view?.userType = "help-seeker"
+                view?.userType = "volunteer"
             }
         }
     }
@@ -165,7 +164,7 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
     @IBAction func unwindToDoctorQustions(unwindSegue: UIStoryboardSegue) {
         // unwind from add/edit question
         questions = []
-        loadQuestions(userType: "help-seeker", searchText: nil)
+        loadQuestions(userType: "volunteer", searchText: nil)
         self.QuestionsTable.reloadData()
     }
     
