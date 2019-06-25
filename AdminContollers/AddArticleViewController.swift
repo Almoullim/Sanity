@@ -106,7 +106,7 @@ class AddArticleViewController: UITableViewController {
         case 0:
             return 3
         case 1:
-            if let id = self.articleIDValue {
+            if self.articleIDValue != nil {
                 return 1
             } else {
                 return 0

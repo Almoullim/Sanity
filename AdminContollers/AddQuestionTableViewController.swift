@@ -75,7 +75,7 @@ class AddQuestionTableViewController: UITableViewController {
         case 1:
             return 4
         case 2:
-            if let question = self.selectedQuestion{
+            if self.selectedQuestion != nil {
                 return 1
             } else {
                 return 0

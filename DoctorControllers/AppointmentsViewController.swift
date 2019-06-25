@@ -16,7 +16,7 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
     var storage: Storage!
     
     @IBOutlet weak var appointmentsTable: UITableView!
-    private let refreshControl = UIRefreshControl()
+    private var refreshControl: UIRefreshControl?
     
     var selectedAppointmentID: String?
     
@@ -35,8 +35,9 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
         appointmentsTable.delegate = self
         appointmentsTable.dataSource = self
 
+        self.refreshControl = UIRefreshControl()
         appointmentsTable.refreshControl = self.refreshControl
-        refreshControl.addTarget(self, action: #selector(loadAppointments), for: .valueChanged)
+        refreshControl!.addTarget(self, action: #selector(loadAppointments), for: .valueChanged)
         
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").whereField("uid", isEqualTo: currentUser.uid)
@@ -86,7 +87,7 @@ class AppointmentsViewController: UIViewController, UITableViewDataSource, UITab
                 print("Error getting documents: \(err)")
             } else {
                 self.addVolunteers(querySnapshot!.documents)
-                self.refreshControl.endRefreshing()
+                self.refreshControl!.endRefreshing()
             }
         }
     }
