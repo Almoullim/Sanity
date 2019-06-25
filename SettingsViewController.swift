@@ -29,6 +29,10 @@ class SettingsViewController: UITableViewController {
             self.performSegue(withIdentifier: "EditProfile", sender: nil)
         case [0,1]:
             logout()
+        case [0,2]:
+            if let number = URL(string: "tel://199") {
+                UIApplication.shared.open(number, options: [:])
+            }
         case [1, 0]:
             self.performSegue(withIdentifier: "EditArticles", sender: nil)
         default:
