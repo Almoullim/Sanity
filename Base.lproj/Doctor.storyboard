@@ -1622,7 +1622,7 @@
         <scene sceneID="C56-Vb-Z5v">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k1C-pe-bWg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Questions" image="wallet_app" id="T2V-pv-ziQ"/>
+                    <tabBarItem key="tabBarItem" title="Questions" image="wallet_app" id="T2V-pv-ziQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ji5-wy-KLh">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
