@@ -1,0 +1,19 @@
+The pods required are already installed but incase the pods are not installed please do a "pod install" in terminal at the project root.
+
+Users for the app
+
+Username: admin
+Password: adminpass
+
+Username: doctor
+Password: doctor
+
+Username: volunteer
+Password: volunteer
+
+Username: helpseeker
+Password: helpseeker
+
+Firebase User
+Email: polymobileprog@gmail.com
+Password (all lowercase): polytechnic
