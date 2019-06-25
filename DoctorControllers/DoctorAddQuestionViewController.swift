@@ -65,7 +65,7 @@ class DoctorAddQuestionViewController: UITableViewController {
         }else {
             // change title and button type if there isn't passed information
             self.navigationItem.title = "Add Question"
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddQuestionTableViewController.AddClicked(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(DoctorAddQuestionViewController.AddClicked(_:)))
         }
     }
     
@@ -76,7 +76,7 @@ class DoctorAddQuestionViewController: UITableViewController {
         case 1:
             return 4
         case 2:
-            if let question = self.selectedQuestion{
+            if self.selectedQuestion != nil {
                 return 1
             } else {
                 return 0
@@ -97,10 +97,10 @@ class DoctorAddQuestionViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "doctorquestions" {
             if sender == nil {
-                if segue.destination is QuestionsTableViewController
+                if segue.destination is DoctorQuestionsViewController
                 {
                     // pass userType back
-                    let view = segue.destination as? QuestionsTableViewController
+                    let view = segue.destination as? DoctorQuestionsViewController
                     view?.userType = self.userType
                 }
                 // get data from outlets and insert/ overwrite information to database

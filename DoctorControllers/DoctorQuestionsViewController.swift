@@ -144,16 +144,16 @@ class DoctorQuestionsViewController: UIViewController, UITableViewDataSource, UI
         
         // pass info to next view
         if segue.identifier == "EditQuestion" {
-            if segue.destination is AddQuestionTableViewController
+            if segue.destination is DoctorAddQuestionViewController
             {
-                let view = segue.destination as? AddQuestionTableViewController
+                let view = segue.destination as? DoctorAddQuestionViewController
                 view?.selectedQuestion = self.selectedQuestion
                 view?.userType = self.userType
             }
         } else if segue.identifier == "AddQuestion" {
-            if segue.destination is AddQuestionTableViewController
+            if segue.destination is DoctorAddQuestionViewController
             {
-                let view = segue.destination as? AddQuestionTableViewController
+                let view = segue.destination as? DoctorAddQuestionViewController
                 
                 view?.userType = "volunteer"
             }
