@@ -97,3 +97,27 @@
 
 /* Class = "UIButton"; normalTitle = "Help Seeker"; ObjectID = "xfj-Zo-keC"; */
 "xfj-Zo-keC.normalTitle" = "طالب المساعدة";
+
+/* Class = "UINavigationItem"; title = "Request Feedback"; ObjectID = "b1O-Er-gww"; */
+"b1O-Er-gww.title" = "ملاحظة للطلب";
+
+/* Class = "UINavigationItem"; title = "Volunteer Exam"; ObjectID = "b0l-2s-lBF"; */
+"b0l-2s-lBF.title" = "امتحان المتطوعيين";
+
+/* Class = "UILabel"; text = "Feedback Message"; ObjectID = "VSU-VJ-Kls"; */
+"VSU-VJ-Kls.text" = "الملاحظة";
+
+/* Class = "UILabel"; text = "For"; ObjectID = "MKo-N9-AH6"; */
+"MKo-N9-AH6.text" = "إلى";
+
+/* Class = "UILabel"; text = "Feedback Rating"; ObjectID = "I2J-sx-fYl"; */
+"I2J-sx-fYl.text" = "تقييم";
+
+/* Class = "UITableViewSection"; headerTitle = "Feedback"; ObjectID = "5OY-s2-fbv"; */
+"5OY-s2-fbv.headerTitle" = "ملاحظة";
+
+/* Class = "UITableViewSection"; footerTitle = "Write a feedback for the user you just contacted"; ObjectID = "5OY-s2-fbv"; */
+"5OY-s2-fbv.footerTitle" = "أكتب ملاحظة للشخص اللذي اتصل بك";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "ET9-K5-FJA"; */
+"ET9-K5-FJA.title" = "تم";
