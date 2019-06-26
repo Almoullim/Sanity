@@ -33,14 +33,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMz-X8-FPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="60"/>
+            <point key="canvasLocation" x="-1120" y="60"/>
         </scene>
         <!--Appointments-->
         <scene sceneID="vvy-wS-Pyl">
             <objects>
                 <viewController id="SXU-WW-enD" customClass="AppointmentsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Grc-tB-EJW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zq0-Mg-Hzr">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rg-9x-mcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="60"/>
+            <point key="canvasLocation" x="590" y="60"/>
         </scene>
         <!--Appointments-->
         <scene sceneID="gVe-U6-b5n">
@@ -157,14 +157,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rh-fj-doW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="60"/>
+            <point key="canvasLocation" x="-126" y="60"/>
         </scene>
         <!--Profile-->
         <scene sceneID="aW7-pt-Hbg">
             <objects>
                 <viewController id="AWP-dd-ip5" customClass="DoctorProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0I-F1-00k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="USG-LT-nYK">
@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4U9-zc-H8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="884"/>
+            <point key="canvasLocation" x="590" y="884"/>
         </scene>
         <!--Profile-->
         <scene sceneID="9uL-0N-9UI">
@@ -448,7 +448,7 @@
             <objects>
                 <tableViewController id="j1K-LK-Vf1" customClass="SettingsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="W6g-qw-BIp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -552,7 +552,7 @@
             <objects>
                 <tableViewController title="Edit Profile" id="p7b-AJ-YO8" customClass="DoctorEditProfileViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="cxb-JJ-xIf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -903,7 +903,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgd-Hl-hKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2674" y="-934"/>
+            <point key="canvasLocation" x="2509" y="-934"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cnu-4f-Kwg">
@@ -922,14 +922,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luj-95-ZHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="-934"/>
+            <point key="canvasLocation" x="1658" y="-934"/>
         </scene>
         <!--Readings-->
         <scene sceneID="82d-CK-xU5">
             <objects>
                 <tableViewController id="XpD-M8-o7G" customClass="DoctorReadingsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ffk-IX-g6t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1021,7 +1021,7 @@
             <objects>
                 <viewController id="vE2-oq-vVL" customClass="DoctorArticleViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oDV-5A-T3m">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6h-Dy-8A2">
@@ -1157,7 +1157,7 @@
             <objects>
                 <tableViewController title="AddArticle" id="8qG-W9-ouF" customClass="DoctorAddArticleViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0rB-LC-8W1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1282,7 +1282,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQV-aY-Yvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HdV-uc-10E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3415.9420289855075" y="1635.326086956522"/>
+            <point key="canvasLocation" x="2954" y="1705"/>
         </scene>
         <!--Main-->
         <scene sceneID="llT-9B-jaR">
@@ -1297,7 +1297,7 @@
             <objects>
                 <tableViewController title="AddQuestion" id="3KI-a3-NEL" customClass="DoctorAddQuestionViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0Ob-vH-1pc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1510,14 +1510,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FuH-Ye-2Fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Hjd-OX-0xm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="2380"/>
+            <point key="canvasLocation" x="-126" y="1865"/>
         </scene>
         <!--Questions-->
         <scene sceneID="gv3-ac-C9O">
             <objects>
                 <viewController title="Questions" id="I4y-Ns-6zi" customClass="DoctorQuestionsViewController" customModule="Sanity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LoT-Je-ZNq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s7O-nZ-jCU" userLabel="Questions List Table">
@@ -1616,7 +1616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soi-F3-QKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="1635"/>
+            <point key="canvasLocation" x="-1120" y="1866"/>
         </scene>
         <!--Questions-->
         <scene sceneID="C56-Vb-Z5v">
@@ -1637,7 +1637,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZS-fn-AMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553.62318840579712" y="1634.5108695652175"/>
+            <point key="canvasLocation" x="-1120" y="1038"/>
         </scene>
     </scenes>
     <resources>
